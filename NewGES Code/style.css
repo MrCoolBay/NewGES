@@ -1,5 +1,5 @@
-/* SIDE BAR */
 @import url("https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap");
+/* SIDE BAR */
 * {
   margin: 0;
   padding: 0;
@@ -269,4 +269,21 @@ body {
     left: 78px;
     width: calc(100% - 78px);
   }
+}
+
+/*CONNEXION*/
+.connect-container {
+  display: flex;
+}
+.connect-ecole {
+  background-color: #f3f3f3;
+  width: 1476px;
+  height: 1080px;
+  left: 0;
+}
+.connect-connexion {
+  background-color: #1ea7d3;
+  width: 444px;
+  height: 1080px;
+  right: 0;
 }
