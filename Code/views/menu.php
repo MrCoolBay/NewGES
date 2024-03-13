@@ -1,6 +1,6 @@
  <div class="sidebar close">
      <div class="logo-details">
-         <img src="img/mywhite.png"></img>
+         <img src="assets/img/mywhite.png"></img>
          <span class="logo_name"></span>
      </div>
      <ul class="nav-links">
@@ -69,7 +69,7 @@
          <li>
              <div class="profile-details">
                  <div class="profile-content">
-                     <img src="/assets/img/DSC_0201.JPG" alt="profileImg" />
+                     <img src="assets/img/DSC_0201.JPG" alt="profileImg" />
                  </div>
                  <div class="name-job">
                      <div class="profile_name">Fabien Lubin</div>
