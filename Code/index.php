@@ -6,6 +6,12 @@ if (isset($_GET["page"]) && !empty($_GET["page"])) {
         DisplayHome();
     } else if ($page == "partenaires") {
         DisplayPartenaires();
+    } else if ($page == "connexion") {
+        DisplayConnexion();
+    } else if ($page == "plannings") {
+        DisplayPlannings();
+    } else if ($page == "notes") {
+        DisplayNotes();
     }
 } else {
     DisplayHome();

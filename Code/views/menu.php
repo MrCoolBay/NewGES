@@ -15,13 +15,13 @@
          </li>
          <li>
              <div class="iocn-link">
-                 <a href="#">
+                 <a href="index.php?page=plannings">
                      <i class="bx bx-book-alt"></i>
                      <span class="link_name">Plannings</span>
                  </a>
              </div>
              <ul class="sub-menu">
-                 <li><a class="link_name" href="#">Plannings</a></li>
+                 <li><a class="link_name" href="index.php?page=plannings">Plannings</a></li>
              </ul>
          </li>
          <li>
@@ -34,7 +34,7 @@
              </div>
              <ul class="sub-menu">
                  <li><a class="link_name" href="#">Scolarité</a></li>
-                 <li><a href="#">Notes</a></li>
+                 <li><a href="index.php?page=notes">Notes</a></li>
                  <li><a href="#">Support de Cours</a></li>
                  <li><a href="#">Offres de travail</a></li>
                  <li><a href="#">Documents</a></li>

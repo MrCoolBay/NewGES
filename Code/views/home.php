@@ -15,16 +15,18 @@
     <?php
     require("menu.php")
     ?>
-    <section class="home-section">
-      <div class="home-content">
-        <i class="bx bx-menu"></i>
-        <span class="text">MyNewGES</span>
-      </div>
-
-    </section>
-
-    <script src="assets/js/script.js"></script>
   </nav>
+  <section class="home-section">
+    <div class="home-content">
+      <i class="bx bx-menu"></i>
+      <span class="text">MyNewGES</span>
+    </div>
+
+  </section>
+
+
+
+  <script src="assets/js/script.js"></script>
 </body>
 
 </html>

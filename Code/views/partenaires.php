@@ -22,9 +22,8 @@
       </div>
 
     </section>
-
-    <script src="assets/js/script.js"></script>
   </nav>
+  <script src="assets/js/script.js"></script>
 </body>
 
 </html>
