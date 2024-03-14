@@ -18,5 +18,5 @@ function DisplayPlannings()
 }
 function DisplayNotes()
 {
-    require("views/scolarite/notes.php");
+    require("views/notes.php");
 }
