@@ -21,18 +21,23 @@
         <i class="bx bx-menu"></i>
         <span class="text">MyNewGES</span>
       </div>
+      <div class="grand-rectangle">
+        <img id="lan" src="assets\img\lanvalolol.png" alt="Image 1">
+        <img id="eductive" src="assets\img\ecolelogo.png" alt="Image 2">
+        <img id="porte-ouverte" src="assets\img\porteouverte.png" alt="Image 2">
+        <!-- Ajoutez d'autres images selon vos besoins -->
+      </div>
+      <div class="instagram-card" id="card">
+        <div class="card-inner" id="cardInner">
+          <iframe class="instagram-iframe front" src="https://www.instagram.com/eductive_reims/embed" frameborder="0" scrolling="no"></iframe>
+          <iframe class="instagram-iframe back" src="https://www.instagram.com/esginformatique/embed" frameborder="0" scrolling="no"></iframe>
+        </div>
+      </div>
+
+
 
     </section>
   </nav>
-
-  <!-- Le grand rectangle avec des images -->
-  <div class="grand-rectangle">
-    <img src=".\NewGES\Code\assets\img\cathedrale.jpg" alt="Image 1">
-    <img src=".\NewGES\Code\assets\img\eductive.jpg" alt="Image 2">
-    <img src="chemin/vers/image3.jpg" alt="Image 3">
-    <!-- Ajoutez d'autres images selon vos besoins -->
-  </div>
-
   <script src="assets/js/script.js"></script>
 </body>
 

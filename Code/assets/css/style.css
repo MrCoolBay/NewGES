@@ -8,10 +8,9 @@
   box-sizing: border-box;
   font-family: "Archivo", sans-serif;
 }
-
-body {
-  overflow: hidden;
-}
+ body{
+ background-color: #e4e9f7;
+ }
 
 .sidebar {
   position: fixed;
@@ -357,32 +356,71 @@ body {
   font-family: Anton;
 }
 
-/* CSS pour le rectangle */
 .grand-rectangle {
-  width: 80%;
-  /* Ajustez la largeur selon vos besoins */
-  height: 400px;
-  /* Ajustez la hauteur selon vos besoins */
-  background-color: #181717;
-  /* Couleur de fond du rectangle */
+  width: 90%;
+  height: 280px;
+  background-color: #f0f0f0;
   margin: 20px auto;
-  /* Centre le rectangle horizontalement et ajoute un espacement en haut et en bas */
   padding: 20px;
-  /* Ajoute un espace à l'intérieur du rectangle */
-  border: 2px solid #870202;
-  /* Bordure du rectangle */
-  overflow: auto;
-  /* Ajoute un défilement si le contenu dépasse la hauteur du rectangle */
+  border: 2px solid #ccc;
+  overflow: hidden;
+  position: relative;
+
 }
 
-/* CSS pour les images à l'intérieur du rectangle */
-.grand-rectangle img {
-  max-width: 100%;
-  /* Pour que les images s'ajustent à la largeur du rectangle */
-  height: auto;
-  /* Pour maintenir le ratio d'aspect des images */
-  display: block;
-  /* Pour éviter les espaces vides entre les images */
-  margin-bottom: 10px;
-  /* Espacement entre les images */
+#eductive {
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  position: absolute;
+  transition: opacity 1s ease;
+}
+
+#lan {
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  position: absolute;
+  transition: opacity 1s ease;
+}
+
+#porte-ouverte {
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  position: absolute;
+  transition: opacity 1s ease;
+}
+
+.instagram-card {
+  perspective: 1000px;
+  width: 500px;
+  height: 550px;
+  margin-left: auto;
+  /* Alignement à droite */
+}
+
+.card-inner {
+  width: 100%;
+  height: 100%;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+.instagram-iframe {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+}
+
+.front {
+  z-index: 2;
+}
+
+.back {
+  transform: rotateY(180deg);
 }
