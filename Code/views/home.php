@@ -25,6 +25,13 @@
     </section>
   </nav>
 
+  <!-- Le grand rectangle avec des images -->
+  <div class="grand-rectangle">
+    <img src=".\NewGES\Code\assets\img\cathedrale.jpg" alt="Image 1">
+    <img src=".\NewGES\Code\assets\img\eductive.jpg" alt="Image 2">
+    <img src="chemin/vers/image3.jpg" alt="Image 3">
+    <!-- Ajoutez d'autres images selon vos besoins -->
+  </div>
 
   <script src="assets/js/script.js"></script>
 </body>
