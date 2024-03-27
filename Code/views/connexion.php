@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="/NewGES/Code/assets/css/style-connexion.css" />
+  <link rel="stylesheet" href="../assets/css/style-connexion.css" />
   <!-- Fontawesome CDN -->
   <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.5.1/css/all.css">
   <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.5.1/css/sharp-thin.css">
@@ -22,7 +22,7 @@
     <input type="checkbox" id="flip">
     <div class="cover">
       <div class="front">
-        <img src="/NewGES/Code/assets/img/campus/campus.png" alt="">
+        <img src="../assets/img/campus/campus.png" alt="">
         <div class="text">
           <span class="text-1">Bienvenue sur le <br> Réseau Skolae</span>
           <span class="text-2">Connectez-vous</span>
@@ -35,7 +35,7 @@
           <div class="title">Se connecter
           </div>
           <div class="img">
-            <img src="/NewGES/Code/assets/img/mynewges.png" alt="logomyges">
+            <img src="../assets/img/mynewges.png" alt="logomyges">
           </div>
           <form action="#">
             <div class="input-boxes">
