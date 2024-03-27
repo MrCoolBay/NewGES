@@ -29,9 +29,9 @@ function flipCard() {
   cardInner.style.transform = 'rotateY(180deg)';
   setTimeout(function() {
     cardInner.style.transform = 'rotateY(0deg)';
-  }, 5000); // Attendre 800ms avant de retourner la carte
+  }, 5000);
 }
 
 setInterval(function() {
   flipCard();
-}, 11000); // Appel de flipCard toutes les 4 secondes (2 secondes pour chaque face)
+}, 11000);

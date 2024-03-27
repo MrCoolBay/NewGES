@@ -22,9 +22,9 @@
         <span class="text">MyNewGES</span>
       </div>
       <div class="grand-rectangle">
-        <img id="lan" src="assets\img\lanvalolol.png" alt="Image 1">
-        <img id="eductive" src="assets\img\ecolelogo.png" alt="Image 2">
-        <img id="porte-ouverte" src="assets\img\porteouverte.png" alt="Image 2">
+        <img id="lan" src="assets\img\3.png" alt="lan valo">
+        <img id="eductive" src="assets\img\1.png" alt="logo ecoles">
+        <img id="porte-ouverte" src="assets\img\2.png" alt="porte ouverte">
         <!-- Ajoutez d'autres images selon vos besoins -->
       </div>
       <div class="instagram-card" id="card">
