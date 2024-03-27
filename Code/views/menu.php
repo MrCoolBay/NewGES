@@ -1,12 +1,12 @@
  <div class="sidebar close">
      <div class="logo-details">
-         <img src="assets/img/mywhite.png"></img>
+         <img src="assets/img/mynewgeswhite.png"></img>
          <span class="logo_name"></span>
      </div>
      <ul class="nav-links">
          <li>
              <a href="index.php?page=home">
-                 <i class="bx bx-grid-alt"></i>
+                 <i class="fa-light fa-house"></i>
                  <span class="link_name">Tableau de bord</span>
              </a>
              <ul class="sub-menu blank">
@@ -16,7 +16,7 @@
          <li>
              <div class="iocn-link">
                  <a href="index.php?page=plannings">
-                     <i class="bx bx-book-alt"></i>
+                     <i class="fa-light fa-calendar-week"></i>
                      <span class="link_name">Plannings</span>
                  </a>
              </div>
@@ -27,10 +27,10 @@
          <li>
              <div class="iocn-link">
                  <a href="#">
-                     <i class="bx bx-collection"></i>
+                     <i class="fa-light fa-backpack"></i>
                      <span class="link_name">Scolarité</span>
                  </a>
-                 <i class="bx bxs-chevron-down arrow"></i>
+                 <i class="fa-light fa-chevron-down arrow"></i>
              </div>
              <ul class="sub-menu">
                  <li><a class="link_name" href="#">Scolarité</a></li>
@@ -45,10 +45,10 @@
          <li>
              <div class="iocn-link">
                  <a href="#">
-                     <i class="bx bx-plug"></i>
+                     <i class="fa-light fa-plug"></i>
                      <span class="link_name">Services</span>
                  </a>
-                 <i class="bx bxs-chevron-down arrow"></i>
+                 <i class="fa-light fa-chevron-down arrow"></i>
              </div>
              <ul class="sub-menu">
                  <li><a class="link_name" href="#">Services</a></li>
@@ -58,12 +58,12 @@
              </ul>
          </li>
          <li>
-             <a href="#">
-                 <i class="bx bx-cog"></i>
-                 <span class="link_name">Paramètres</span>
+             <a id="mode-toggle" href="#">
+                 <i class="fa-light fa-moon"></i>
+                 <span class="link_name">Mode nuit</span>
              </a>
              <ul class="sub-menu blank">
-                 <li><a class="link_name" href="#">Paramètres</a></li>
+                 <li><a class="link_name" href="#">Mode nuit</a></li>
              </ul>
          </li>
          <li>

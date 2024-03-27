@@ -1,5 +1,4 @@
 @import url("https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Anton&display=swap");
 
 /* SIDE BAR */
 * {
@@ -275,13 +274,17 @@ body {
   flex-wrap: wrap;
 }
 
-.home-section .home-content .bx-menu,
+.home-section .home-content .fa-bars {
+  color: #eb4e81;
+  font-size: 30px;
+}
+
 .home-section .home-content .text {
   color: #eb4e81;
   font-size: 35px;
 }
 
-.home-section .home-content .bx-menu {
+.home-section .home-content .fa-bars {
   cursor: pointer;
   margin-right: 10px;
 }
