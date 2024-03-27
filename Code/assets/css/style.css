@@ -362,8 +362,8 @@ body {
 }
 
 .instagram-card {
-  width: 500px;
-  height: 540px;
+  width: 50vh;
+  height: 51vh;
   margin-right: 7.5vh;
   margin-left: auto;
 }
