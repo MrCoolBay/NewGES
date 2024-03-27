@@ -52,7 +52,7 @@
              </div>
              <ul class="sub-menu">
                  <li><a class="link_name" href="#">Services</a></li>
-                 <li><a href="https://portal.academicsoftware.com/dashboard" target= "_blank" >Logiciels</a></li>
+                 <li><a href="https://portal.academicsoftware.com/dashboard" target="_blank">Logiciels</a></li>
                  <li><a href="#">Ciriculum Vitae</a></li>
                  <li><a href="index.php?page=partenaires">Partenaires</a></li>
              </ul>
@@ -75,7 +75,8 @@
                      <div class="profile_name">Fabien Lubin</div>
                      <div class="job">ESGI</div>
                  </div>
-                 <i class="bx bx-log-out"></i>
+                 <a href="index.php?page=session"><i class="bx bx-log-out"></i></a>
+
              </div>
          </li>
      </ul>

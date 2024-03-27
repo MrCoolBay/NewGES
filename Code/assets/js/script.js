@@ -22,7 +22,7 @@ function changeImage() {
   images[currentImageIndex].style.display = 'block';
 }
 
-setInterval(changeImage, 2000); // Change l'image toutes les 5 secondes (5000ms)
+setInterval(changeImage, 6000); // Change l'image toutes les 5 secondes (5000ms)
 
 function flipCard() {
   var cardInner = document.getElementById('cardInner');

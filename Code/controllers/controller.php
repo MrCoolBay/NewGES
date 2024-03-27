@@ -8,9 +8,9 @@ function DisplayPartenaires()
 {
     require("views/partenaires.php");
 }
-function DisplayConnexion()
+function DisplaySession()
 {
-    require("views/connexion.php");
+    require("views/session.php");
 }
 function DisplayPlannings()
 {

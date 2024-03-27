@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="fr">
 
+<?php session_start(); ?>
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="../assets/css/style-connexion.css" />
+  <link rel="stylesheet" href="assets/css/style-connexion.css" />
   <!-- Fontawesome CDN -->
   <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.5.1/css/all.css">
   <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.5.1/css/sharp-thin.css">
@@ -22,7 +24,7 @@
     <input type="checkbox" id="flip">
     <div class="cover">
       <div class="front">
-        <img src="../assets/img/campus/campus.png" alt="">
+        <img src="assets/img/campus/campus.png" alt="">
         <div class="text">
           <span class="text-1">Bienvenue sur le <br> Réseau Skolae</span>
           <span class="text-2">Connectez-vous</span>
@@ -35,17 +37,17 @@
           <div class="title">Se connecter
           </div>
           <div class="img">
-            <img src="../assets/img/mynewges.png" alt="logomyges">
+            <img src="assets/img/mynewges.png" alt="logomyges">
           </div>
-          <form action="#">
+          <form action="" method="POST">
             <div class="input-boxes">
               <div class="input-box">
-                <i class="fa-duotone fa-envelope"></i>
-                <input type="text" placeholder="Entrez votre e-mail" required>
+                <i class="fa-duotone fa-user"></i>
+                <input type="text" for="username" placeholder="Entrez votre nom d'utilisateur" id="username" name="username" required>
               </div>
               <div class="input-box">
                 <i class="fa-duotone fa-lock-keyhole"></i>
-                <input type="password" placeholder="Entrez votre mot de passe" required>
+                <input type="password" for="password" placeholder="Entrez votre mot de passe" id="password" name="password" required>
               </div>
               <div class="text"><a href="#">Mot de passe oublié ?</a></div>
               <div class="button input-box">
@@ -57,19 +59,19 @@
         </div>
         <div class="signup-form">
           <div class="title">S'inscrire</div>
-          <form action="#">
+          <form method="POST" action="index.php?form=register">
             <div class="input-boxes">
               <div class="input-box">
                 <i class="fa-duotone fa-user"></i>
-                <input type="text" placeholder="Entrez votre nom" required>
+                <input type="text" for="username" placeholder="Entrez votre nom" id="username" name="username" required>
               </div>
               <div class="input-box">
                 <i class="fa-duotone fa-envelope"></i>
-                <input type="text" placeholder="Entrez votre e-mail" required>
+                <input type="email" for="email" placeholder="Entrez votre e-mail" id="email" name="email" required>
               </div>
               <div class="input-box">
                 <i class="fa-duotone fa-lock-keyhole"></i>
-                <input type="password" placeholder="Entrez votre mot de passe" required>
+                <input type="password" for="password" placeholder="Entrez votre mot de passe" id="password" name="password" required>
               </div>
               <div class="button input-box">
                 <input type="submit" value="S'inscrire">
