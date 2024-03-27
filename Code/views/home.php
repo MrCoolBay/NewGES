@@ -25,7 +25,7 @@
         <img id="lan" src="assets\img\3.png" alt="lan valo">
         <img id="eductive" src="assets\img\1.png" alt="logo ecoles">
         <img id="porte-ouverte" src="assets\img\2.png" alt="porte ouverte">
-    
+
       </div>
       <div class="instagram-card" id="card">
         <div class="card-inner" id="cardInner">
