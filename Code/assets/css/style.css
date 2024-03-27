@@ -8,9 +8,9 @@
   box-sizing: border-box;
   font-family: "Archivo", sans-serif;
 }
- body{
- background-color: #e4e9f7;
- }
+body {
+  background-color: #e4e9f7;
+}
 
 .sidebar {
   position: fixed;
@@ -329,15 +329,14 @@
   background-color: #f0f0f0;
   margin: 20px auto;
   padding: 20px;
-  border: 2px solid #ccc;
+  border-radius: 25px;
   overflow: hidden;
   position: relative;
-
 }
 
 #eductive {
   width: 100%;
- height: 100%;
+  height: 100%;
   top: 0;
   left: 0;
   position: absolute;
@@ -364,8 +363,9 @@
 
 .instagram-card {
   width: 500px;
-  height: 550px;
-  margin-left: 59.6%;
+  height: 540px;
+  margin-right: 7.5vh;
+  margin-left: auto;
 }
 
 .card-inner {
@@ -380,6 +380,7 @@
   width: 100%;
   height: 100%;
   backface-visibility: hidden;
+  border-radius: 15px;
 }
 
 .front {
