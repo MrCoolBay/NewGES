@@ -25,7 +25,7 @@
 
     <section class="home-section">
       <div class="home-content">
-        <i id="icon" class="fa-regular fa-bars"></i>
+        <i id="icon" class="fa-solid fa-bars"></i>
         <span class="text">MyNewGES</span>
       </div>
       <div class="grand-rectangle">

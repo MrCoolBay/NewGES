@@ -67,12 +67,13 @@ body {
   backface-visibility: hidden;
 }
 .container .cover img {
-  border-radius: 30px;
   position: absolute;
   height: 100%;
   width: 100%;
   object-fit: cover;
   z-index: 10;
+  border-top-right-radius: 30px;
+  border-bottom-right-radius: 30px;
 }
 .container .cover .text {
   position: absolute;

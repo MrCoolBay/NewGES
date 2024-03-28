@@ -42,11 +42,11 @@
           <form action="index.php?form=login" method="POST">
             <div class="input-boxes">
               <div class="input-box">
-                <i class="fa-duotone fa-user"></i>
+                <i class="fa-solid fa-user"></i>
                 <input type="text" for="username" placeholder="Entrez votre nom d'utilisateur" id="username" name="username" required>
               </div>
               <div class="input-box">
-                <i class="fa-duotone fa-lock-keyhole"></i>
+                <i class="fa-solid fa-lock-keyhole"></i>
                 <input type="password" for="password" placeholder="Entrez votre mot de passe" id="password" name="password" required>
               </div>
               <div class="text"><a href="#">Mot de passe oublié ?</a></div>
@@ -62,15 +62,15 @@
           <form method="POST" action="index.php?form=register">
             <div class="input-boxes">
               <div class="input-box">
-                <i class="fa-duotone fa-user"></i>
+                <i class="fa-solid fa-user"></i>
                 <input type="text" for="username" placeholder="Entrez votre nom" id="username" name="username" required>
               </div>
               <div class="input-box">
-                <i class="fa-duotone fa-envelope"></i>
+                <i class="fa-solid fa-envelope"></i>
                 <input type="email" for="email" placeholder="Entrez votre e-mail" id="email" name="email" required>
               </div>
               <div class="input-box">
-                <i class="fa-duotone fa-lock-keyhole"></i>
+                <i class="fa-solid fa-lock-keyhole"></i>
                 <input type="password" for="password" placeholder="Entrez votre mot de passe" id="password" name="password" required>
               </div>
               <div class="button input-box">

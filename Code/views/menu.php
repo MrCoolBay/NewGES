@@ -75,7 +75,7 @@
                      <div class="profile_name"><?= $username ?></div>
                      <div class="job">ESGI</div>
                  </div>
-                 <a href="index.php?logout"><i class="bx bx-log-out"></i></a>
+                 <a href="index.php?logout"><i class="fa-regular fa-right-from-bracket"></i></a>
 
              </div>
          </li>

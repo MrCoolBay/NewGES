@@ -25,7 +25,7 @@
     ?>
     <section class="home-section">
       <div class="home-content">
-        <i class="fa-regular fa-bars"></i>
+        <i class="fa-solid fa-bars"></i>
         <span class="text">Partenaires</span>
       </div>
 
