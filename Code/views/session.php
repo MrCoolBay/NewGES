@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="fr">
 
-<?php session_start(); ?>
+<!-- <?php session_start(); ?> -->
 
 <head>
   <meta charset="UTF-8" />
@@ -39,7 +39,7 @@
           <div class="img">
             <img src="assets/img/mynewges.png" alt="logomyges">
           </div>
-          <form action="" method="POST">
+          <form action="index.php?form=login" method="POST">
             <div class="input-boxes">
               <div class="input-box">
                 <i class="fa-duotone fa-user"></i>

@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="fr">
 
+<?php $username = $_SESSION['username'] ?>
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -30,6 +32,9 @@
         <img id="lan" src="assets\img\3.png" alt="lan valo">
         <img id="eductive" src="assets\img\1.png" alt="logo ecoles">
         <img id="porte-ouverte" src="assets\img\2.png" alt="porte ouverte">
+
+      </div>
+      <div class="test">
 
       </div>
       <div class="instagram-card" id="card">

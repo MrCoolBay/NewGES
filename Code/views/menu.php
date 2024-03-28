@@ -72,10 +72,10 @@
                      <img src="assets/img/DSC_0201.JPG" alt="profileImg" />
                  </div>
                  <div class="name-job">
-                     <div class="profile_name">Fabien Lubin</div>
+                     <div class="profile_name"><?= $username ?></div>
                      <div class="job">ESGI</div>
                  </div>
-                 <a href="index.php?page=session"><i class="bx bx-log-out"></i></a>
+                 <a href="index.php?logout"><i class="bx bx-log-out"></i></a>
 
              </div>
          </li>
