@@ -2,6 +2,7 @@
 <html lang="fr">
 
 <?php $username = $_SESSION['username'] ?>
+<?php $pdp = $_SESSION['pdp'] ?>
 
 <head>
   <meta charset="UTF-8" />
@@ -35,7 +36,7 @@
 
       </div>
       <div class="test">
-
+        <img src="<?= $pdp ?>" alt="">
       </div>
       <div class="instagram-card" id="card">
         <div class="card-inner" id="cardInner">

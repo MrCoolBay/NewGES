@@ -54,6 +54,11 @@ function DbLogin()
         $_SESSION['user_id'] = $user['id'];
         $_SESSION['username'] = $user['username'];
 
+        // Création d'un cookie pour garder l'utilisateur connecté
+        $cookie_name = "user_id";
+        $cookie_value = $user['id'];
+        setcookie($cookie_name, $cookie_value, time() + (10), "/");
+
         DisplayHome(); // Rediriger vers le tableau de bord après la connexion
         exit;
     } else {
