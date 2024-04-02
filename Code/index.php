@@ -33,6 +33,6 @@ if (isset($_GET['logout'])) {
         DisplaySession();
     }
 } else {
-    // Rediriger vers la page d'accueil si aucune page valide n'est spécifiée
-    DisplayHome();
+    // Rediriger vers la page de connexion si aucune page valide n'est spécifiée
+    DisplaySession();
 }

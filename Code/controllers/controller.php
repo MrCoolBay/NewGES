@@ -40,23 +40,27 @@ function DbLogin()
 {
     session_start();
     // Récupération des données du formulaire
-    $username = $_POST['username'];
+    $email = $_POST['email'];
     $password = $_POST['password'];
 
     // Vérification des informations dans la base de données
     $db = DbConnexion();
-    $stmt = $db->prepare("SELECT id, username, password, salt FROM users WHERE username = :username");
-    $stmt->bindParam(':username', $username);
+    $stmt = $db->prepare("SELECT id_user, name, surname, pdp, email, password, salt, school FROM users WHERE email = :email");
+    $stmt->bindParam(':email', $email);
     $stmt->execute();
     $user = $stmt->fetch(PDO::FETCH_ASSOC);
 
     if ($user && password_verify($password . $user['salt'], $user['password'])) {
-        $_SESSION['user_id'] = $user['id'];
-        $_SESSION['username'] = $user['username'];
+        $_SESSION['user_id'] = $user['id_user'];
+        $_SESSION['email'] = $user['email'];
+        $_SESSION['name'] = $user['name'];
+        $_SESSION['surname'] = $user['surname'];
+        $_SESSION['school'] = $user['school'];
+        $_SESSION['pdp'] = $user['pdp'];
 
         // Création d'un cookie pour garder l'utilisateur connecté
         $cookie_name = "user_id";
-        $cookie_value = $user['id'];
+        $cookie_value = $user['id_user'];
         setcookie($cookie_name, $cookie_value, time() + (10), "/");
 
         DisplayHome(); // Rediriger vers le tableau de bord après la connexion

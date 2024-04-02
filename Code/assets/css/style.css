@@ -240,7 +240,6 @@ body {
   color: #fff;
   font-size: 18px;
   font-weight: 500;
-  white-space: nowrap;
 }
 
 .sidebar.close .profile-details i,
@@ -329,7 +328,7 @@ body {
 .grand-rectangle {
   width: 90%;
   height: 280px;
-  background-color: #f0f0f0;
+  background-color: transparent;
   margin: 20px auto;
   padding: 20px;
   border-radius: 20px;

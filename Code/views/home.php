@@ -1,7 +1,9 @@
 <!DOCTYPE html>
 <html lang="fr">
 
-<?php $username = $_SESSION['username'] ?>
+<?php $name = $_SESSION['name'] ?>
+<?php $surname = $_SESSION['surname'] ?>
+<?php $school = $_SESSION['school'] ?>
 <?php $pdp = $_SESSION['pdp'] ?>
 
 <head>
@@ -35,13 +37,42 @@
         <img id="porte-ouverte" src="assets\img\2.png" alt="porte ouverte">
 
       </div>
-      <div class="test">
-        <img src="<?= $pdp ?>" alt="">
-      </div>
+
       <div class="instagram-card" id="card">
         <div class="card-inner" id="cardInner">
           <iframe class="instagram-iframe front" src="https://www.instagram.com/eductive_reims/embed" frameborder="0" scrolling="no"></iframe>
-          <iframe class="instagram-iframe back" src="https://www.instagram.com/esginformatique/embed" frameborder="0" scrolling="no"></iframe>
+          <?php
+          // Récupération du nom de l'école depuis la session
+          $ecole = $school;
+
+          // Affichage de l'iframe en fonction du nom de l'école
+          if ($ecole == 'ESGI') {
+            echo '<iframe class="instagram-iframe back" src="https://www.instagram.com/esginformatique/embed" frameborder="0" scrolling="no"></iframe>';
+          } elseif ($ecole == 'MODART') {
+            echo '<iframe class="instagram-iframe back" src="https://www.instagram.com/modart___/embed" frameborder="0" scrolling="no"></iframe>';
+          } elseif ($ecole == 'ESUPCOM') {
+            echo '<iframe class="instagram-iframe back" src="https://www.instagram.com/esupcom_france/embed" frameborder="0" scrolling="no"></iframe>';
+          } elseif ($ecole == 'EFAB') {
+            echo '<iframe class="instagram-iframe back" src="https://www.instagram.com/efab_france/embed" frameborder="0" scrolling="no"></iframe>';
+          } elseif ($ecole == 'EIML') {
+            echo '<iframe class="instagram-iframe back" src="https://www.instagram.com/eiml_paris/embed" frameborder="0" scrolling="no"></iframe>';
+          } elseif ($ecole == 'PPASPORT') {
+            echo '<iframe class="instagram-iframe back" src="https://www.instagram.com/ppa_sport/embed" frameborder="0" scrolling="no"></iframe>';
+          } elseif ($ecole == 'PPA') {
+            echo '<iframe class="instagram-iframe back" src="https://www.instagram.com/ppabuisnessschool/embed" frameborder="0" scrolling="no"></iframe>';
+          } elseif ($ecole == 'ISFJ') {
+            echo '<iframe class="instagram-iframe back" src="https://www.instagram.com/isfjournalisme/embed" frameborder="0" scrolling="no"></iframe>';
+          } elseif ($ecole == 'EFET STUDIO CREA') {
+            echo '<iframe class="instagram-iframe back" src="https://www.instagram.com/efet_studio_crea/embed" frameborder="0" scrolling="no"></iframe>';
+          } elseif ($ecole == 'EFET PHOTO') {
+            echo '<iframe class="instagram-iframe back" src="https://www.instagram.com/efet_photo_officiel/embed" frameborder="0" scrolling="no"></iframe>';
+          } elseif ($ecole == 'MAESTRIS') {
+            echo '<iframe class="instagram-iframe back" src="https://www.instagram.com/maestris.bts/embed" frameborder="0" scrolling="no"></iframe>';
+          } elseif ($ecole == 'ISA') {
+            echo '<iframe class="instagram-iframe back" src="https://www.instagram.com/ecole_isa/embed" frameborder="0" scrolling="no"></iframe>';
+          }
+          ?>
+
         </div>
       </div>
 

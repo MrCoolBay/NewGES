@@ -1,3 +1,9 @@
+ <?php $name = $_SESSION['name'] ?>
+ <?php $surname = $_SESSION['surname'] ?>
+ <?php $school = $_SESSION['school'] ?>
+ <?php $pdp = $_SESSION['pdp'] ?>
+
+
  <div class="sidebar close">
      <div class="logo-details">
          <img src="assets/img/mynewgeswhite.png"></img>
@@ -72,8 +78,8 @@
                      <img src="<?= $pdp ?>" alt="profileImg" />
                  </div>
                  <div class="name-job">
-                     <div class="profile_name"><?= $username ?></div>
-                     <div class="job">ESGI</div>
+                     <div class="profile_name"><?= $name, " ", $surname ?></div>
+                     <div class="job"><?= $school ?></div>
                  </div>
                  <a href="index.php?logout"><i class="fa-regular fa-right-from-bracket"></i></a>
 

@@ -2,7 +2,7 @@
 function DbConnexion()
 {
     try {
-        $db = new PDO('mysql:host=localhost:3306;dbname=fabienlu_books;charset=utf8', 'httpdocs', 'yk9g51BOMG');
+        $db = new PDO('mysql:host=localhost:3306;dbname=myges;charset=utf8', 'root', '');
         return $db;
     } catch (Exception $e) {
         die('Erreur : ' . $e->getMessage());
@@ -22,20 +22,23 @@ function DbRegister()
     }
 
     // Récupération des données du formulaire
-    $username = $_POST['username'];
+    $name = $_POST['name'];
+    $surname = $_POST['surname'];
     $email = $_POST['email'];
     $password = $_POST['password'];
+    $school = $_POST['school'];
 
     // Hashage du mot de passe avec un sel aléatoire
     $salt = uniqid(mt_rand(), true);
     $hashed_password = password_hash($password . $salt, PASSWORD_DEFAULT);
 
-    // Insertion des données dans la base de données
-    $stmt = $db->prepare("INSERT INTO users (username, email, password, salt) VALUES (:username, :email, :password, :salt)");
-    $stmt->bindParam(':username', $username);
+    $stmt = $db->prepare("INSERT INTO users (name, surname, email, password, salt, school) VALUES (:name, :surname, :email, :password, :salt, :school)");
+    $stmt->bindParam(':name', $name);
+    $stmt->bindParam(':surname', $surname);
     $stmt->bindParam(':email', $email);
     $stmt->bindParam(':password', $hashed_password);
     $stmt->bindParam(':salt', $salt);
+    $stmt->bindParam(':school', $school);
     $stmt->execute();
 }
 function DbLogout()

@@ -42,8 +42,8 @@
           <form action="index.php?form=login" method="POST">
             <div class="input-boxes">
               <div class="input-box">
-                <i class="fa-solid fa-user"></i>
-                <input type="text" for="username" placeholder="Entrez votre nom d'utilisateur" id="username" name="username" required>
+                <i class="fa-solid fa-envelope"></i>
+                <input type="text" for="email" placeholder="Entrez votre email" id="email" name="email" required>
               </div>
               <div class="input-box">
                 <i class="fa-solid fa-lock-keyhole"></i>
@@ -63,15 +63,23 @@
             <div class="input-boxes">
               <div class="input-box">
                 <i class="fa-solid fa-user"></i>
-                <input type="text" for="username" placeholder="Entrez votre nom" id="username" name="username" required>
+                <input type="text" for="name" placeholder="Entrez le prénom" id="name" name="name" required>
+              </div>
+              <div class="input-box">
+                <i class="fa-solid fa-user"></i>
+                <input type="text" for="surname" placeholder="Entrez le nom" id="surname" name="surname" required>
               </div>
               <div class="input-box">
                 <i class="fa-solid fa-envelope"></i>
-                <input type="email" for="email" placeholder="Entrez votre e-mail" id="email" name="email" required>
+                <input type="email" for="email" placeholder="Entrez l'e-mail" id="email" name="email" required>
               </div>
               <div class="input-box">
                 <i class="fa-solid fa-lock-keyhole"></i>
-                <input type="password" for="password" placeholder="Entrez votre mot de passe" id="password" name="password" required>
+                <input type="password" for="password" placeholder="Entrez le mot de passe" id="password" name="password" required>
+              </div>
+              <div class="input-box">
+                <i class="fa-solid fa-school"></i>
+                <input type="text" for="school" placeholder="Entrez l'école de l'étudiant" id="school" name="school">
               </div>
               <div class="button input-box">
                 <input type="submit" value="S'inscrire">
