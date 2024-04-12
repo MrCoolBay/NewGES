@@ -1,8 +1,6 @@
 <!DOCTYPE html>
 <html lang="fr">
 
-
-
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -19,17 +17,32 @@
 </head>
 
 <body>
-    <nav>
-        <?php
-        require("menu.php")
-        ?>
 
+    <nav>
+        <?php require("menu.php"); ?>
         <section class="home-section">
             <div class="home-content">
                 <i class="fa-solid fa-bars"></i>
                 <span class="text">Mes notes</span>
             </div>
+            <table border='1'>
+                <tr>
+                    <th>Note</th>
+                    <th>Date</th>
+                    <th>Information</th>
+                </tr>
 
+                <?php foreach ($data as $note) { ?>
+                    <tr>
+                        <td><?php echo $note['note1']; ?></td>
+                        <td><?php echo $note['note2']; ?></td>
+                        <td><?php echo $note['note3']; ?></td>
+                        <td><?php echo $note['date_note']; ?></td>
+                        <td><?php echo $note['information_note']; ?></td>
+                    </tr>
+                <?php } ?>
+            </table>
+            </table>
         </section>
     </nav>
 

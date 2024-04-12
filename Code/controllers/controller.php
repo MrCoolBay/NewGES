@@ -34,6 +34,7 @@ function DisplayPlannings()
 }
 function DisplayNotes()
 {
+    $data = Dbnote();
     require("views/notes.php");
 }
 function DbLogin()

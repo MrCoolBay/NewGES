@@ -39,7 +39,13 @@ function DbRegister()
     $stmt->bindParam(':password', $hashed_password);
     $stmt->bindParam(':salt', $salt);
     $stmt->bindParam(':school', $school);
-    $stmt->execute();
+    try {
+        $stmt->execute();
+    } catch (PDOException $e) {
+        echo "Erreur PDO : " . $e->getMessage();
+    } catch (Exception $e) {
+        echo "Erreur : " . $e->getMessage();
+    }
 }
 function DbLogout()
 {
@@ -48,4 +54,24 @@ function DbLogout()
     session_destroy();
     header("Location: index.php?page=session");
     exit;
+}
+
+function Dbnote()
+{
+    // Récupération de la connexion
+    $db = DbConnexion();
+
+    // Vérification de la connexion
+    if (!$db) {
+        // Gérer l'échec de la connexion
+        exit("La connexion à la base de données a échoué.");
+    }
+    // Préparation de la requête SQL
+    $sql = "SELECT * FROM note";
+    $stmt = $db->prepare($sql);
+    if ($stmt->execute()) {
+        $ligne = $stmt->fetchAll();
+    }
+    return $ligne;
+
 }
