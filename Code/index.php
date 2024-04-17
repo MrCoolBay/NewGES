@@ -20,6 +20,8 @@ if (isset($_GET['logout'])) {
         DisplaySession();
     } elseif ($page == 'logout') {
         DbLogout();
+    } elseif ($page == 'register') {
+        DisplayRegister();
     }
 } elseif (isset($_GET["form"]) && !empty($_GET["form"])) {
     $form = htmlspecialchars_decode($_GET["form"]);

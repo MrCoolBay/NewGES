@@ -12,12 +12,19 @@ function DisplayPartenaires()
 }
 function DisplaySession()
 {
-
     require("views/session.php");
+}
+function DisplayRegister()
+{
+    require("views/register.php");
 }
 function DisplayIncorrect()
 {
     require("views/popup/incorrectuser.php");
+}
+function DisplayAccessDenied()
+{
+    require("views/popup/accessdenied.php");
 }
 function DisplayConfLogout()
 {
@@ -27,6 +34,10 @@ function DisplayConfLogout()
 function DisplayConfRegister()
 {
     require("views/popup/confregister.php");
+}
+function DisplayIncorrectRegister()
+{
+    require("views/popup/incorrectregister.php");
 }
 function DisplayPlannings()
 {

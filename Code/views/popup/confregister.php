@@ -23,7 +23,8 @@
         <i class="fa-duotone fa-toilet-paper-check"></i>
         <h2>Inscrit !</h2>
         <h3>Vous avez bien réussi votre inscription à MyNewGES.</h3>
-
+        <br>
+        <h4>Fait par les étudiants pour les étudiants !</h4>
         <div class="buttons">
             <a href="index.php?page=session" class="close-btn">Je me connecte</a>
         </div>

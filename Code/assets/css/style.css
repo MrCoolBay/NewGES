@@ -250,6 +250,12 @@ body {
 
 .sidebar .profile-details .job {
   font-size: 12px;
+  text-decoration: none;
+  color: #fff;
+}
+.sidebar .profile-details .job a {
+  text-decoration: none;
+  color: #fff;
 }
 
 .home-section {

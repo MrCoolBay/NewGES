@@ -69,6 +69,12 @@ section {
   color: #333;
   text-align: center;
 }
+.modal-box h4 {
+  font-size: 12px;
+  font-weight: 400;
+  color: #333;
+  text-align: center;
+}
 .modal-box .buttons {
   margin-top: 25px;
 }

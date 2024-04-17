@@ -1,6 +1,17 @@
 <!DOCTYPE html>
 <html lang="fr">
 
+<?php
+session_start();
+
+if (!isset($_SESSION['user_id'])) {
+  // Rediriger vers la page de connexion si l'utilisateur n'est pas connecté
+  header("Location: index.php?page=session");
+  exit;
+}
+?>
+
+
 <?php $name = $_SESSION['name'] ?>
 <?php $surname = $_SESSION['surname'] ?>
 <?php $school = $_SESSION['school'] ?>

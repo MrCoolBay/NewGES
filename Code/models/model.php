@@ -1,14 +1,14 @@
 <?php
+
 function DbConnexion()
 {
     try {
-        $db = new PDO('mysql:host=localhost:3306;dbname=myges;charset=utf8', 'root', '');
+        $db = new PDO('mysql:host=localhost;dbname=myges;charset=utf8', 'root', '');
         return $db;
     } catch (Exception $e) {
         die('Erreur : ' . $e->getMessage());
     }
 }
-
 
 function DbRegister()
 {
@@ -21,6 +21,7 @@ function DbRegister()
         exit("La connexion à la base de données a échoué.");
     }
 
+
     // Récupération des données du formulaire
     $name = $_POST['name'];
     $surname = $_POST['surname'];
@@ -28,18 +29,35 @@ function DbRegister()
     $password = $_POST['password'];
     $school = $_POST['school'];
 
+    // Vérifier si l'adresse e-mail existe déjà
+    $stmt = $db->prepare("SELECT COUNT(*) FROM users WHERE email = :email");
+    $stmt->bindParam(':email', $email, PDO::PARAM_STR);
+    $stmt->execute();
+    $count = $stmt->fetchColumn();
+
+    if ($count > 0) {
+        // L'adresse e-mail existe déjà, afficher un message et arrêter le processus
+        exit(DisplayIncorrectRegister());
+    }
+
     // Hashage du mot de passe avec un sel aléatoire
     $salt = uniqid(mt_rand(), true);
     $hashed_password = password_hash($password . $salt, PASSWORD_DEFAULT);
 
     $stmt = $db->prepare("INSERT INTO users (name, surname, email, password, salt, school) VALUES (:name, :surname, :email, :password, :salt, :school)");
-    $stmt->bindParam(':name', $name);
-    $stmt->bindParam(':surname', $surname);
-    $stmt->bindParam(':email', $email);
-    $stmt->bindParam(':password', $hashed_password);
-    $stmt->bindParam(':salt', $salt);
-    $stmt->bindParam(':school', $school);
-    $stmt->execute();
+    $stmt->bindParam(':name', $name, PDO::PARAM_STR);
+    $stmt->bindParam(':surname', $surname, PDO::PARAM_STR);
+    $stmt->bindParam(':email', $email, PDO::PARAM_STR);
+    $stmt->bindParam(':password', $hashed_password, PDO::PARAM_STR);
+    $stmt->bindParam(':salt', $salt, PDO::PARAM_STR);
+    $stmt->bindParam(':school', $school, PDO::PARAM_STR);
+    try {
+        $stmt->execute();
+    } catch (PDOException $e) {
+        echo "Erreur PDO : " . $e->getMessage();
+    } catch (Exception $e) {
+        echo "Erreur : " . $e->getMessage();
+    }
 }
 function DbLogout()
 {
