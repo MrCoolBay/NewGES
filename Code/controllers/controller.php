@@ -46,6 +46,7 @@ function DisplayPlannings()
 }
 function DisplayNotes()
 {
+    $data = Dbnote();
     require("views/notes.php");
 }
 
@@ -53,6 +54,10 @@ function DisplayInscription()
 {
     VerifyAdmin();
     require("views/admin/inscription.php");
+}
+function DisplaySupports()
+{
+    require("views/scolarite/supports.php");
 }
 function DbLogin()
 {

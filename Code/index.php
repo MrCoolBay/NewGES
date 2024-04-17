@@ -16,6 +16,9 @@ if (isset($_GET['logout'])) {
     } elseif ($page == 'notes') {
         session_start();
         DisplayNotes();
+    } elseif ($page == 'supports') {
+        session_start();
+        DisplaySupports();
     } elseif ($page == 'session') {
         DisplaySession();
     } elseif ($page == 'logout') {
@@ -26,6 +29,9 @@ if (isset($_GET['logout'])) {
     } elseif ($page == 'inscription') {
         DisplayInscription();
     }
+
+    }    
+
 } elseif (isset($_GET["form"]) && !empty($_GET["form"])) {
     $form = htmlspecialchars_decode($_GET["form"]);
     if ($_SERVER["REQUEST_METHOD"] == "POST" && $form == "login") {

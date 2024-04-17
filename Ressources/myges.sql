@@ -73,3 +73,16 @@ COMMIT;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+
+
+CREATE TABLE Note(
+        id_note   Int  Auto_increment  NOT NULL ,
+        matiere   CHAR(50),
+        note1     Int NOT NULL,
+        note2     Int NOT NULL,
+        note3     Int NOT NULL,
+        partiel     Int NOT NULL,
+        date_note Date NOT NULL,
+        information_note CHAR(50)
+	,CONSTRAINT Note_PK PRIMARY KEY (id_note)
+)ENGINE=InnoDB;

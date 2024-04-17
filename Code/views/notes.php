@@ -11,7 +11,6 @@ if (!isset($_SESSION['user_id'])) {
 }
 ?>
 
-
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -27,17 +26,42 @@ if (!isset($_SESSION['user_id'])) {
 </head>
 
 <body>
-    <nav>
-        <?php
-        require("menu.php")
-        ?>
 
+    <nav>
+        <?php require("menu.php"); ?>
         <section class="home-section">
             <div class="home-content">
                 <i class="fa-solid fa-bars"></i>
                 <span class="text">Mes notes</span>
             </div>
 
+
+            <div>h</div>
+            <div class="note">
+                <table border="3">
+                    <tr>
+                        <th>Matière</th>
+                        <th>CC 1</th>
+                        <th>CC 2</th>
+                        <th>CC 3</th>
+                        <th>Partiel</th>
+                        <th>Date</th>
+                        <th>Information</th>
+                    </tr>
+
+                    <?php foreach ($data as $note) { ?>
+                        <tr>
+                            <td><?php echo $note['matiere']; ?></td>
+                            <td><?php echo $note['note1']; ?></td>
+                            <td><?php echo $note['note2']; ?></td>
+                            <td><?php echo $note['note3']; ?></td>
+                            <td><?php echo $note['partiel']; ?></td>
+                            <td><?php echo $note['date_note']; ?></td>
+                            <td><?php echo $note['information_note']; ?></td>
+                        </tr>
+                    <?php } ?>
+                </table>
+            </div>
         </section>
     </nav>
 

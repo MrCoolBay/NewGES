@@ -51,6 +51,12 @@ function DbRegister()
     $stmt->bindParam(':password', $hashed_password, PDO::PARAM_STR);
     $stmt->bindParam(':salt', $salt, PDO::PARAM_STR);
     $stmt->bindParam(':school', $school, PDO::PARAM_STR);
+    $stmt->bindParam(':name', $name);
+    $stmt->bindParam(':surname', $surname);
+    $stmt->bindParam(':email', $email);
+    $stmt->bindParam(':password', $hashed_password);
+    $stmt->bindParam(':salt', $salt);
+    $stmt->bindParam(':school', $school);
     try {
         $stmt->execute();
     } catch (PDOException $e) {
@@ -71,13 +77,20 @@ function DbLogout()
 function VerifyAdmin()
 {
     session_start();
-
     $db = DbConnexion();
+}
+function Dbnote()
+{
+    // Récupération de la connexion
+    $db = DbConnexion();
+
+    // Vérification de la connexion
 
     if (!$db) {
         // Gérer l'échec de la connexion
         exit("La connexion à la base de données a échoué.");
     }
+
 
     // Vérifier si l'utilisateur a le bon identifiant pour accéder au lien restreint
     $allowed_school_id = "admin"; // ID de l'utilisateur autorisé à accéder au lien
@@ -86,4 +99,14 @@ function VerifyAdmin()
         DisplayAccessDenied();
         exit;
     }
+}
+
+    // Préparation de la requête SQL
+    $sql = "SELECT * FROM note";
+    $stmt = $db->prepare($sql);
+    if ($stmt->execute()) {
+        $ligne = $stmt->fetchAll();
+    }
+    return $ligne;
+
 }
