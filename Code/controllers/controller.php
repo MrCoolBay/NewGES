@@ -59,6 +59,10 @@ function DisplaySupports()
 {
     require("views/scolarite/supports.php");
 }
+function DisplayOffer()
+{
+    require("views/scolarite/offres.php");
+}
 function DbLogin()
 {
     session_start();

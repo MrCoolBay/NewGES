@@ -19,6 +19,9 @@ if (isset($_GET['logout'])) {
     } elseif ($page == 'supports') {
         session_start();
         DisplaySupports();
+    } elseif ($page == 'offres') {
+        session_start();
+        DisplayOffer();
     } elseif ($page == 'session') {
         DisplaySession();
     } elseif ($page == 'logout') {

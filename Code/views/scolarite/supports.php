@@ -22,6 +22,12 @@
         <section class="home-section">
             <div class="home-content">
                 <i class="fa-solid fa-bars"></i>
+
+                <span class="text">Mes supports de cours</span>
+            </div>
+            <br>
+    <div class="telechargements">
+
                 <span class="text">Liste des supports </span>
     <div class="grand-rectangle">
         <img id="lan" src="assets\img\3.png" alt="lan valo">
@@ -31,6 +37,7 @@
 
     <div id="telechargements">
         <h2>Documents disponibles :</h2>
+
         <table border="3">
             <tr>
                 <th>Nom du document</th>

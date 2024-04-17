@@ -67,9 +67,9 @@
                     ?>
                  <li><a href="index.php?page=notes">Notes</a></li>
                  <li><a href="index.php?page=supports">Support de Cours</a></li>
-                 <li><a href="#">Offres de travail</a></li>
-                 <li><a href="#">Documents</a></li>
-                 <li><a href="#">Trombinoscope</a></li>
+                 <li><a href="index.php?page=offres">Offres de travail</a></li>
+                 <li><a href="index.php?page=documents">Documents</a></li>
+                 <li><a href="index.php?page=trombino">Trombinoscope</a></li>
              </ul>
          </li>
 
