@@ -394,7 +394,7 @@ body {
   transform: rotateY(180deg);
 }
 
-.telechargements{
+.telechargements {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -409,11 +409,13 @@ body {
   padding: 10px;
 }
 
-.telechargements tr,
+.telechargements th,
 .telechargements td {
   border: 3px solid #eb4e81;
-  background-color: #1ea7d3;
+  text-align: center;
+  /* Alignement du texte au centre */
 }
+
 
 .note {
   display: flex;
@@ -433,8 +435,7 @@ body {
 .note th,
 .note td {
   border: 3px solid #eb4e81;
-  padding: 20px;
-  text-align: center; /* Alignement du texte au centre */
+  padding: 10px;
+  text-align: center;
+  /* Alignement du texte au centre */
 }
-
-

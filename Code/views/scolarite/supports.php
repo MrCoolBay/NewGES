@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.5.1/css/sharp-regular.css">
     <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.5.1/css/sharp-light.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" />
+    <link rel="stylesheet" href="style.css" />
     <title>Supports - MyNewGes</title>
 </head>
 
@@ -30,7 +31,7 @@
 
     <div id="telechargements">
         <h2>Documents disponibles :</h2>
-        <table border="3">
+        <table>
             <tr>
                 <th>Nom doc.</th>
                 <th>Type doc.</th>
@@ -39,12 +40,12 @@
             <tr>
                 <td>Document Uno</td>
                 <td>PDF</td>
-                <td><a href="Ressources/projet annuel.pdf" download>Télécharger</a></td>
+                <td><a href="documents/document1.pdf" download>Télécharger</a></td>
             </tr>
             <tr>
                 <td>Document Dos</td>
-                <td>Texte</td>
-                <td><a href="Ressources/test.txt" download>Télécharger</a></td>
+                <td>Word</td>
+                <td><a href="documents/document2.docx" download>Télécharger</a></td>
             </tr>
             <tr>
                 <td>Document Tres</td>
@@ -55,6 +56,5 @@
         </table>
     </div>
 </nav>
-<script src="assets/js/script.js"></script>
 </body>
 </html>
