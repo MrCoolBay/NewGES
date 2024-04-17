@@ -409,14 +409,16 @@ body {
   border-collapse: collapse;
   border: 3px solid #eb4e81;
   margin: auto;
-  width: 80%; /* Augmentation de la largeur */
-  height: 10px; /* Diminution de la hauteur */
+  width: 80%;
+  height: 50px;
   padding: 10px;
 }
 
 .note th,
 .note td {
   border: 3px solid #eb4e81;
-  background-color: #1ea7d3;
+  padding: 20px;
+  text-align: center; /* Alignement du texte au centre */
 }
+
 
