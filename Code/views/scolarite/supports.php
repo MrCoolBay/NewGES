@@ -31,11 +31,11 @@
 
     <div id="telechargements">
         <h2>Documents disponibles :</h2>
-        <table>
+        <table border="3">
             <tr>
-                <th>Nom doc.</th>
-                <th>Type doc.</th>
-                <th></th>
+                <th>Nom du document</th>
+                <th>Type du document</th>
+                <th>Télécharger</th>
             </tr>
             <tr>
                 <td>Document Uno</td>
@@ -50,7 +50,7 @@
             <tr>
                 <td>Document Tres</td>
                 <td>Zip</td>
-                <td><a href="documents/document3.zip" download>Télécharger</a></td>
+                <td><a href="#" download>Télécharger</a></td>
             </tr>
             
         </table>

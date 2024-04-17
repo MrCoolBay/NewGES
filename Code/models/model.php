@@ -76,7 +76,7 @@ function Dbnote()
 
 }
 
-function DbSupports()
+/*function DbSupports()
 {
     $db = DbConnexion();
     if (!$db) {
@@ -88,4 +88,4 @@ function DbSupports()
         $ligne = $stmt->fetchAll();
     }
     return $ligne;
-}
+}*/
