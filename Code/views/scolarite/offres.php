@@ -44,24 +44,55 @@
                         <td>Contrat d'apprentissage </td>
                         <td>Informatique</td>
                         <td>Champagne Ardennes</td>
-                        <td><a href="Ressources/test.txt" download> Fiche de poste <br><br>
+                        <td><a href="../Ressources/FicheDePoste/eProgest.pdf" download="../Ressources/FicheDePoste/eProgest.pdf"> Fiche de poste <br><br>
                                 <form action="index.php?form=upload" method="post" enctype="multipart/form-data">
-                                    <label for="file">Déposez votre CV :</label><br>
-                                    <input type="file" id="file" name="file" accept=".pdf,.doc,.docx,">
+                                    <label for="file">Déposez votre CV :</label><br><br>
+                                    <input type="file" id="file" name="file" accept=".pdf,.doc,.docx,"><br><br>
                                     <input type="submit" value="Envoyer">
                         </td>
                     </tr>
                     <tr>
-                        <td>Document Dos</td>
-                        <td>Texte</td>
-                        <td><a href="Ressources/test.txt" download>Télécharger</a></td>
+                        <td>09/04</td>
+                        <td>Alternance - Gestionnaire en maintenance et support informatique (H/F)</td>
+                        <td>PlURIAL NOVILIA</td>
+                        <td>Septembre 2024</td>
+                        <td>Contrat d'apprentissage </td>
+                        <td>Informatique</td>
+                        <td>Non communiqué</td>
+                        <td><a href="../Ressources/FicheDePoste/plurial.pdf" download="../Ressources/FicheDePoste/plurial.pdf"> Fiche de poste <br><br>
+                                <form action="index.php?form=upload" method="post" enctype="multipart/form-data">
+                                    <label for="file">Déposez votre CV :</label><br><br>
+                                    <input type="file" id="file" name="file" accept=".pdf,.doc,.docx,"><br><br>
+                                    <input type="submit" value="Envoyer">
                     </tr>
                     <tr>
-                        <td>Document Tres</td>
-                        <td>Zip</td>
-                        <td><a href="#" download>Télécharger</a></td>
+                        <td>09/04</td>
+                            <td>alternant(e) en informatique</td>
+                            <td>HAFFNER ENERGY</td>
+                            <td>Dès que possible</td>
+                            <td>Contrat d'apprentissage </td>
+                            <td>Informatique</td>
+                            <td>Non communiqué</td>
+                            <td><a href="../Ressources/FicheDePoste/HAFFNER.pdf" download="../Ressources/FicheDePoste/HAFFNER.pdf"> Fiche de poste <br><br>
+                                    <form action="index.php?form=upload" method="post" enctype="multipart/form-data">
+                                        <label for="file">Déposez votre CV :</label><br><br>
+                                        <input type="file" id="file" name="file" accept=".pdf,.doc,.docx,"><br><br>
+                                        <input type="submit" value="Envoyer">
                     </tr>
-
+                    <tr>
+                        <td>21/02</td>
+                            <td>Développeur Web</td>
+                            <td>DÉPARTEMENT DE LA MARNE</td>
+                            <td>Avril 2024</td>
+                            <td>Contrat d'apprentissage </td>
+                            <td>Informatique</td>
+                            <td>CHAMPAGNE ARDENNE</td>
+                            <td><a href="../Ressources/FicheDePoste/HAFFNER.pdf" download="../Ressources/FicheDePoste/HAFFNER.pdf"> Fiche de poste <br><br>
+                                    <form action="index.php?form=upload" method="post" enctype="multipart/form-data">
+                                        <label for="file">Déposez votre CV :</label><br><br>
+                                        <input type="file" id="file" name="file" accept=".pdf,.doc,.docx,"><br><br>
+                                        <input type="submit" value="Envoyer">
+                    </tr>
                 </table>
             </div>
     </nav>
