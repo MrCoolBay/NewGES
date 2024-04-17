@@ -393,10 +393,26 @@ body {
 .back {
   transform: rotateY(180deg);
 }
-.telechargements {
+
+.telechargements{
   display: flex;
   justify-content: center;
-  border: 3px solid #1ea7d3;
+  align-items: center;
+}
+
+.telechargements table {
+  border-collapse: collapse;
+  border: 3px solid #eb4e81;
+  margin: auto;
+  width: 80%;
+  height: 50px;
+  padding: 10px;
+}
+
+.telechargements tr,
+.telechargements td {
+  border: 3px solid #eb4e81;
+  background-color: #1ea7d3;
 }
 
 .note {
