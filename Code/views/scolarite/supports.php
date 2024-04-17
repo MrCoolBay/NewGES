@@ -35,12 +35,12 @@
                     <tr>
                         <td>Document Uno</td>
                         <td>PDF</td>
-                        <td><a href="/Ressources/" download="projetannuel.pdf">Télécharger</a></td>
+                        <td><a href="../Ressources/projetannuel.pdf" download="projetannuel.pdf">Télécharger</a></td>
                     </tr>
                     <tr>
                         <td>Document Dos</td>
                         <td>Texte</td>
-                        <td><a href="/Ressources/" download="test.txt">Télécharger</a></td>
+                        <td><a href="../Ressources/test.txt" download="test.txt">Télécharger</a></td>
                     </tr>
                     <tr>
                         <td>Document Tres</td>
