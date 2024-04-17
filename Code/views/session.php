@@ -1,7 +1,16 @@
 <!DOCTYPE html>
 <html lang="fr">
 
-<!-- <?php session_start(); ?> -->
+<?php
+session_start();
+
+// if (!isset($_SESSION['user_id'])) {
+//   // Rediriger vers la page de connexion si l'utilisateur n'est pas connecté
+//   header("Location: index.php?page=session");
+//   exit;
+// }
+?>
+
 
 <head>
   <meta charset="UTF-8" />
@@ -49,44 +58,53 @@
                 <i class="fa-solid fa-lock-keyhole"></i>
                 <input type="password" for="password" placeholder="Entrez votre mot de passe" id="password" name="password" required>
               </div>
-              <div class="text"><a href="#">Mot de passe oublié ?</a></div>
+              <div class="text"><label for="flip">Mot de passe oublié ?</label></div>
               <div class="button input-box">
                 <input type="submit" value="Connexion">
               </div>
-              <div class="text sign-up-text">Pas de compte ? <label for="flip">S'inscrire</label></div>
+              <!-- <div class="text sign-up-text">Pas de compte ? <label for="flip">S'inscrire</label></div> -->
             </div>
           </form>
         </div>
         <div class="signup-form">
-          <div class="title">S'inscrire</div>
-          <form method="POST" action="index.php?form=register">
-            <div class="input-boxes">
-              <div class="input-box">
-                <i class="fa-solid fa-user"></i>
-                <input type="text" for="name" placeholder="Entrez le prénom" id="name" name="name" required>
-              </div>
-              <div class="input-box">
-                <i class="fa-solid fa-user"></i>
-                <input type="text" for="surname" placeholder="Entrez le nom" id="surname" name="surname" required>
-              </div>
-              <div class="input-box">
-                <i class="fa-solid fa-envelope"></i>
-                <input type="email" for="email" placeholder="Entrez l'e-mail" id="email" name="email" required>
-              </div>
-              <div class="input-box">
-                <i class="fa-solid fa-lock-keyhole"></i>
-                <input type="password" for="password" placeholder="Entrez le mot de passe" id="password" name="password" required>
-              </div>
-              <div class="input-box">
-                <i class="fa-solid fa-school"></i>
-                <input type="text" for="school" placeholder="Entrez l'école de l'étudiant" id="school" name="school">
-              </div>
-              <div class="button input-box">
-                <input type="submit" value="S'inscrire">
-              </div>
-              <div class="text sign-up-text">Vous avez déjà un compte ? <label for="flip">Se connecter</label></div>
+          <div class="title">Mot de passe oublié ?</div>
+          <br>
+          <h4>Veuillez contacter un administrateur à cette adresse mail :</h4>
+          <br>
+          <form action="mailto:support@mynewges.fr">
+            <div class="button input-box">
+              <input type="submit" value="support@mynewges.fr"></input>
             </div>
+
           </form>
+          <!-- <form method=" POST" action="">
+              <div class="input-boxes">
+                <div class="input-box">
+                  <i class="fa-solid fa-user"></i>
+                  <input type="text" for="name" placeholder="Entrez le prénom" id="name" name="name" required>
+                </div>
+                <div class="input-box">
+                  <i class="fa-solid fa-user"></i>
+                  <input type="text" for="surname" placeholder="Entrez le nom" id="surname" name="surname" required>
+                </div>
+                <div class="input-box">
+                  <i class="fa-solid fa-envelope"></i>
+                  <input type="email" for="email" placeholder="Entrez l'e-mail" id="email" name="email" required>
+                </div>
+                <div class="input-box">
+                  <i class="fa-solid fa-lock-keyhole"></i>
+                  <input type="password" for="password" placeholder="Entrez le mot de passe" id="password" name="password" required>
+                </div>
+                <div class="input-box">
+                  <i class="fa-solid fa-school"></i>
+                  <input type="text" for="school" placeholder="Entrez l'école de l'étudiant" id="school" name="school">
+                </div>
+                <div class="button input-box">
+                  <input type="submit" value="S'inscrire">
+                </div> -->
+          <div class="text sign-up-text">Vous avez déjà un compte ? <label for="flip">J'ai retrouvé !</label></div>
+          <!-- </div> 
+          </form> -->
         </div>
       </div>
     </div>

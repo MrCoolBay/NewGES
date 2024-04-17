@@ -7,7 +7,6 @@
   box-sizing: border-box;
   font-family: "Archivo", sans-serif;
 }
-
 body {
   background-color: #e4e9f7;
 }
@@ -269,7 +268,7 @@ body {
   padding: 12px;
 }
 
-.sidebar.close~.home-section {
+.sidebar.close ~ .home-section {
   left: 78px;
   width: calc(100% - 78px);
 }
@@ -326,121 +325,14 @@ body {
     width: calc(100% - 240px);
   }
 
-  .sidebar.close~.home-section {
+  .sidebar.close ~ .home-section {
     left: 78px;
     width: calc(100% - 78px);
   }
 }
 
-.grand-rectangle {
-  width: 90%;
-  height: 280px;
-  background-color: transparent;
-  margin: 20px auto;
-  padding: 20px;
-  border-radius: 20px;
-  overflow: hidden;
-  position: relative;
-}
-
-#eductive {
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
-  position: absolute;
-  transition: opacity 1s ease;
-}
-
-#lan {
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
-  position: absolute;
-  transition: opacity 1s ease;
-}
-
-#porte-ouverte {
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
-  position: absolute;
-  transition: opacity 1s ease;
-}
-
-.instagram-card {
-  width: 25%;
-  height: 47%;
-  margin-right: 7.5vh;
-  margin-left: auto;
-}
-
-.card-inner {
-  width: 100%;
-  height: 100%;
-  transition: transform 0.8s;
-  transform-style: preserve-3d;
-}
-
-.instagram-iframe {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  backface-visibility: hidden;
-  border-radius: 15px;
-}
-
-.front {
-  z-index: 2;
-}
-
-.back {
-  transform: rotateY(180deg);
-}
-
-.telechargements {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-top: 30px;
-}
-
-.telechargements table {
-  border-collapse: collapse;
-  border: 3px solid #eb4e81;
-  margin: auto;
-  width: 80%;
-  height: 50px;
-  padding: 10px;
-}
-
-.telechargements tr,
-.telechargements td {
-  border: 3px solid #eb4e81;
-  background-color: #1ea7d3;
-}
-
-
-.note {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.note table {
-  border-collapse: collapse;
-  border: 3px solid #eb4e81;
-  margin: auto;
-  width: 80%;
-  height: 20px;
-  padding: 10px;
-}
-
-.note th,
-.note td {
-  border: 3px solid #eb4e81;
-  padding: 20px;
+.bienvenue {
+  margin-top: 2%;
   text-align: center;
+  color: #eb4e81;
 }

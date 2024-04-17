@@ -23,7 +23,15 @@ if (isset($_GET['logout'])) {
         DisplaySession();
     } elseif ($page == 'logout') {
         DbLogout();
+    } elseif ($page == 'paneladmin') {
+        session_start();
+        DisplayPanelAdmin();
+    } elseif ($page == 'inscription') {
+        DisplayInscription();
+    }
+
     }    
+
 } elseif (isset($_GET["form"]) && !empty($_GET["form"])) {
     $form = htmlspecialchars_decode($_GET["form"]);
     if ($_SERVER["REQUEST_METHOD"] == "POST" && $form == "login") {

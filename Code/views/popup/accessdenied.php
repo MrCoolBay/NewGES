@@ -21,11 +21,11 @@
 <body>
     <div class="modal-box">
         <i class="fa-duotone fa-toilet-paper-xmark"></i>
-        <h2>Désolé ! </h2>
-        <h3>Nom d'utilisateur ou mot de passe incorrect.</h3>
+        <h2>Accès refusé ! </h2>
+        <h3>Vous ne disposez pas des autorisations nécessaires.</h3>
 
         <div class="buttons">
-            <a href="index.php?page=session" class="close-btn">On va réessayer</a>
+            <a href="index.php?page=session" class="close-btn">Me reconnecter</a>
         </div>
     </div>
 

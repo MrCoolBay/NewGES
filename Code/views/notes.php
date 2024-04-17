@@ -1,6 +1,16 @@
 <!DOCTYPE html>
 <html lang="fr">
 
+<?php
+session_start();
+
+if (!isset($_SESSION['user_id'])) {
+    // Rediriger vers la page de connexion si l'utilisateur n'est pas connecté
+    header("Location: index.php?page=session");
+    exit;
+}
+?>
+
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />

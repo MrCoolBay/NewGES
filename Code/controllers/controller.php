@@ -12,12 +12,20 @@ function DisplayPartenaires()
 }
 function DisplaySession()
 {
-
     require("views/session.php");
+}
+function DisplayPanelAdmin()
+{
+    VerifyAdmin();
+    require("views/panneladmin.php");
 }
 function DisplayIncorrect()
 {
     require("views/popup/incorrectuser.php");
+}
+function DisplayAccessDenied()
+{
+    require("views/popup/accessdenied.php");
 }
 function DisplayConfLogout()
 {
@@ -28,6 +36,10 @@ function DisplayConfRegister()
 {
     require("views/popup/confregister.php");
 }
+function DisplayIncorrectRegister()
+{
+    require("views/popup/incorrectregister.php");
+}
 function DisplayPlannings()
 {
     require("views/plannings.php");
@@ -36,6 +48,12 @@ function DisplayNotes()
 {
     $data = Dbnote();
     require("views/notes.php");
+}
+
+function DisplayInscription()
+{
+    VerifyAdmin();
+    require("views/admin/inscription.php");
 }
 function DisplaySupports()
 {
@@ -47,6 +65,7 @@ function DbLogin()
     // Récupération des données du formulaire
     $email = $_POST['email'];
     $password = $_POST['password'];
+
 
     // Vérification des informations dans la base de données
     $db = DbConnexion();
@@ -68,8 +87,22 @@ function DbLogin()
         $cookie_value = $user['id_user'];
         setcookie($cookie_name, $cookie_value, time() + (10), "/");
 
-        DisplayHome(); // Rediriger vers le tableau de bord après la connexion
-        exit;
+        // Rediriger vers le tableau de bord de l'utilisateur après la connexion
+
+
+        if ($_SESSION['school'] == "admin") {
+            $allowed_school_id = "admin"; // ID de l'utilisateur autorisé à accéder au lien
+            if ($_SESSION['school'] !== $allowed_school_id) {
+                // Rediriger vers une page d'erreur ou afficher un message d'erreur
+                DisplayAccessDenied();
+                exit;
+            }
+            header("Location: index.php?page=paneladmin");
+        } elseif ($_SESSION['school'] == "intervenant") {
+            header("Location: index.php?page=panelinter");
+        } else {
+            header("Location: index.php?page=home");
+        }
     } else {
         DisplayIncorrect();
     }

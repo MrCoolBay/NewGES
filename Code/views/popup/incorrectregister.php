@@ -22,7 +22,7 @@
     <div class="modal-box">
         <i class="fa-duotone fa-toilet-paper-xmark"></i>
         <h2>Désolé ! </h2>
-        <h3>Nom d'utilisateur ou mot de passe incorrect.</h3>
+        <h3>Cet utilisateur existe déjà.</h3>
 
         <div class="buttons">
             <a href="index.php?page=session" class="close-btn">On va réessayer</a>
