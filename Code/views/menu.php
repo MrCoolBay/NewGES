@@ -41,7 +41,7 @@
              <ul class="sub-menu">
                  <li><a class="link_name" href="#">Scolarité</a></li>
                  <li><a href="index.php?page=notes">Notes</a></li>
-                 <li><a href="#">Support de Cours</a></li>
+                 <li><a href="index.php?page=supports">Support de Cours</a></li>
                  <li><a href="#">Offres de travail</a></li>
                  <li><a href="#">Documents</a></li>
                  <li><a href="#">Trombinoscope</a></li>

@@ -37,6 +37,10 @@ function DisplayNotes()
     $data = Dbnote();
     require("views/notes.php");
 }
+function DisplaySupports()
+{
+    require("views/scolarite/supports.php");
+}
 function DbLogin()
 {
     session_start();

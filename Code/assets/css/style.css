@@ -392,3 +392,10 @@ body {
 .back {
   transform: rotateY(180deg);
 }
+
+.telechargements {
+  display: flex;
+  justify-content: center;
+  border: 3px solid #1ea7d3;
+}
+
