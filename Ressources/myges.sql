@@ -78,6 +78,7 @@ COMMIT;
 
 CREATE TABLE Note(
         id_note   Int  Auto_increment  NOT NULL ,
+        matiere   CHAR(50),
         note1     Int NOT NULL,
         note2     Int NOT NULL,
         note3     Int NOT NULL,
