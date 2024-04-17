@@ -24,6 +24,9 @@
                 <i class="fa-solid fa-bars"></i>
                 <span class="text">Mes notes</span>
             </div>
+
+
+            <div>h</div>
             <div class="note">
                 <table border="3">
                     <tr>
