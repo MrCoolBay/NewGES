@@ -12,7 +12,6 @@
     <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.5.1/css/sharp-regular.css">
     <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.5.1/css/sharp-light.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" />
-    <link rel="stylesheet" href="style.css" />
     <title>Notes - MyNewGes</title>
 </head>
 
@@ -25,24 +24,31 @@
                 <i class="fa-solid fa-bars"></i>
                 <span class="text">Mes notes</span>
             </div>
-            <table border='1'>
-                <tr>
-                    <th>Note</th>
-                    <th>Date</th>
-                    <th>Information</th>
-                </tr>
-
-                <?php foreach ($data as $note) { ?>
+            <div class="note">
+                <table border="3">
                     <tr>
-                        <td><?php echo $note['note1']; ?></td>
-                        <td><?php echo $note['note2']; ?></td>
-                        <td><?php echo $note['note3']; ?></td>
-                        <td><?php echo $note['date_note']; ?></td>
-                        <td><?php echo $note['information_note']; ?></td>
+                        <th>Matière</th>
+                        <th>CC 1</th>
+                        <th>CC 2</th>
+                        <th>CC 3</th>
+                        <th>Partiel</th>
+                        <th>Date</th>
+                        <th>Information</th>
                     </tr>
-                <?php } ?>
-            </table>
-            </table>
+
+                    <?php foreach ($data as $note) { ?>
+                        <tr>
+                            <td><?php echo $note['matiere']; ?></td>
+                            <td><?php echo $note['note1']; ?></td>
+                            <td><?php echo $note['note2']; ?></td>
+                            <td><?php echo $note['note3']; ?></td>
+                            <td><?php echo $note['partiel']; ?></td>
+                            <td><?php echo $note['date_note']; ?></td>
+                            <td><?php echo $note['information_note']; ?></td>
+                        </tr>
+                    <?php } ?>
+                </table>
+            </div>
         </section>
     </nav>
 
