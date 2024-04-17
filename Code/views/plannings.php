@@ -29,7 +29,7 @@ if (!isset($_SESSION['user_id'])) {
 <body>
     <nav>
         <?php
-        require("menu/menu.php")
+        require("menu.php")
         ?>
 
         <section class="home-section">

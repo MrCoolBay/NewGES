@@ -10,13 +10,33 @@
          <span class="logo_name"></span>
      </div>
      <ul class="nav-links">
+
          <li>
-             <a href="index.php?page=home">
+
+             <a href="
+                     <?php if ($school == "admin") {
+                            echo "index.php?page=paneladmin";
+                        } elseif ($school == "intervenant") {
+                            echo "index.php?page=panelinter";
+                        } else {
+                            echo "index.php?page=home";
+                        }
+                        ?>">
                  <i class="fa-light fa-house"></i>
                  <span class="link_name">Tableau de bord</span>
              </a>
              <ul class="sub-menu blank">
-                 <li><a class="link_name" href="index.php?page=home">Tableau de bord</a></li>
+                 <li>
+                     <a class="link_name" href="
+                     <?php if ($school == "admin") {
+                            echo "index.php?page=paneladmin";
+                        } elseif ($school == "intervenant") {
+                            echo "index.php?page=panelinter";
+                        } else {
+                            echo "index.php?page=home";
+                        }
+                        ?>">Tableau de bord</a>
+                 </li>
              </ul>
          </li>
          <li>
@@ -40,6 +60,11 @@
              </div>
              <ul class="sub-menu">
                  <li><a class="link_name" href="#">Scolarité</a></li>
+                 <?php
+                    if ($school == "admin") {
+                        echo ('<li><a href="index.php?page=inscription">Inscription</a></li>');
+                    }
+                    ?>
                  <li><a href="index.php?page=notes">Notes</a></li>
                  <li><a href="#">Support de Cours</a></li>
                  <li><a href="#">Offres de travail</a></li>
@@ -79,7 +104,7 @@
                  </div>
                  <div class="name-job">
                      <div class="profile_name"><?= $name, " ", $surname ?></div>
-                     <div class="job"> <a href="index.php?page=paneladmin"><?= $school ?></a> </div>
+                     <div class="job"><?= $school ?></a> </div>
                  </div>
                  <a href="index.php?logout"><i class="fa-regular fa-right-from-bracket"></i></a>
 

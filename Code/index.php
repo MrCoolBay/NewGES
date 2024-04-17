@@ -11,14 +11,8 @@ if (isset($_GET['logout'])) {
         session_start();
         DisplayHome();
     } elseif ($page == 'plannings') {
-        try {
-            session_start();
-            DisplayPlannings();
-        } catch (PDOException $e) {
-            echo "Erreur PDO : " . $e->getMessage();
-        } catch (Exception $e) {
-            echo "Erreur : " . $e->getMessage();
-        }
+        session_start();
+        DisplayPlannings();
     } elseif ($page == 'notes') {
         session_start();
         DisplayNotes();
@@ -26,8 +20,6 @@ if (isset($_GET['logout'])) {
         DisplaySession();
     } elseif ($page == 'logout') {
         DbLogout();
-    } elseif ($page == 'admin') {
-        DbPanelAdmin();
     } elseif ($page == 'paneladmin') {
         session_start();
         DisplayPanelAdmin();

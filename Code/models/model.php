@@ -68,7 +68,7 @@ function DbLogout()
     exit;
 }
 
-function DbPanelAdmin()
+function VerifyAdmin()
 {
     session_start();
 
@@ -79,8 +79,6 @@ function DbPanelAdmin()
         exit("La connexion à la base de données a échoué.");
     }
 
-    $_SESSION['school'] = "admin";
-
     // Vérifier si l'utilisateur a le bon identifiant pour accéder au lien restreint
     $allowed_school_id = "admin"; // ID de l'utilisateur autorisé à accéder au lien
     if ($_SESSION['school'] !== $allowed_school_id) {
@@ -88,7 +86,4 @@ function DbPanelAdmin()
         DisplayAccessDenied();
         exit;
     }
-
-    // Afficher le contenu restreint ici
-    header("Location: index.php?page=paneladmin");
 }

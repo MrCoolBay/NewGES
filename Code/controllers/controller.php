@@ -16,6 +16,7 @@ function DisplaySession()
 }
 function DisplayPanelAdmin()
 {
+    VerifyAdmin();
     require("views/panneladmin.php");
 }
 function DisplayIncorrect()
@@ -50,6 +51,7 @@ function DisplayNotes()
 
 function DisplayInscription()
 {
+    VerifyAdmin();
     require("views/admin/inscription.php");
 }
 function DbLogin()
@@ -58,6 +60,7 @@ function DbLogin()
     // Récupération des données du formulaire
     $email = $_POST['email'];
     $password = $_POST['password'];
+
 
     // Vérification des informations dans la base de données
     $db = DbConnexion();
@@ -79,8 +82,22 @@ function DbLogin()
         $cookie_value = $user['id_user'];
         setcookie($cookie_name, $cookie_value, time() + (10), "/");
 
-        header("Location: index.php?page=home"); // Rediriger vers le tableau de bord après la connexion
-        exit;
+        // Rediriger vers le tableau de bord de l'utilisateur après la connexion
+
+
+        if ($_SESSION['school'] == "admin") {
+            $allowed_school_id = "admin"; // ID de l'utilisateur autorisé à accéder au lien
+            if ($_SESSION['school'] !== $allowed_school_id) {
+                // Rediriger vers une page d'erreur ou afficher un message d'erreur
+                DisplayAccessDenied();
+                exit;
+            }
+            header("Location: index.php?page=paneladmin");
+        } elseif ($_SESSION['school'] == "intervenant") {
+            header("Location: index.php?page=panelinter");
+        } else {
+            header("Location: index.php?page=home");
+        }
     } else {
         DisplayIncorrect();
     }
