@@ -44,9 +44,9 @@
                         <td>Contrat d'apprentissage </td>
                         <td>Informatique</td>
                         <td>Champagne Ardennes</td>
-                        <td><a href="Ressources/test.txt" download> Fiche de poste
-                                <form action="Ressources/docOffres.php" method="post" enctype="multipart/form-data">
-                                    <label for="file">Déposez votre CV :</label>
+                        <td><a href="Ressources/test.txt" download> Fiche de poste <br><br>
+                                <form action="index.php?form=upload" method="post" enctype="multipart/form-data">
+                                    <label for="file">Déposez votre CV :</label><br>
                                     <input type="file" id="file" name="file" accept=".pdf,.doc,.docx,">
                                     <input type="submit" value="Envoyer">
                         </td>

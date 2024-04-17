@@ -63,6 +63,7 @@ function DisplayOffer()
 {
     require("views/scolarite/offres.php");
 }
+
 function DbLogin()
 {
     session_start();

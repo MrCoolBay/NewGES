@@ -118,3 +118,47 @@ function Dbnote()
         echo "Erreur : " . $e->getMessage();
     }
 }
+
+function uploadCV($fileName, $fileContent)
+{
+    // Connexion à la base de données
+    $db = DbConnexion();
+    if (!$db) {
+        exit("La connexion à la base de données a échoué.");
+    }
+
+    // Préparation de la requête d'insertion
+    $stmt= $db->prepare("INSERT INTO documents (name, file_data) VALUES (?, ?)");
+    $stmt->bindParam(1, $fileName, PDO::PARAM_STR);
+    $stmt->bindParam(2, $fileContent, PDO::PARAM_LOB);
+
+    // Exécution de la requête d'insertion
+    $stmt->execute();
+
+    // Affichage de la confirmation
+    header ("Location: index.php?page=offres");
+    echo("Réussi");
+    exit;
+}
+
+function dbConsult(){
+    $db=DbConnexion();
+
+    $id = $_GET['id'];
+
+    // Récupérer les données du fichier depuis la base de données
+    $stmt = $db->query("SELECT file_data FROM documents WHERE id = ?");
+
+    
+    $stmt->execute([$id]);
+
+
+    $fileData = $stmt->fetchColumn();
+
+    // Configurer les en-têtes pour le téléchargement du fichier PDF
+    header('Content-Type: application/pdf');
+    header('Content-Disposition: attachment; filename="nom_du_fichier.pdf"');
+
+    // Envoyer les données du fichier au navigateur
+    echo $fileData;
+}
