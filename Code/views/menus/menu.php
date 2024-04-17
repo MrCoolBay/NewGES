@@ -79,7 +79,7 @@
                  </div>
                  <div class="name-job">
                      <div class="profile_name"><?= $name, " ", $surname ?></div>
-                     <div class="job"> <a href="index.php?page=register"><?= $school ?></a> </div>
+                     <div class="job"> <a href="index.php?page=paneladmin"><?= $school ?></a> </div>
                  </div>
                  <a href="index.php?logout"><i class="fa-regular fa-right-from-bracket"></i></a>
 

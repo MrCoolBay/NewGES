@@ -11,8 +11,14 @@ if (isset($_GET['logout'])) {
         session_start();
         DisplayHome();
     } elseif ($page == 'plannings') {
-        session_start();
-        DisplayPlannings();
+        try {
+            session_start();
+            DisplayPlannings();
+        } catch (PDOException $e) {
+            echo "Erreur PDO : " . $e->getMessage();
+        } catch (Exception $e) {
+            echo "Erreur : " . $e->getMessage();
+        }
     } elseif ($page == 'notes') {
         session_start();
         DisplayNotes();
@@ -20,8 +26,13 @@ if (isset($_GET['logout'])) {
         DisplaySession();
     } elseif ($page == 'logout') {
         DbLogout();
-    } elseif ($page == 'register') {
-        DisplayRegister();
+    } elseif ($page == 'admin') {
+        DbPanelAdmin();
+    } elseif ($page == 'paneladmin') {
+        session_start();
+        DisplayPanelAdmin();
+    } elseif ($page == 'inscription') {
+        DisplayInscription();
     }
 } elseif (isset($_GET["form"]) && !empty($_GET["form"])) {
     $form = htmlspecialchars_decode($_GET["form"]);

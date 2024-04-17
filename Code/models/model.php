@@ -67,3 +67,28 @@ function DbLogout()
     header("Location: index.php?page=session");
     exit;
 }
+
+function DbPanelAdmin()
+{
+    session_start();
+
+    $db = DbConnexion();
+
+    if (!$db) {
+        // Gérer l'échec de la connexion
+        exit("La connexion à la base de données a échoué.");
+    }
+
+    $_SESSION['school'] = "admin";
+
+    // Vérifier si l'utilisateur a le bon identifiant pour accéder au lien restreint
+    $allowed_school_id = "admin"; // ID de l'utilisateur autorisé à accéder au lien
+    if ($_SESSION['school'] !== $allowed_school_id) {
+        // Rediriger vers une page d'erreur ou afficher un message d'erreur
+        DisplayAccessDenied();
+        exit;
+    }
+
+    // Afficher le contenu restreint ici
+    header("Location: index.php?page=paneladmin");
+}

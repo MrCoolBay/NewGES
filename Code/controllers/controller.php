@@ -14,9 +14,9 @@ function DisplaySession()
 {
     require("views/session.php");
 }
-function DisplayRegister()
+function DisplayPanelAdmin()
 {
-    require("views/register.php");
+    require("views/panneladmin.php");
 }
 function DisplayIncorrect()
 {
@@ -47,6 +47,11 @@ function DisplayNotes()
 {
     require("views/notes.php");
 }
+
+function DisplayInscription()
+{
+    require("views/admin/inscription.php");
+}
 function DbLogin()
 {
     session_start();
@@ -74,7 +79,7 @@ function DbLogin()
         $cookie_value = $user['id_user'];
         setcookie($cookie_name, $cookie_value, time() + (10), "/");
 
-        DisplayHome(); // Rediriger vers le tableau de bord après la connexion
+        header("Location: index.php?page=home"); // Rediriger vers le tableau de bord après la connexion
         exit;
     } else {
         DisplayIncorrect();

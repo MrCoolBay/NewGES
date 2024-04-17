@@ -1,16 +1,14 @@
-<!DOCTYPE html>
-<html lang="fr">
-
 <?php
+// Assurez-vous que l'utilisateur est identifié
 session_start();
-
 if (!isset($_SESSION['user_id'])) {
     // Rediriger vers la page de connexion si l'utilisateur n'est pas connecté
     header("Location: index.php?page=session");
     exit;
 }
 ?>
-
+<!DOCTYPE html>
+<html lang="fr">
 
 <head>
     <meta charset="UTF-8" />
@@ -23,26 +21,22 @@ if (!isset($_SESSION['user_id'])) {
     <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.5.1/css/sharp-regular.css">
     <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.5.1/css/sharp-light.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" />
-    <title>Notes - MyNewGes</title>
+    <title>Panel Administrateur - MyNewGES</title>
 </head>
 
 <body>
+
     <nav>
         <?php
-        require("menus/menu.php")
+        require("menus/menuadmin.php")
         ?>
-
         <section class="home-section">
             <div class="home-content">
-                <i class="fa-solid fa-bars"></i>
-                <span class="text">Mes notes</span>
+                <i id="icon" class="fa-solid fa-bars"></i>
+                <span class="text">Panel Administrateur</span>
             </div>
-
         </section>
-    </nav>
-
-
-    <script src="assets/js/script.js"></script>
+        <script src="assets/js/script.js"></script>
 </body>
 
 </html>
