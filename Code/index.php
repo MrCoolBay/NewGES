@@ -8,7 +8,6 @@ if (isset($_GET['logout'])) {
 
     if ($page == 'home') {
         $page = isset($_GET['page']) ? $_GET['page'] : '';
-        session_start();
         DisplayHome();
     } elseif ($page == 'plannings') {
         session_start();
@@ -31,6 +30,9 @@ if (isset($_GET['logout'])) {
         DisplayPanelAdmin();
     } elseif ($page == 'inscription') {
         DisplayInscription();
+    } elseif ($page == 'consultcv'){
+        session_start();
+        dbConsult();
     }
 } elseif (isset($_GET["form"]) && !empty($_GET["form"])) {
     $form = htmlspecialchars_decode($_GET["form"]);
@@ -42,6 +44,14 @@ if (isset($_GET['logout'])) {
     } elseif ($_SERVER["REQUEST_METHOD"] == "POST" && $form == "logout") {
         DbLogout();
         DisplaySession();
+    } elseif ($_SERVER["REQUEST_METHOD"] == "POST" && $form == "upload") {
+        // Récupération du nom et du contenu du fichier depuis $_FILES
+        $fileName = $_FILES['file']['name'];
+        $fileContent = file_get_contents($_FILES['file']['tmp_name']);
+
+        // Appel de la fonction uploadCV avec les paramètres nécessaires
+        uploadCV($fileName, $fileContent);
+
     }
 } else {
     // Rediriger vers la page de connexion si aucune page valide n'est spécifiée
