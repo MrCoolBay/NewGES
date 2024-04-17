@@ -414,7 +414,8 @@ body {
 .telechargements th,
 .telechargements td {
   border: 3px solid #eb4e81;
-  padding: 30px
+  padding: 30px;
+  text-align: center;
 }
 
 .note {
@@ -439,4 +440,26 @@ body {
   text-align: center; /* Alignement du texte au centre */
 }
 
+.offre {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.offre table {
+  border-collapse: collapse;
+  border: 3px solid #eb4e81;
+  margin: auto;
+  width: 80%;
+  height: 50px;
+  padding: 10px;
+}
+
+.offre th,
+.offre tr,
+.offre td{
+  border: 3px solid #eb4e81;
+  padding: 20px;
+  text-align: center;
+}
 

@@ -21,7 +21,7 @@
         <section class="home-section">
             <div class="home-content">
                 <i class="fa-solid fa-bars"></i>
-                <span class="text">Liste des supports </span>
+                <span class="text">Mes supports de cours</span>
             </div>
             <br>
     <div class="telechargements">
