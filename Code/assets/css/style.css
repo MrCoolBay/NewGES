@@ -428,14 +428,13 @@ body {
   border: 3px solid #eb4e81;
   margin: auto;
   width: 80%;
-  height: 50px;
+  height: 20px;
   padding: 10px;
 }
 
 .note th,
 .note td {
   border: 3px solid #eb4e81;
-  padding: 10px;
+  padding: 20px;
   text-align: center;
-  /* Alignement du texte au centre */
 }
