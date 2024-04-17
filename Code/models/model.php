@@ -78,6 +78,20 @@ function VerifyAdmin()
 {
     session_start();
     $db = DbConnexion();
+
+    // Vérification de la connexion
+    if (!$db) {
+        // Gérer l'échec de la connexion
+        exit("La connexion à la base de données a échoué.");
+    }
+
+    // Vérifier si l'utilisateur a le bon identifiant pour accéder au lien restreint
+    $allowed_school_id = "admin"; // ID de l'utilisateur autorisé à accéder au lien
+    if ($_SESSION['school'] !== $allowed_school_id) {
+        // Rediriger vers une page d'erreur ou afficher un message d'erreur
+        DisplayAccessDenied();
+        exit;
+    }
 }
 function Dbnote()
 {
@@ -90,23 +104,17 @@ function Dbnote()
         // Gérer l'échec de la connexion
         exit("La connexion à la base de données a échoué.");
     }
-
-
-    // Vérifier si l'utilisateur a le bon identifiant pour accéder au lien restreint
-    $allowed_school_id = "admin"; // ID de l'utilisateur autorisé à accéder au lien
-    if ($_SESSION['school'] !== $allowed_school_id) {
-        // Rediriger vers une page d'erreur ou afficher un message d'erreur
-        DisplayAccessDenied();
-        exit;
-    }
-}
-
     // Préparation de la requête SQL
     $sql = "SELECT * FROM note";
     $stmt = $db->prepare($sql);
-    if ($stmt->execute()) {
-        $ligne = $stmt->fetchAll();
+    try {
+        if ($stmt->execute()) {
+            $ligne = $stmt->fetchAll();
+        }
+        return $ligne;
+    } catch (PDOException $e) {
+        echo "Erreur PDO : " . $e->getMessage();
+    } catch (Exception $e) {
+        echo "Erreur : " . $e->getMessage();
     }
-    return $ligne;
-
 }

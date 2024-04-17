@@ -26,17 +26,16 @@ if (!isset($_SESSION['user_id'])) {
 </head>
 
 <body>
-
     <nav>
-        <?php require("menu.php"); ?>
+        <?php
+        require("menu.php");
+        ?>
         <section class="home-section">
             <div class="home-content">
                 <i class="fa-solid fa-bars"></i>
                 <span class="text">Mes notes</span>
             </div>
-
-
-            <div>h</div>
+            <div class="semestre">Voici les notes du semestre 1</div>
             <div class="note">
                 <table border="3">
                     <tr>

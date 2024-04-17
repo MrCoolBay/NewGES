@@ -16,50 +16,56 @@
 </head>
 
 <body>
-<nav>
-<?php require("views/menu.php"); ?>
+    <nav>
+        <?php require("views/menu.php"); ?>
         <section class="home-section">
             <div class="home-content">
                 <i class="fa-solid fa-bars"></i>
                 <span class="text">Liste des offres </span>
             </div>
             <br>
-    <div class="offre">
-        <table border="3">
-            <tr>
-                <th>Date</th>
-                <th>Intitulé du poste</th>
-                <th>Entreprise</th>
-                <th>Début</th>  
-                <th>Type de poste</th>
-                <th>Secteur</th>
-                <th>Région</th>  
-                <th>Action</th>
-            </tr>
-            <tr>
-                <td>12/04</td>
-                <td>Administrateur Windows / Exchange</td>
-                <td>e-Progest</td>
-                <td>Dès que possible</td>
-                <td>Contrat d'apprentissage </td>
-                <td>Informatique</td>
-                <td>Champagne Ardennes</td>
-                <td><a href="Ressources/test.txt" download> Fiche de poste</td>
-            </tr>
-            <tr>
-                <td>Document Dos</td>
-                <td>Texte</td>
-                <td><a href="Ressources/test.txt" download>Télécharger</a></td>
-            </tr>
-            <tr>
-                <td>Document Tres</td>
-                <td>Zip</td>
-                <td><a href="#" download>Télécharger</a></td>
-            </tr>
-            
-        </table>
-    </div>
-</nav>
-<script src="assets/js/script.js"></script>
+            <div class="offre">
+                <table border="3">
+                    <tr>
+                        <th>Date</th>
+                        <th>Intitulé du poste</th>
+                        <th>Entreprise</th>
+                        <th>Début</th>
+                        <th>Type de poste</th>
+                        <th>Secteur</th>
+                        <th>Région</th>
+                        <th>Action</th>
+                    </tr>
+                    <tr>
+                        <td>12/04</td>
+                        <td>Administrateur Windows / Exchange</td>
+                        <td>e-Progest</td>
+                        <td>Dès que possible</td>
+                        <td>Contrat d'apprentissage </td>
+                        <td>Informatique</td>
+                        <td>Champagne Ardennes</td>
+                        <td><a href="Ressources/test.txt" download> Fiche de poste
+                                <form action="Ressources/docOffres.php" method="post" enctype="multipart/form-data">
+                                    <label for="file">Déposez votre CV :</label>
+                                    <input type="file" id="file" name="file" accept=".pdf,.doc,.docx,">
+                                    <input type="submit" value="Envoyer">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Document Dos</td>
+                        <td>Texte</td>
+                        <td><a href="Ressources/test.txt" download>Télécharger</a></td>
+                    </tr>
+                    <tr>
+                        <td>Document Tres</td>
+                        <td>Zip</td>
+                        <td><a href="#" download>Télécharger</a></td>
+                    </tr>
+
+                </table>
+            </div>
+    </nav>
+    <script src="assets/js/script.js"></script>
 </body>
+
 </html>

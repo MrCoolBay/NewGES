@@ -17,51 +17,41 @@
 </head>
 
 <body>
-<nav>
-<?php require("views/menu.php"); ?>
+    <nav>
+        <?php require("views/menu.php"); ?>
         <section class="home-section">
             <div class="home-content">
                 <i class="fa-solid fa-bars"></i>
-
                 <span class="text">Mes supports de cours</span>
             </div>
             <br>
-    <div class="telechargements">
+            <div class="telechargements">
+                <table border="3">
+                    <tr>
+                        <th>Nom du document</th>
+                        <th>Type du document</th>
+                        <th>Télécharger</th>
+                    </tr>
+                    <tr>
+                        <td>Document Uno</td>
+                        <td>PDF</td>
+                        <td><a href="/Ressources/" download="projetannuel.pdf">Télécharger</a></td>
+                    </tr>
+                    <tr>
+                        <td>Document Dos</td>
+                        <td>Texte</td>
+                        <td><a href="/Ressources/" download="test.txt">Télécharger</a></td>
+                    </tr>
+                    <tr>
+                        <td>Document Tres</td>
+                        <td>Zip</td>
+                        <td><a href="#" download>Télécharger</a></td>
+                    </tr>
 
-                <span class="text">Liste des supports </span>
-    <div class="grand-rectangle">
-        <img id="lan" src="assets\img\3.png" alt="lan valo">
-        <img id="eductive" src="assets\img\1.png" alt="logo ecoles">
-        <img id="porte-ouverte" src="assets\img\2.png" alt="porte ouverte">
-    </div>
-
-    <div id="telechargements">
-        <h2>Documents disponibles :</h2>
-
-        <table border="3">
-            <tr>
-                <th>Nom du document</th>
-                <th>Type du document</th>
-                <th>Télécharger</th>
-            </tr>
-            <tr>
-                <td>Document Uno</td>
-                <td>PDF</td>
-                <td><a href="documents/document1.pdf" download>Télécharger</a></td>
-            </tr>
-            <tr>
-                <td>Document Dos</td>
-                <td>Word</td>
-                <td><a href="documents/document2.docx" download>Télécharger</a></td>
-            </tr>
-            <tr>
-                <td>Document Tres</td>
-                <td>Zip</td>
-                <td><a href="#" download>Télécharger</a></td>
-            </tr>
-            
-        </table>
-    </div>
-</nav>
+                </table>
+            </div>
+    </nav>
+    <script src="assets/js/script.js"></script>
 </body>
+
 </html>
