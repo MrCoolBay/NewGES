@@ -80,7 +80,7 @@ function DbSupports()
 {
     $db = DbConnexion();
     if (!$db) {
-        exit("La connexion à la base de données a échoué.")
+        exit("La connexion à la base de données a échoué.");
     }
     $sql = "SELECT * FROM document";
     $stmt = $db->prepare($sql);
