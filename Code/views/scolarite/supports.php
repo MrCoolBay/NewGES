@@ -34,7 +34,6 @@
             <tr>
                 <th>Nom doc.</th>
                 <th>Type doc.</th>
-                <th></th>
             </tr>
             <tr>
                 <td>Document Uno</td>
