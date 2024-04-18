@@ -43,6 +43,8 @@
                         <td><a href="../Ressources/FicheDePoste/eProgest.pdf" download="../Ressources/FicheDePoste/eProgest.pdf"> CALENDRIER 23-24 B1 </td>
                         <td><a href="../Ressources/FicheDePoste/eProgest.pdf" download="../Ressources/FicheDePoste/eProgest.pdf">⮟</td>
                     </tr>
+                    <tr>
+                        <td>HANDICAP</td>
                 </table>
             </div>
     </nav>

@@ -36,9 +36,6 @@ if (isset($_GET['logout'])) {
     } elseif ($page == 'consultcv') {
         session_start();
         dbConsult();
-    } elseif ($page == 'ajoutnote') {
-        session_start();
-        DisplayAjoutNote();
     }
 } elseif (isset($_GET["form"]) && !empty($_GET["form"])) {
     $form = htmlspecialchars_decode($_GET["form"]);

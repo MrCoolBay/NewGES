@@ -79,6 +79,10 @@ function DisplayOffer()
 {
     require("views/scolarite/offres.php");
 }
+function DisplayDoc()
+{
+    require("views/scolarite/documents.php");
+}
 
 function DbLogin()
 {
