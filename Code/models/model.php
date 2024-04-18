@@ -93,31 +93,62 @@ function VerifyAdmin()
         exit;
     }
 }
+function VerifyInter()
+{
+    session_start();
+    $db = DbConnexion();
+
+    // Vérification de la connexion
+    if (!$db) {
+        // Gérer l'échec de la connexion
+        exit("La connexion à la base de données a échoué.");
+    }
+
+    // Vérifier si l'utilisateur a le bon identifiant pour accéder au lien restreint
+    $allowed_school_id = "Intervenant"; // ID de l'utilisateur autorisé à accéder au lien
+    if ($_SESSION['school'] !== $allowed_school_id) {
+        // Rediriger vers une page d'erreur ou afficher un message d'erreur
+        DisplayAccessDenied();
+        exit;
+    }
+}
 function Dbnote()
 {
     // Récupération de la connexion
     $db = DbConnexion();
 
     // Vérification de la connexion
-
     if (!$db) {
         // Gérer l'échec de la connexion
         exit("La connexion à la base de données a échoué.");
     }
-    // Préparation de la requête SQL
-    $sql = "SELECT * FROM note";
+
+    // Récupération de l'identifiant de l'utilisateur connecté à partir de la session
+    session_start();
+    $userId = $_SESSION['user_id']; // Assurez-vous d'avoir correctement stocké l'ID de l'utilisateur dans $_SESSION lors de la connexion
+
+    // Préparation de la requête SQL pour sélectionner les notes de l'utilisateur connecté
+    $sql = "SELECT * FROM note WHERE id_user = :userId";
     $stmt = $db->prepare($sql);
+
     try {
+        // Liaison de la valeur de l'ID utilisateur à la requête préparée
+        $stmt->bindParam(':userId', $userId, PDO::PARAM_INT);
+
+        // Exécution de la requête préparée
         if ($stmt->execute()) {
+            // Récupération des lignes de résultat
             $ligne = $stmt->fetchAll();
+            return $ligne;
         }
-        return $ligne;
     } catch (PDOException $e) {
         echo "Erreur PDO : " . $e->getMessage();
     } catch (Exception $e) {
         echo "Erreur : " . $e->getMessage();
     }
 }
+
+
 
 function uploadCV($fileName, $fileContent)
 {
@@ -128,7 +159,7 @@ function uploadCV($fileName, $fileContent)
     }
 
     // Préparation de la requête d'insertion
-    $stmt= $db->prepare("INSERT INTO documents (name, file_data) VALUES (?, ?)");
+    $stmt = $db->prepare("INSERT INTO documents (name, file_data) VALUES (?, ?)");
     $stmt->bindParam(1, $fileName, PDO::PARAM_STR);
     $stmt->bindParam(2, $fileContent, PDO::PARAM_LOB);
 
@@ -136,22 +167,20 @@ function uploadCV($fileName, $fileContent)
     $stmt->execute();
 
     // Affichage de la confirmation
-    header ("Location: index.php?page=offres");
-    echo("Réussi");
+    header("Location: index.php?page=offres");
+    echo ("Réussi");
     exit;
 }
 
-function dbConsult(){
-    $db=DbConnexion();
+function dbConsult()
+{
+    $db = DbConnexion();
 
     $id = $_GET['id'];
 
     // Récupérer les données du fichier depuis la base de données
     $stmt = $db->query("SELECT file_data FROM documents WHERE id = ?");
-
-    
     $stmt->execute([$id]);
-
 
     $fileData = $stmt->fetchColumn();
 
@@ -161,4 +190,35 @@ function dbConsult(){
 
     // Envoyer les données du fichier au navigateur
     echo $fileData;
+}
+
+function DbAddNote($id_user, $matiere, $intervenant, $note1, $info_note1)
+{
+    $db = DbConnexion();
+
+    $sql = "INSERT INTO note (id_user, matiere, intervenant, note1, info_note1) VALUES (:id_user, :matiere, :intervenant, :note1, :info_note1)";
+    $stmt = $db->prepare($sql);
+    $stmt->bindParam(':id_user', $id_user);
+    $stmt->bindParam(':matiere', $matiere);
+    $stmt->bindParam(':intervenant', $intervenant);
+    $stmt->bindParam(':note1', $note1);
+    $stmt->bindParam(':info_note1', $info_note1);
+
+    if ($stmt->execute()) {
+        return true;
+    }
+    return false;
+}
+
+function DbUsers()
+{
+    $db = DbConnexion();
+
+    $stmt = $db->prepare("SELECT id_user, name, surname FROM users");
+    // Exécution de la requête
+    $stmt->execute();
+    // Récupération des résultats
+    $usersList = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+    return $usersList;
 }

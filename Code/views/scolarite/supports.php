@@ -25,27 +25,34 @@
                 <span class="text">Mes supports de cours</span>
             </div>
             <br>
+            <div class="tophead">
+                <p>
+                    <span>Pour tout problème concernant les supports de cours ( fichier manquant...), veuillez voir avec votre attachée de promotion ou l'enseignant de la matière concernée.</span>
+                </p>
+            </div>
             <div class="telechargements">
                 <table border="3">
                     <tr>
-                        <th>Nom du document</th>
-                        <th>Type du document</th>
-                        <th>Télécharger</th>
+                        <th><i class="fa-regular fa-folder-open"></i> Nom du document</th>
+                        <th><i class="fa-regular fa-file"></i> Type du document</th>
+                        <th><i class="fa-regular fa-file-arrow-down"></i> Lien de téléchargement</th>
                     </tr>
                     <tr>
                         <td>Document Uno</td>
                         <td>PDF</td>
-                        <td><a href="/Ressources/" download="projetannuel.pdf">Télécharger</a></td>
+                        <td><a href="../Ressources/projetannuel.pdf" download="projetannuel.pdf"><i class="fas fa-download"></i></a></td>
                     </tr>
                     <tr>
                         <td>Document Dos</td>
                         <td>Texte</td>
-                        <td><a href="/Ressources/" download="test.txt">Télécharger</a></td>
+                        <td><a href="../Ressources/test.txt" download="test.txt"><i class="fas fa-download"></i></a>
+                        </td>
                     </tr>
                     <tr>
                         <td>Document Tres</td>
                         <td>Zip</td>
-                        <td><a href="#" download>Télécharger</a></td>
+                        <td><a href="#" download><i class="fas fa-download"></i></a>
+                        </td>
                     </tr>
 
                 </table>

@@ -16,7 +16,7 @@
              <a href="
                      <?php if ($school == "admin") {
                             echo "index.php?page=paneladmin";
-                        } elseif ($school == "intervenant") {
+                        } elseif ($school == "Intervenant") {
                             echo "index.php?page=panelinter";
                         } else {
                             echo "index.php?page=home";
@@ -63,9 +63,13 @@
                  <?php
                     if ($school == "admin") {
                         echo ('<li><a href="index.php?page=inscription">Inscription</a></li>');
+                    } elseif ($school == "Intervenant") {
+                        echo ('<li><a href="index.php?page=ajoutnote">Ajout Notes</a></li>');
+                    } elseif ($school !== "Intervenant") {
+                        echo ('<li><a href="index.php?page=notes">Notes</a></li>');
                     }
                     ?>
-                 <li><a href="index.php?page=notes">Notes</a></li>
+
                  <li><a href="index.php?page=supports">Support de Cours</a></li>
                  <li><a href="index.php?page=offres">Offres de travail</a></li>
                  <li><a href="index.php?page=documents">Documents</a></li>

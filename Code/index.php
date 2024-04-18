@@ -28,13 +28,14 @@ if (isset($_GET['logout'])) {
     } elseif ($page == 'paneladmin') {
         session_start();
         DisplayPanelAdmin();
+    } elseif ($page == 'panelinter') {
+        session_start();
+        DisplayPanelInter();
     } elseif ($page == 'inscription') {
         DisplayInscription();
-    } elseif ($page == 'consultcv'){
+    } elseif ($page == 'consultcv') {
         session_start();
         dbConsult();
-    } elseif ($page == 'documents'){
-        DisplayDoc();
     }
 } elseif (isset($_GET["form"]) && !empty($_GET["form"])) {
     $form = htmlspecialchars_decode($_GET["form"]);
@@ -53,7 +54,8 @@ if (isset($_GET['logout'])) {
 
         // Appel de la fonction uploadCV avec les paramètres nécessaires
         uploadCV($fileName, $fileContent);
-
+    } elseif ($_SERVER["REQUEST_METHOD"] == "POST" && $form == "add") {
+        AddNote();
     }
 } else {
     // Rediriger vers la page de connexion si aucune page valide n'est spécifiée
