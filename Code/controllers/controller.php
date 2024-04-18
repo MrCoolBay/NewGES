@@ -17,7 +17,18 @@ function DisplaySession()
 function DisplayPanelAdmin()
 {
     VerifyAdmin();
-    require("views/panneladmin.php");
+    require("views/paneladmin.php");
+}
+function DisplayAjoutNote()
+{
+    DbUsers();
+    VerifyInter();
+    require("views/inter/ajoutnote.php");
+}
+function DisplayPanelInter()
+{
+    VerifyInter();
+    require("views/panelinter.php");
 }
 function DisplayIncorrect()
 {
@@ -35,6 +46,11 @@ function DisplayConfLogout()
 function DisplayConfRegister()
 {
     require("views/popup/confregister.php");
+}
+function DisplayCorrectNote()
+{
+    DbUsers();
+    require("views/popup/correctnote.php");
 }
 function DisplayIncorrectRegister()
 {
@@ -103,11 +119,35 @@ function DbLogin()
                 exit;
             }
             header("Location: index.php?page=paneladmin");
-        } elseif ($_SESSION['school'] == "intervenant") {
+        } elseif ($_SESSION['school'] == "Intervenant") {
+            $allowed_school_id = "Intervenant"; // ID de l'utilisateur autorisé à accéder au lien
+            if ($_SESSION['school'] !== $allowed_school_id) {
+                // Rediriger vers une page d'erreur ou afficher un message d'erreur
+                DisplayAccessDenied();
+                exit;
+            }
             header("Location: index.php?page=panelinter");
         } else {
             header("Location: index.php?page=home");
         }
+    } else {
+        DisplayIncorrect();
+    }
+}
+
+function AddNote()
+{
+    // Récupération des données du formulaire 
+    $id_user = htmlspecialchars_decode($_POST['id_user']);
+    $matiere = htmlspecialchars_decode($_POST['matiere']);
+    $intervenant = htmlspecialchars_decode($_POST['intervenant']);
+    $note1 = htmlspecialchars_decode($_POST['note1']);
+    $info_note1 = htmlspecialchars_decode($_POST['info_note1']);
+
+    // Ajout du livre dans la base de données
+    $result = DbAddNote($id_user, $matiere, $intervenant, $note1, $info_note1);
+    if ($result) {
+        DisplayCorrectNote();
     } else {
         DisplayIncorrect();
     }

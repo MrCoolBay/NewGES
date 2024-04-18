@@ -27,14 +27,14 @@
             <div class="offre">
                 <table border="3">
                     <tr>
-                        <th>Date</th>
-                        <th>Intitulé du poste</th>
-                        <th>Entreprise</th>
-                        <th>Début</th>
-                        <th>Type de poste</th>
-                        <th>Secteur</th>
-                        <th>Région</th>
-                        <th>Action</th>
+                        <th><i class="fa-regular fa-calendar-days"></i> Date</th>
+                        <th><i class="fa-regular fa-user-tie-hair"></i> Intitulé du poste</th>
+                        <th><i class="fa-regular fa-buildings"></i> Entreprise</th>
+                        <th><i class="fa-regular fa-hourglass-start"></i> Début</th>
+                        <th><i class="fa-regular fa-billboard"></i> Type de poste</th>
+                        <th><i class="fa-regular fa-square-person-confined"></i> Secteur</th>
+                        <th><i class="fa-regular fa-earth-europe"></i> Région</th>
+                        <th><i class="fa-regular fa-excavator"></i> Action</th>
                     </tr>
                     <tr>
                         <td>12/04</td>
@@ -48,7 +48,8 @@
                                 <form action="index.php?form=upload" method="post" enctype="multipart/form-data">
                                     <label for="file">Déposez votre CV :</label><br>
                                     <input type="file" id="file" name="file" accept=".pdf,.doc,.docx,">
-                                    <input type="submit" value="Envoyer">
+                                    <br>
+                                    <input class="send" type="submit" value="Envoyer">
                         </td>
                     </tr>
                     <tr>
