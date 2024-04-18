@@ -409,6 +409,7 @@ body {
 }
 
 .telechargements table {
+  border-collapse: collapse;
   margin: auto;
   width: 90%;
   font-weight: 600;
@@ -444,12 +445,12 @@ body {
 }
 
 .note table {
+  border-collapse: collapse;
   margin: auto;
   width: 90%;
-  border-radius: 15px;
   font-weight: 600;
+  border-radius: 15px;
   border-color: transparent;
-  /* background-color: #1ea7d3; */
 }
 
 .note td {
@@ -486,9 +487,11 @@ td.notes {
   display: flex;
   justify-content: center;
   align-items: center;
+  border-top-left-radius: 15px;
 }
 
 .offre table {
+  border-collapse: collapse;
   margin: auto;
   width: 90%;
   font-weight: 600;
@@ -498,16 +501,16 @@ td.notes {
 
 .offre tr,
 .offre td {
-  border-radius: 15px;
   border: 3px solid #1ea7d3;
   padding: 10px;
   text-align: center;
   color: #1ea7d3;
+  border-radius: 15px;
 }
 
 .offre th {
-  padding: 10px;
   border-radius: 15px;
+  padding: 10px;
   border: 3px solid #eb4e81;
   color: #1ea7d3;
 }

@@ -37,9 +37,12 @@ if (isset($_GET['logout'])) {
         session_start();
         dbConsult();
     } elseif ($page == 'documents') {
+        session_start();
         DisplayDoc();
+    } elseif ($page == 'ajoutnote') {
+        session_start();
+        DisplayAjoutNote();
     }
-
 } elseif (isset($_GET["form"]) && !empty($_GET["form"])) {
     $form = htmlspecialchars_decode($_GET["form"]);
     if ($_SERVER["REQUEST_METHOD"] == "POST" && $form == "login") {
