@@ -49,7 +49,6 @@ if (!isset($_SESSION['user_id'])) {
                         <th><i class="fa-regular fa-square-2"></i> CC 2</th>
                         <th><i class="fa-regular fa-flag-checkered"></i> Partiel</th>
                         <th><i class="fa-regular fa-calendar-days"></i> Date</th>
-                        <th><i class="fa-regular fa-circle-info"></i> Information</th>
                         <th><i class="fa-regular fa-calculator-simple"></i> Moyenne</th>
                     </tr>
 
