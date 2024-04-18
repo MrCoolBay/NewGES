@@ -36,7 +36,10 @@ if (isset($_GET['logout'])) {
     } elseif ($page == 'consultcv') {
         session_start();
         dbConsult();
+    } elseif ($page == 'documents') {
+        DisplayDoc();
     }
+
 } elseif (isset($_GET["form"]) && !empty($_GET["form"])) {
     $form = htmlspecialchars_decode($_GET["form"]);
     if ($_SERVER["REQUEST_METHOD"] == "POST" && $form == "login") {
