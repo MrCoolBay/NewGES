@@ -35,30 +35,44 @@ if (!isset($_SESSION['user_id'])) {
                 <i class="fa-solid fa-bars"></i>
                 <span class="text">Mes notes</span>
             </div>
-            <div class="semestre">Voici les notes du semestre 1</div>
+            <div class="tophead">
+                <br>
+                <p>Les notes de 0/20 qui apparaissent dans cette rubrique sont attribuées provisoirement dans l'attente de vérification ultérieure des justificatifs d'absence. <span>En cas d'erreur concernant vos notes ou absences, veuillez contacter votre attachée de promotion.</span> </p>
+                <br>
+            </div>
             <div class="note">
                 <table border="3">
                     <tr>
-                        <th>Matière</th>
-                        <th>CC 1</th>
-                        <th>CC 2</th>
-                        <th>CC 3</th>
-                        <th>Partiel</th>
-                        <th>Date</th>
-                        <th>Information</th>
+                        <th> <i class="fas fa-briefcase"></i> Matière</th>
+                        <th> <i class="fas fa-briefcase"></i> Intervenant</th>
+                        <th><i class="fa-regular fa-square-1"></i> CC 1</th>
+                        <th><i class="fa-regular fa-square-2"></i> CC 2</th>
+                        <th><i class="fa-regular fa-flag-checkered"></i> Partiel</th>
+                        <th><i class="fa-regular fa-calendar-days"></i> Date</th>
+                        <th><i class="fa-regular fa-circle-info"></i> Information</th>
+                        <th><i class="fa-regular fa-calculator-simple"></i> Moyenne</th>
                     </tr>
 
                     <?php foreach ($data as $note) { ?>
                         <tr>
                             <td><?php echo $note['matiere']; ?></td>
-                            <td><?php echo $note['note1']; ?></td>
-                            <td><?php echo $note['note2']; ?></td>
-                            <td><?php echo $note['note3']; ?></td>
-                            <td><?php echo $note['partiel']; ?></td>
+                            <td><?php echo $note['intervenant']; ?></td>
+                            <td class="notes">
+                                <?php echo $note['note1']; ?>
+
+                            </td>
+                            <td class="notes"><?php echo $note['note2']; ?></td>
+                            <td class="notes"><?php echo $note['partiel']; ?></td>
                             <td><?php echo $note['date_note']; ?></td>
-                            <td><?php echo $note['information_note']; ?></td>
+                            <td class="notes"><?php echo $note['moyenne']; ?></td>
+
                         </tr>
                     <?php } ?>
+                    <tr>
+                        <th class="notes">Moyenne</th>
+
+                        <th><?php echo $note['moyenne_total'] ?></th>
+                    </tr>
                 </table>
             </div>
         </section>
