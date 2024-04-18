@@ -76,7 +76,7 @@ function DbLogout()
 
 function VerifyAdmin()
 {
-    session_start();
+
     $db = DbConnexion();
 
     // Vérification de la connexion
@@ -95,7 +95,7 @@ function VerifyAdmin()
 }
 function VerifyInter()
 {
-    session_start();
+
     $db = DbConnexion();
 
     // Vérification de la connexion
@@ -124,7 +124,7 @@ function Dbnote()
     }
 
     // Récupération de l'identifiant de l'utilisateur connecté à partir de la session
-    session_start();
+
     $userId = $_SESSION['user_id']; // Assurez-vous d'avoir correctement stocké l'ID de l'utilisateur dans $_SESSION lors de la connexion
 
     // Préparation de la requête SQL pour sélectionner les notes de l'utilisateur connecté

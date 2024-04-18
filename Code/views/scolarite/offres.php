@@ -27,14 +27,14 @@
             <div class="offre">
                 <table border="3">
                     <tr>
-                        <th><i class="fa-regular fa-calendar-days"></i> Date</th>
+                        <th class="top-left"><i class="fa-regular fa-calendar-days"></i> Date</th>
                         <th><i class="fa-regular fa-user-tie-hair"></i> Intitulé du poste</th>
                         <th><i class="fa-regular fa-buildings"></i> Entreprise</th>
                         <th><i class="fa-regular fa-hourglass-start"></i> Début</th>
                         <th><i class="fa-regular fa-billboard"></i> Type de poste</th>
                         <th><i class="fa-regular fa-square-person-confined"></i> Secteur</th>
                         <th><i class="fa-regular fa-earth-europe"></i> Région</th>
-                        <th><i class="fa-regular fa-excavator"></i> Action</th>
+                        <th class="top-right"><i class="fa-regular fa-excavator"></i> Action</th>
                     </tr>
                     <tr>
                         <td>12/04</td>
@@ -48,8 +48,8 @@
                                 <form action="index.php?form=upload" method="post" enctype="multipart/form-data">
                                     <label for="file">Déposez votre CV :</label><br>
                                     <input type="file" id="file" name="file" accept=".pdf,.doc,.docx,">
-                                    <br>
                                     <input class="send" type="submit" value="Envoyer">
+                                </form>
                         </td>
                     </tr>
                     <tr>
@@ -64,35 +64,38 @@
                                 <form action="index.php?form=upload" method="post" enctype="multipart/form-data">
                                     <label for="file">Déposez votre CV :</label><br><br>
                                     <input type="file" id="file" name="file" accept=".pdf,.doc,.docx,"><br><br>
-                                    <input type="submit" value="Envoyer">
+                                    <input class="send" type="submit" value="Envoyer">
+                                </form>
                     </tr>
                     <tr>
                         <td>09/04</td>
-                            <td>alternant(e) en informatique</td>
-                            <td>HAFFNER ENERGY</td>
-                            <td>Dès que possible</td>
-                            <td>Contrat d'apprentissage </td>
-                            <td>Informatique</td>
-                            <td>Non communiqué</td>
-                            <td><a href="../Ressources/FicheDePoste/HAFFNER.pdf" download="../Ressources/FicheDePoste/HAFFNER.pdf"> Fiche de poste <br><br>
-                                    <form action="index.php?form=upload" method="post" enctype="multipart/form-data">
-                                        <label for="file">Déposez votre CV :</label><br><br>
-                                        <input type="file" id="file" name="file" accept=".pdf,.doc,.docx,"><br><br>
-                                        <input type="submit" value="Envoyer">
+                        <td>alternant(e) en informatique</td>
+                        <td>HAFFNER ENERGY</td>
+                        <td>Dès que possible</td>
+                        <td>Contrat d'apprentissage </td>
+                        <td>Informatique</td>
+                        <td>Non communiqué</td>
+                        <td><a href="../Ressources/FicheDePoste/HAFFNER.pdf" download="../Ressources/FicheDePoste/HAFFNER.pdf"> Fiche de poste <br><br>
+                                <form action="index.php?form=upload" method="post" enctype="multipart/form-data">
+                                    <label for="file">Déposez votre CV :</label><br><br>
+                                    <input type="file" id="file" name="file" accept=".pdf,.doc,.docx,"><br><br>
+                                    <input class="send" type="submit" value="Envoyer">
+                                </form>
                     </tr>
                     <tr>
                         <td>21/02</td>
-                            <td>Développeur Web</td>
-                            <td>DÉPARTEMENT DE LA MARNE</td>
-                            <td>Avril 2024</td>
-                            <td>Contrat d'apprentissage </td>
-                            <td>Informatique</td>
-                            <td>CHAMPAGNE ARDENNE</td>
-                            <td><a href="../Ressources/FicheDePoste/HAFFNER.pdf" download="../Ressources/FicheDePoste/HAFFNER.pdf"> Fiche de poste <br><br>
-                                    <form action="index.php?form=upload" method="post" enctype="multipart/form-data">
-                                        <label for="file">Déposez votre CV :</label><br><br>
-                                        <input type="file" id="file" name="file" accept=".pdf,.doc,.docx,"><br><br>
-                                        <input type="submit" value="Envoyer">
+                        <td>Développeur Web</td>
+                        <td>DÉPARTEMENT DE LA MARNE</td>
+                        <td>Avril 2024</td>
+                        <td>Contrat d'apprentissage </td>
+                        <td>Informatique</td>
+                        <td>CHAMPAGNE ARDENNE</td>
+                        <td><a href="../Ressources/FicheDePoste/HAFFNER.pdf" download="../Ressources/FicheDePoste/HAFFNER.pdf"> Fiche de poste <br><br>
+                                <form action="index.php?form=upload" method="post" enctype="multipart/form-data">
+                                    <label for="file">Déposez votre CV :</label><br><br>
+                                    <input type="file" id="file" name="file" accept=".pdf,.doc,.docx,"><br><br>
+                                    <input class="send" type="submit" value="Envoyer">
+                                </form>
                     </tr>
                 </table>
             </div>
