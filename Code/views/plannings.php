@@ -241,7 +241,7 @@ if (!isset($_SESSION['user_id'])) {
                     });
                 });
             </script>
-
+            <?php require("footer.php") ?>
         </section>
     </nav>
     <script src="assets/js/script.js"></script>

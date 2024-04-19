@@ -61,6 +61,7 @@ if (!isset($_SESSION['user_id'])) {
                     </div>
                 </section>
             </div>
+            <?php require("views/footer.php") ?>
         </section>
         <script src="assets/js/script.js"></script>
 </body>

@@ -24,6 +24,15 @@
                 <span class="text">Liste des offres </span>
             </div>
             <br>
+            <div class="tophead">
+                <p>
+                    <span>Cette page regroupe l'ensemble des offres de stage diffusées par votre école ou partagées par les étudiants.
+                        <br>
+                        Vous pouvez également consulter les offres de notre partenaire Jpo-d en suivant <a href="https://ges.jpo-d.com/" target="_blank">ce lien.</a>
+                    </span>
+                </p>
+            </div>
+            <br>
             <div class="offre">
                 <table border="3">
                     <tr>
@@ -99,6 +108,8 @@
                     </tr>
                 </table>
             </div>
+            <?php require("views/footer.php") ?>
+        </section>
     </nav>
     <script src="assets/js/script.js"></script>
 </body>

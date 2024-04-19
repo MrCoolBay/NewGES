@@ -36,4 +36,47 @@ setInterval(function() {
   flipCard();
 }, 11000);
 
+document.querySelector('.fa-bars').addEventListener('click', function() {
+    this.style.transition = 'transform 0.5s';
+    if (this.style.transform === 'rotate(90deg)') {
+      this.style.transform = 'rotate(0deg)';
+    } else {
+      this.style.transform = 'rotate(90deg)';
+    }
+});
+
+let darkModeBtn = document.querySelector("#darkModeBtn");
+let section = document.querySelector("section");
+let menu = document.querySelector(".sidebar");
+let footer = document.querySelector(".footer");
+let menuPink = document.querySelector(".profile-details");
+
+darkModeBtn.addEventListener("click", () => {
+  if (localStorage.getItem('darkMode') !== 'enabled') {
+    section.classList.add("dark-mode");
+    menu.classList.add("dark-mode");
+    footer.classList.add("dark-mode");
+    menuPink.classList.add("dark-mode");
+
+    // Enregistrez l'état dans le stockage local
+    localStorage.setItem('darkMode', 'enabled');
+  } else {
+    section.classList.remove("dark-mode");
+    menu.classList.remove("dark-mode");
+    footer.classList.remove("dark-mode");
+    menuPink.classList.remove("dark-mode");
+    
+    // Supprimez l'état du stockage local
+    localStorage.removeItem('darkMode');
+  }
+});
+
+document.addEventListener('DOMContentLoaded', (event) => {
+  if (localStorage.getItem('darkMode') === 'enabled') {
+    section.classList.add("dark-mode");
+    menu.classList.add("dark-mode");
+    footer.classList.add("dark-mode");
+    menuPink.classList.add("dark-mode");
+  }
+});
 

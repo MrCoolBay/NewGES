@@ -35,7 +35,7 @@ session_start();
             <div class="front">
                 <img src="assets/img/campus/campus.png" alt="">
                 <div class="text">
-                    <span class="text-1">Bienvenue sur le <br> Réseau Skolae</span>
+                    <span class="text-1">Bienvenue sur le <br> Panel d'inscription</span>
                     <span class="text-2">Inscrivez-vous</span>
                 </div>
             </div>

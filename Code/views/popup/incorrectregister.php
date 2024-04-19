@@ -25,7 +25,7 @@
         <h3>Cet utilisateur existe déjà.</h3>
 
         <div class="buttons">
-            <a href="index.php?page=session" class="close-btn">On va réessayer</a>
+            <a href="index.php?page=inscription" class="close-btn">On va réessayer</a>
         </div>
     </div>
 

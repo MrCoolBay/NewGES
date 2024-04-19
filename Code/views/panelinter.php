@@ -44,6 +44,7 @@ if (!isset($_SESSION['user_id'])) {
                     Vous pouvez ici ajouter des notes, ajouter des documents pour les élèves et pleins d'autres choses !
                 </p>
             </div>
+            <?php require("footer.php") ?>
         </section>
         <script src="assets/js/script.js"></script>
 </body>

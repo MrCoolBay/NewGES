@@ -7,7 +7,6 @@
  <div class="sidebar close">
      <div class="logo-details">
          <img src="assets/img/mynewgeswhite.png"></img>
-         <span class="logo_name"></span>
      </div>
      <ul class="nav-links">
 
@@ -93,14 +92,16 @@
              </ul>
          </li>
          <li>
-             <a id="mode-toggle" href="#">
+             <a id="darkModeBtn" href="#">
                  <i class="fa-light fa-moon"></i>
                  <span class="link_name">Mode nuit</span>
              </a>
              <ul class="sub-menu blank">
-                 <li><a class="link_name" href="#">Mode nuit</a></li>
+                 <li id="darkModeBtn"><a class="link_name" href="#">Mode nuit</a>
+                 </li>
              </ul>
          </li>
+
          <li>
              <div class="profile-details">
                  <div class="profile-content">
@@ -108,7 +109,7 @@
                  </div>
                  <div class="name-job">
                      <div class="profile_name"><?= $name, " ", $surname ?></div>
-                     <div class="job"><?= $school ?></a> </div>
+                     <div class="job"><?= $school ?> </div>
                  </div>
                  <a href="index.php?logout"><i class="fa-regular fa-right-from-bracket"></i></a>
 

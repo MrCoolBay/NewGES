@@ -57,6 +57,8 @@
 
                 </table>
             </div>
+            <?php require("views/footer.php") ?>
+        </section>
     </nav>
     <script src="assets/js/script.js"></script>
 </body>

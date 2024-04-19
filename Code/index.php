@@ -32,6 +32,7 @@ if (isset($_GET['logout'])) {
         session_start();
         DisplayPanelInter();
     } elseif ($page == 'inscription') {
+        session_start();
         DisplayInscription();
     } elseif ($page == 'consultcv') {
         session_start();

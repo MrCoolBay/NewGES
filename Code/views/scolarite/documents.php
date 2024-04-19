@@ -21,7 +21,15 @@
         <section class="home-section">
             <div class="home-content">
                 <i class="fa-solid fa-bars"></i>
-                <span class="text">Liste des offres </span>
+                <span class="text">Mes documents</span>
+            </div>
+            <br>
+            <div class="tophead">
+                <p>
+                    <span>
+                        Cette section vous permet d'accéder à différents documents mis à votre disposition pour votre scolarité par l’équipe pédagogique. Ce sont des informations administratives, des guides, des plannings...
+                    </span>
+                </p>
             </div>
             <br>
             <div class="offre">
@@ -196,6 +204,8 @@
                     </tr>
                 </table>
             </div>
+            <?php require("views/footer.php") ?>
+        </section>
     </nav>
     <script src="assets/js/script.js"></script>
 

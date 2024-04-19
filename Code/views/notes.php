@@ -74,6 +74,7 @@ if (!isset($_SESSION['user_id'])) {
                     </tr>
                 </table>
             </div>
+            <?php require("footer.php") ?>
         </section>
     </nav>
 
