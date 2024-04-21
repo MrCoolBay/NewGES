@@ -1,5 +1,8 @@
 <!DOCTYPE html>
 <html lang="fr">
+<?php
+session_start();
+?>
 
 <head>
     <meta charset="UTF-8" />
@@ -27,7 +30,7 @@
             <br>
             <div class="tophead">
                 <p>
-                    <span>Pour tout problème concernant les supports de cours ( fichier manquant...), veuillez voir avec votre attachée de promotion ou l'enseignant de la matière concernée.</span>
+                    Pour tout problème concernant les supports de cours ( fichier manquant...), veuillez voir avec votre attachée de promotion ou l'enseignant de la matière concernée.
                 </p>
             </div>
             <div class="telechargements">

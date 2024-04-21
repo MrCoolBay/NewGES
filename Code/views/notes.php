@@ -9,6 +9,7 @@ if (!isset($_SESSION['user_id'])) {
     header("Location: index.php?page=session");
     exit;
 }
+
 ?>
 
 <head>
@@ -37,14 +38,16 @@ if (!isset($_SESSION['user_id'])) {
             </div>
             <div class="tophead">
                 <br>
-                <p>Les notes de 0/20 qui apparaissent dans cette rubrique sont attribuées provisoirement dans l'attente de vérification ultérieure des justificatifs d'absence. <span>En cas d'erreur concernant vos notes ou absences, veuillez contacter votre attachée de promotion.</span> </p>
+                <p>Les notes de 0/20 qui apparaissent dans cette rubrique sont attribuées provisoirement dans l'attente de vérification ultérieure des justificatifs d'absence.
+                </p>
+                <p><span>En cas d'erreur concernant vos notes ou absences, veuillez contacter votre attachée de promotion.</span> </p>
                 <br>
             </div>
             <div class="note">
                 <table border="3">
                     <tr>
-                        <th> <i class="fas fa-briefcase"></i> Matière</th>
-                        <th> <i class="fas fa-briefcase"></i> Intervenant</th>
+                        <th><i class="fas fa-briefcase"></i> Matière</th>
+                        <th><i class="fas fa-briefcase"></i> Intervenant</th>
                         <th><i class="fa-regular fa-square-1"></i> CC 1</th>
                         <th><i class="fa-regular fa-square-2"></i> CC 2</th>
                         <th><i class="fa-regular fa-flag-checkered"></i> Partiel</th>
@@ -70,7 +73,8 @@ if (!isset($_SESSION['user_id'])) {
                     <tr>
                         <th class="notes">Moyenne</th>
 
-                        <th><?php echo $note['moyenne_total'] ?></th>
+                        <th><?php
+                            echo $data['moyenne_total'] ?></th>
                     </tr>
                 </table>
             </div>

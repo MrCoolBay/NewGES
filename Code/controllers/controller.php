@@ -38,11 +38,7 @@ function DisplayAccessDenied()
 {
     require("views/popup/accessdenied.php");
 }
-function DisplayConfLogout()
-{
-    session_start();
-    require("views/popup/conflogout.php");
-}
+
 function DisplayConfRegister()
 {
     require("views/popup/confregister.php");
@@ -108,13 +104,9 @@ function DbLogin()
         $_SESSION['pdp'] = $user['pdp'];
 
         // Création d'un cookie pour garder l'utilisateur connecté
-        $cookie_name = "user_id";
-        $cookie_value = $user['id_user'];
-        setcookie($cookie_name, $cookie_value, time() + (10), "/");
+        setcookie('user_id', $user['id_user'], time() + 60, '/');
 
         // Rediriger vers le tableau de bord de l'utilisateur après la connexion
-
-
         if ($_SESSION['school'] == "admin") {
             $allowed_school_id = "admin"; // ID de l'utilisateur autorisé à accéder au lien
             if ($_SESSION['school'] !== $allowed_school_id) {

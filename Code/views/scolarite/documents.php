@@ -1,5 +1,8 @@
 <!DOCTYPE html>
 <html lang="fr">
+<?php
+session_start();
+?>
 
 <head>
     <meta charset="UTF-8" />
@@ -26,9 +29,7 @@
             <br>
             <div class="tophead">
                 <p>
-                    <span>
-                        Cette section vous permet d'accéder à différents documents mis à votre disposition pour votre scolarité par l’équipe pédagogique. Ce sont des informations administratives, des guides, des plannings...
-                    </span>
+                    Cette section vous permet d'accéder à différents documents mis à votre disposition pour votre scolarité par l’équipe pédagogique. Ce sont des informations administratives, des guides, des plannings...
                 </p>
             </div>
             <br>

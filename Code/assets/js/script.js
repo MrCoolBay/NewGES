@@ -46,6 +46,7 @@ document.querySelector('.fa-bars').addEventListener('click', function() {
 });
 
 let darkModeBtn = document.querySelector("#darkModeBtn");
+let body = document.querySelector("body");
 let section = document.querySelector("section");
 let menu = document.querySelector(".sidebar");
 let footer = document.querySelector(".footer");
@@ -53,6 +54,7 @@ let menuPink = document.querySelector(".profile-details");
 
 darkModeBtn.addEventListener("click", () => {
   if (localStorage.getItem('darkMode') !== 'enabled') {
+    body.classList.add("dark-mode");
     section.classList.add("dark-mode");
     menu.classList.add("dark-mode");
     footer.classList.add("dark-mode");
@@ -61,6 +63,7 @@ darkModeBtn.addEventListener("click", () => {
     // Enregistrez l'état dans le stockage local
     localStorage.setItem('darkMode', 'enabled');
   } else {
+    body.classList.remove("dark-mode");
     section.classList.remove("dark-mode");
     menu.classList.remove("dark-mode");
     footer.classList.remove("dark-mode");
@@ -73,6 +76,7 @@ darkModeBtn.addEventListener("click", () => {
 
 document.addEventListener('DOMContentLoaded', (event) => {
   if (localStorage.getItem('darkMode') === 'enabled') {
+    body.classList.add("dark-mode");
     section.classList.add("dark-mode");
     menu.classList.add("dark-mode");
     footer.classList.add("dark-mode");

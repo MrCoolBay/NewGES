@@ -10,38 +10,38 @@ if (isset($_GET['logout'])) {
         $page = isset($_GET['page']) ? $_GET['page'] : '';
         DisplayHome();
     } elseif ($page == 'plannings') {
-        session_start();
+
         DisplayPlannings();
     } elseif ($page == 'notes') {
-        session_start();
+
         DisplayNotes();
     } elseif ($page == 'supports') {
-        session_start();
+
         DisplaySupports();
     } elseif ($page == 'offres') {
-        session_start();
+
         DisplayOffer();
     } elseif ($page == 'session') {
         DisplaySession();
     } elseif ($page == 'logout') {
         DbLogout();
     } elseif ($page == 'paneladmin') {
-        session_start();
+
         DisplayPanelAdmin();
     } elseif ($page == 'panelinter') {
-        session_start();
+
         DisplayPanelInter();
     } elseif ($page == 'inscription') {
-        session_start();
+
         DisplayInscription();
     } elseif ($page == 'consultcv') {
-        session_start();
+
         dbConsult();
     } elseif ($page == 'documents') {
-        session_start();
+
         DisplayDoc();
     } elseif ($page == 'ajoutnote') {
-        session_start();
+
         DisplayAjoutNote();
     }
 } elseif (isset($_GET["form"]) && !empty($_GET["form"])) {

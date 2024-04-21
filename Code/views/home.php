@@ -11,7 +11,6 @@ if (!isset($_SESSION['user_id'])) {
 }
 ?>
 
-
 <?php $name = $_SESSION['name'] ?>
 <?php $surname = $_SESSION['surname'] ?>
 <?php $school = $_SESSION['school'] ?>

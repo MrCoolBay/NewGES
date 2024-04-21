@@ -1,5 +1,8 @@
 <!DOCTYPE html>
 <html lang="fr">
+<?php
+session_start();
+?>
 
 <head>
     <meta charset="UTF-8" />
@@ -26,8 +29,10 @@
             <br>
             <div class="tophead">
                 <p>
-                    <span>Cette page regroupe l'ensemble des offres de stage diffusées par votre école ou partagées par les étudiants.
-                        <br>
+                    Cette page regroupe l'ensemble des offres de stage diffusées par votre école ou partagées par les étudiants.
+                </p>
+                <p>
+                    <span>
                         Vous pouvez également consulter les offres de notre partenaire Jpo-d en suivant <a href="https://ges.jpo-d.com/" target="_blank">ce lien.</a>
                     </span>
                 </p>

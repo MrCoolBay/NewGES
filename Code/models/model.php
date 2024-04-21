@@ -65,6 +65,7 @@ function DbRegister()
         echo "Erreur : " . $e->getMessage();
     }
 }
+
 function DbLogout()
 {
     session_start();
@@ -76,6 +77,8 @@ function DbLogout()
 
 function VerifyAdmin()
 {
+
+    session_start();
 
     $db = DbConnexion();
 
@@ -93,9 +96,10 @@ function VerifyAdmin()
         exit;
     }
 }
+
 function VerifyInter()
 {
-
+    session_start();
     $db = DbConnexion();
 
     // Vérification de la connexion
@@ -112,8 +116,10 @@ function VerifyInter()
         exit;
     }
 }
+
 function Dbnote()
 {
+    session_start();
     // Récupération de la connexion
     $db = DbConnexion();
 
@@ -147,8 +153,6 @@ function Dbnote()
         echo "Erreur : " . $e->getMessage();
     }
 }
-
-
 
 function uploadCV($fileName, $fileContent)
 {

@@ -1,12 +1,11 @@
 <?php
+session_start();
 // Assurez-vous que l'utilisateur est identifié
 if (!isset($_SESSION['user_id'])) {
     // Rediriger vers la page de connexion si l'utilisateur n'est pas connecté
     header("Location: index.php?page=session");
     exit;
 }
-
-
 ?>
 
 <!DOCTYPE html>
