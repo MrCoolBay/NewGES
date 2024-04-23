@@ -4,17 +4,12 @@
 <?php
 session_start();
 
-if (!isset($_SESSION['user_id'])) {
+if (!isset($_SESSION['student_id'])) {
   // Rediriger vers la page de connexion si l'utilisateur n'est pas connecté
   header("Location: index.php?page=session");
   exit;
 }
 ?>
-
-<?php $name = $_SESSION['name'] ?>
-<?php $surname = $_SESSION['surname'] ?>
-<?php $school = $_SESSION['school'] ?>
-<?php $pdp = $_SESSION['pdp'] ?>
 
 <head>
   <meta charset="UTF-8" />
@@ -33,7 +28,7 @@ if (!isset($_SESSION['user_id'])) {
 <body>
   <nav>
     <?php
-    require("menu.php")
+    require("student_menu.php")
     ?>
 
     <section class="home-section">
@@ -52,8 +47,8 @@ if (!isset($_SESSION['user_id'])) {
         <div class="card-inner" id="cardInner">
           <iframe class="instagram-iframe front" src="https://www.instagram.com/eductive_reims/embed" frameborder="0" scrolling="no"></iframe>
           <?php
-          // Récupération du nom de l'école depuis la session
-          $ecole = $school;
+
+          $ecole = $ecole['nom_ecole'];
 
           // Affichage de l'iframe en fonction du nom de l'école
           if ($ecole == 'ESGI') {

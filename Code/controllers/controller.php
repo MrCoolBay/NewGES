@@ -2,9 +2,8 @@
 require("models/model.php");
 function DisplayHome()
 {
-
     DbConnexion();
-    require("views/home.php");
+    require("views/student_dashboard.php");
 }
 function DisplayPartenaires()
 {
@@ -17,18 +16,18 @@ function DisplaySession()
 function DisplayPanelAdmin()
 {
     VerifyAdmin();
-    require("views/paneladmin.php");
+    require("views/admin_dashboard.php");
 }
 function DisplayAjoutNote()
 {
-    DbUsers();
+    DbStudent();
     VerifyInter();
     require("views/inter/ajoutnote.php");
 }
 function DisplayPanelInter()
 {
     VerifyInter();
-    require("views/panelinter.php");
+    require("views/intervenant_dashboard.php");
 }
 function DisplayIncorrect()
 {
@@ -45,7 +44,7 @@ function DisplayConfRegister()
 }
 function DisplayCorrectNote()
 {
-    DbUsers();
+    DbStudent();
     require("views/popup/correctnote.php");
 }
 function DisplayIncorrectRegister()
@@ -62,10 +61,13 @@ function DisplayNotes()
     require("views/notes.php");
 }
 
-function DisplayInscription()
+function DisplayInscriptionStudent()
 {
-    VerifyAdmin();
-    require("views/admin/inscription.php");
+    require("views/admin/inscriptionstudent.php");
+}
+function DisplayInscriptionInter()
+{
+    require("views/admin/inscriptioninter.php");
 }
 function DisplaySupports()
 {
@@ -83,65 +85,102 @@ function DisplayDoc()
 function DbLogin()
 {
     session_start();
+
     // Récupération des données du formulaire
     $email = $_POST['email'];
     $password = $_POST['password'];
 
-
     // Vérification des informations dans la base de données
     $db = DbConnexion();
-    $stmt = $db->prepare("SELECT id_user, name, surname, pdp, email, password, salt, school FROM users WHERE email = :email");
+
+    // Recherche de l'utilisateur dans la table admin
+    $stmt = $db->prepare("SELECT id_admin, name_admin, surname_admin, pdp_admin, email, password, salt, grade FROM admin WHERE email = :email");
     $stmt->bindParam(':email', $email);
     $stmt->execute();
-    $user = $stmt->fetch(PDO::FETCH_ASSOC);
+    $admin = $stmt->fetch(PDO::FETCH_ASSOC);
 
-    if ($user && password_verify($password . $user['salt'], $user['password'])) {
-        $_SESSION['user_id'] = $user['id_user'];
-        $_SESSION['email'] = $user['email'];
-        $_SESSION['name'] = $user['name'];
-        $_SESSION['surname'] = $user['surname'];
-        $_SESSION['school'] = $user['school'];
-        $_SESSION['pdp'] = $user['pdp'];
+    // Si l'utilisateur est trouvé dans la table admin
+    if ($admin && password_verify($password . $admin['salt'], $admin['password'])) {
+        // Enregistrer les informations de l'admin dans la session
+        $_SESSION['admin_id'] = $admin['id_admin'];
+        $_SESSION['email'] = $admin['email'];
+        $_SESSION['name'] = $admin['name_admin'];
+        $_SESSION['surname'] = $admin['surname_admin'];
+        $_SESSION['pdp'] = $admin['pdp_admin'];
+        $_SESSION['grade'] = $admin['grade'];
 
-        // Création d'un cookie pour garder l'utilisateur connecté
-        setcookie('user_id', $user['id_user'], time() + 60, '/');
+        // Créer un cookie pour garder l'admin connecté
+        setcookie('admin_id', $admin['id_admin'], time() + 3600, '/');
 
-        // Rediriger vers le tableau de bord de l'utilisateur après la connexion
-        if ($_SESSION['school'] == "admin") {
-            $allowed_school_id = "admin"; // ID de l'utilisateur autorisé à accéder au lien
-            if ($_SESSION['school'] !== $allowed_school_id) {
-                // Rediriger vers une page d'erreur ou afficher un message d'erreur
-                DisplayAccessDenied();
-                exit;
-            }
-            header("Location: index.php?page=paneladmin");
-        } elseif ($_SESSION['school'] == "Intervenant") {
-            $allowed_school_id = "Intervenant"; // ID de l'utilisateur autorisé à accéder au lien
-            if ($_SESSION['school'] !== $allowed_school_id) {
-                // Rediriger vers une page d'erreur ou afficher un message d'erreur
-                DisplayAccessDenied();
-                exit;
-            }
-            header("Location: index.php?page=panelinter");
-        } else {
-            header("Location: index.php?page=home");
-        }
-    } else {
-        DisplayIncorrect();
+        // Redirection vers le tableau de bord de l'admin après la connexion
+        header("Location: index.php?page=admindash");
+        exit();
     }
+
+    // Recherche de l'utilisateur dans la table student
+    $stmt = $db->prepare("SELECT id_student, name_student, surname_student, pdp_student, email, password, salt, id_ecole, id_promo FROM student WHERE email = :email");
+    $stmt->bindParam(':email', $email);
+    $stmt->execute();
+    $student = $stmt->fetch(PDO::FETCH_ASSOC);
+
+    // Si l'utilisateur est trouvé dans la table student
+    if ($student && password_verify($password . $student['salt'], $student['password'])) {
+        // Enregistrer les informations de l'étudiant dans la session
+        $_SESSION['student_id'] = $student['id_student'];
+        $_SESSION['email'] = $student['email'];
+        $_SESSION['name'] = $student['name_student'];
+        $_SESSION['surname'] = $student['surname_student'];
+        $_SESSION['pdp'] = $student['pdp_student'];
+        $_SESSION['id_ecole'] = $student['id_ecole'];
+        $_SESSION['id_promo'] = $student['id_promo'];
+
+        // Créer un cookie pour garder l'étudiant connecté
+        setcookie('student_id', $student['id_student'], time() + 3600, '/');
+
+        // Redirection vers le tableau de bord de l'étudiant après la connexion
+        header("Location: index.php?page=studentdash");
+        exit();
+    }
+
+    // Recherche de l'intervenant dans la table intervenant
+    $stmt = $db->prepare("SELECT id_intervenant, name_intervenant, surname_intervenant, pdp_intervenant email, password, salt FROM intervenant WHERE email = :email");
+    $stmt->bindParam(':email', $email);
+    $stmt->execute();
+    $intervenant = $stmt->fetch(PDO::FETCH_ASSOC);
+
+    // Si l'intervenant est trouvé dans la table intervenant
+    if ($intervenant && password_verify($password . $intervenant['salt'], $intervenant['password'])) {
+        // Enregistrer les informations de l'intervenant dans la session
+        $_SESSION['intervenant_id'] = $intervenant['id_intervenant'];
+        $_SESSION['email'] = $intervenant['email'];
+        $_SESSION['name'] = $intervenant['name_intervenant'];
+        $_SESSION['surname'] = $intervenant['surname_intervenant'];
+        $_SESSION['pdp'] = $intervenant['pdp_intervenant'];
+
+        // Créer un cookie pour garder l'intervenant connecté
+        setcookie('intervenant_id', $intervenant['id_intervenant'], time() + 3600, '/');
+
+        // Redirection vers le tableau de bord de l'intervenant après la connexion
+        header("Location: index.php?page=interdash");
+        exit();
+    }
+
+    // Si ni l'admin, ni l'étudiant, ni l'intervenant ne sont trouvés, afficher un message d'erreur
+    DisplayIncorrect();
 }
+
 
 function AddNote()
 {
     // Récupération des données du formulaire 
-    $id_user = htmlspecialchars_decode($_POST['id_user']);
-    $matiere = htmlspecialchars_decode($_POST['matiere']);
-    $intervenant = htmlspecialchars_decode($_POST['intervenant']);
-    $note1 = htmlspecialchars_decode($_POST['note1']);
-    $info_note1 = htmlspecialchars_decode($_POST['info_note1']);
+    $id_student = htmlspecialchars($_POST['student_id']);
+    $id_matiere = htmlspecialchars($_POST['id_matiere']);
+    $id_intervenant = htmlspecialchars($_POST['id_intervenant']);
+    $note = htmlspecialchars($_POST['note']);
+    $info_note = htmlspecialchars($_POST['info_note']);
 
-    // Ajout du livre dans la base de données
-    $result = DbAddNote($id_user, $matiere, $intervenant, $note1, $info_note1);
+    // Ajout de la note dans la base de données
+    $result = DbAddNote($id_student, $id_matiere, $id_intervenant, $note, $info_note);
     if ($result) {
         DisplayCorrectNote();
     } else {

@@ -1,7 +1,7 @@
 <?php
 // Assurez-vous que l'utilisateur est identifié
 
-if (!isset($_SESSION['user_id'])) {
+if (!isset($_SESSION['intervenant_id'])) {
     // Rediriger vers la page de connexion si l'utilisateur n'est pas connecté
     header("Location: index.php?page=session");
     exit;
@@ -31,7 +31,7 @@ if (!isset($_SESSION['user_id'])) {
 
     <nav>
         <?php
-        require("menu.php")
+        require("intervenant_menu.php")
         ?>
         <section class="home-section">
             <div class="home-content">
