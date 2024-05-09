@@ -532,3 +532,26 @@ td.notes {
 .offre #file {
   margin-top: 5px;
 }
+
+.planning {
+  margin-left: auto;
+}
+
+/********* PAGE PLANNING ***********/
+.planning {
+    border: 1px solid #ccc; 
+    padding: 10px; 
+}
+
+
+.jour {
+    display: inline-block; 
+    vertical-align: top;
+    width: calc(100% / 7); 
+    box-sizing: border-box; 
+    padding: 10px;
+    border-right: 1px solid #ccc;
+}
+.jour:last-child {
+    border-right: none; /*Supprimer la bordure droite pour le dernier jour */
+  }
