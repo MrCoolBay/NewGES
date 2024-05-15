@@ -79,7 +79,7 @@ body {
 }
 
 .sidebar .nav-links li:hover {
-  background: #1ea7d3;
+  background: none;
 }
 
 .sidebar .nav-links li .iocn-link {
@@ -470,5 +470,9 @@ body {
 
 .sidebar.dark-mode,
 .footer.dark-mode {
+  background: #136380;
+}
+
+.sidebar .nav-links li .sub-menu.dark-mode {
   background: #136380;
 }

@@ -2,6 +2,11 @@
 <html lang="fr">
 <?php
 session_start();
+if (!isset($_SESSION['student_id'])) {
+    // Rediriger vers la page de connexion si l'utilisateur n'est pas connecté
+    header("Location: index.php?page=session");
+    exit;
+}
 ?>
 
 <head>
@@ -20,7 +25,7 @@ session_start();
 
 <body>
     <nav>
-        <?php require("views/menu.php"); ?>
+        <?php require("views/student_menu.php"); ?>
         <section class="home-section">
             <div class="home-content">
                 <i class="fa-solid fa-bars"></i>

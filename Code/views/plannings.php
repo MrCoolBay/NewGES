@@ -5,7 +5,7 @@
 
 session_start();
 
-if (!isset($_SESSION['user_id'])) {
+if (!isset($_SESSION['student_id'])) {
     // Rediriger vers la page de connexion si l'utilisateur n'est pas connecté
     header("Location: index.php?page=session");
     exit;
@@ -30,7 +30,7 @@ if (!isset($_SESSION['user_id'])) {
 <body>
     <nav>
         <?php
-        require("menu.php")
+        require("student_menu.php")
         ?>
 
         <section class="home-section">

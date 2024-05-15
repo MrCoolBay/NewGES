@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : localhost
--- Généré le : dim. 21 avr. 2024 à 19:12
+-- Généré le : mer. 15 mai 2024 à 17:11
 -- Version du serveur : 10.4.28-MariaDB
 -- Version de PHP : 8.2.4
 
@@ -18,8 +18,116 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Base de données : `myges`
+-- Base de données : `mygesnew`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `admin`
+--
+
+CREATE TABLE `admin` (
+  `id_admin` int(11) NOT NULL,
+  `name_admin` varchar(255) NOT NULL,
+  `surname_admin` varchar(255) NOT NULL,
+  `pdp_admin` varchar(255) DEFAULT 'https://media.istockphoto.com/id/1223671392/fr/vectoriel/photo-de-profil-par-d%C3%A9faut-avatar-photo-placeholder-illustration-de-vecteur.jpg?s=612x612&w=0&k=20&c=iLDNfo8MGvF_Srti46vL4iyYbHB4bUK5iv6V7c4Pj80=',
+  `email` varchar(255) NOT NULL,
+  `password` varchar(255) NOT NULL,
+  `salt` varchar(255) NOT NULL,
+  `grade` varchar(50) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Déchargement des données de la table `admin`
+--
+
+INSERT INTO `admin` (`id_admin`, `name_admin`, `surname_admin`, `pdp_admin`, `email`, `password`, `salt`, `grade`) VALUES
+(1, 'Fabien', 'Lubin', 'https://media.istockphoto.com/id/1223671392/fr/vectoriel/photo-de-profil-par-d%C3%A9faut-avatar-photo-placeholder-illustration-de-vecteur.jpg?s=612x612&w=0&k=20&c=iLDNfo8MGvF_Srti46vL4iyYbHB4bUK5iv6V7c4Pj80=', 'flubin1@myges.fr', '$2y$10$IhcJ1ZKKuc3hCIxj0yzx2OUnQa3A1koiKUl7jv8RgaFz9xw.Pibp2', '846279938660c2cc8149e61.97265511', 'superadmin');
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `ecole`
+--
+
+CREATE TABLE `ecole` (
+  `id_ecole` int(11) NOT NULL,
+  `nom_ecole` varchar(100) NOT NULL,
+  `id_ecole_ecole` int(11) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Déchargement des données de la table `ecole`
+--
+
+INSERT INTO `ecole` (`id_ecole`, `nom_ecole`, `id_ecole_ecole`) VALUES
+(1, 'ESGI', NULL),
+(2, 'ISA', NULL),
+(3, 'EFET STUDIO CREA', NULL),
+(4, 'EFET PHOTO', NULL),
+(5, 'EFAB', NULL),
+(6, 'ESUPCOM', NULL),
+(7, 'MAESTRIS', NULL),
+(8, 'MODART', NULL),
+(9, 'EIML', NULL),
+(10, 'PPASPORT', NULL),
+(11, 'PPA', NULL),
+(12, 'ISFJ', NULL);
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `intervenant`
+--
+
+CREATE TABLE `intervenant` (
+  `id_intervenant` int(11) NOT NULL,
+  `name_intervenant` varchar(100) NOT NULL,
+  `surname_intervenant` varchar(100) NOT NULL,
+  `pdp_intervenant` varchar(10000) NOT NULL DEFAULT 'https://media.istockphoto.com/id/1223671392/fr/vectoriel/photo-de-profil-par-d%C3%A9faut-avatar-photo-placeholder-illustration-de-vecteur.jpg?s=612x612&w=0&k=20&c=iLDNfo8MGvF_Srti46vL4iyYbHB4bUK5iv6V7c4Pj80=',
+  `email` varchar(100) NOT NULL,
+  `password` varchar(255) NOT NULL,
+  `salt` varchar(50) NOT NULL,
+  `id_ecole` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Déchargement des données de la table `intervenant`
+--
+
+INSERT INTO `intervenant` (`id_intervenant`, `name_intervenant`, `surname_intervenant`, `pdp_intervenant`, `email`, `password`, `salt`, `id_ecole`) VALUES
+(9, 'Thomas', 'Pierson', 'https://media.istockphoto.com/id/1223671392/fr/vectoriel/photo-de-profil-par-d%C3%A9faut-avatar-photo-placeholder-illustration-de-vecteur.jpg?s=612x612&w=0&k=20&c=iLDNfo8MGvF_Srti46vL4iyYbHB4bUK5iv6V7c4Pj80=', 'tpierson@myges.fr', '$2y$10$vfq4iat166QRjbSh.tDI3.ogwMOi3sqATRr2MATRnblMXcRNviShq', '21214582196644cdc0318095.50942488', 2);
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `matiere`
+--
+
+CREATE TABLE `matiere` (
+  `id_matiere` int(11) NOT NULL,
+  `nom_matiere` varchar(100) NOT NULL,
+  `id_ecole` int(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Déchargement des données de la table `matiere`
+--
+
+INSERT INTO `matiere` (`id_matiere`, `nom_matiere`, `id_ecole`) VALUES
+(22, 'Architecture des réseaux', 1),
+(23, 'Architecture Web', 1),
+(24, 'Bases de l\'administration Windows', 1),
+(25, 'Circuits logiques et architecture d\'un ordinateur', 1),
+(26, 'Virtualisation et gestion de parcs informatiques', 1),
+(27, 'Développement Web : html, css, php', 1),
+(28, 'Développement Web : js, web api, json', 1),
+(29, 'Langage C', 1),
+(30, 'Langage SQL', 1),
+(31, 'Projet Annuel', 1),
+(32, 'Algorithmique et structure des données', 1),
+(33, 'Programme Open Labs', 1);
 
 -- --------------------------------------------------------
 
@@ -29,91 +137,178 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `note` (
   `id_note` int(11) NOT NULL,
-  `matiere` char(100) DEFAULT NULL,
-  `intervenant` varchar(50) NOT NULL,
-  `note1` varchar(50) DEFAULT NULL,
-  `info_note1` varchar(100) DEFAULT NULL,
-  `note2` varchar(50) DEFAULT NULL,
-  `info_note2` varchar(100) DEFAULT NULL,
-  `partiel` varchar(50) DEFAULT NULL,
+  `note` int(11) DEFAULT NULL,
+  `info_note` varchar(100) DEFAULT NULL,
   `date_note` timestamp NULL DEFAULT current_timestamp(),
-  `id_user` int(11) NOT NULL,
+  `id_student` int(11) NOT NULL,
+  `id_matiere` int(11) DEFAULT NULL,
+  `id_intervenant` int(11) DEFAULT NULL,
   `moyenne` decimal(5,2) DEFAULT NULL,
-  `moyenne_total` decimal(5,2) DEFAULT NULL
+  `note1` decimal(5,2) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Déchargement des données de la table `note`
---
-
-INSERT INTO `note` (`id_note`, `matiere`, `intervenant`, `note1`, `info_note1`, `note2`, `info_note2`, `partiel`, `date_note`, `id_user`, `moyenne`, `moyenne_total`) VALUES
-(15, 'Anglais', 'Mme Manach Sekour', '1', 'Informations pour la note 1', '19', 'Informations pour la note 2', '18', '2024-04-18 08:20:11', 11, 12.67, 12.67),
-(16, 'Anglais', 'Mme Manach Sekour', '15', 'Informations pour la note 1', '19', 'Informations pour la note 2', '19', '2024-04-18 08:24:57', 1, 17.67, 14.83),
-(17, 'Anglais', 'Mme Manouch Sekour', '7', 'Informations pour la note 1', '10', 'Informations pour la note 2', '19', '2024-04-11 22:00:00', 1, 12.00, 14.83),
-(18, 'Anglais', 'Thomas Pierson', '15', 'OINqzodj', NULL, NULL, NULL, '2024-04-18 11:09:05', 10, NULL, NULL),
-(19, 'Anglais', 'Thomas Pierson', '15', 'Bravo Amaury', NULL, NULL, NULL, '2024-04-18 11:14:29', 4, NULL, NULL),
-(20, 'Anglais', 'Thomas Pierson', '15', 'salut', NULL, NULL, NULL, '2024-04-18 11:21:31', 2, NULL, NULL),
-(21, 'Anglais', 'Thomas Pierson', '15', 'salut', NULL, NULL, NULL, '2024-04-18 11:22:17', 2, NULL, NULL),
-(22, 'Anglais', 'Thomas Pierson', '15', 'weeeeee', NULL, NULL, NULL, '2024-04-18 11:23:21', 2, NULL, NULL),
-(23, 'Anglais', 'Thomas Pierson', '2', 'Salut', NULL, NULL, NULL, '2024-04-18 11:42:08', 10, NULL, NULL),
-(24, 'Développement web :  html, css, php', 'Thomas Pierson', '15', 'Contrôle', NULL, NULL, NULL, '2024-04-18 17:18:02', 11, NULL, NULL),
-(25, 'Réseaux', 'Thomas Pierson', '12', 'TP Réseaux', NULL, NULL, NULL, '2024-04-18 17:19:06', 11, NULL, NULL),
-(26, 'Virtualisation', 'Thomas Pierson', '16', 'TD Virtu', NULL, NULL, NULL, '2024-04-18 17:19:22', 11, NULL, NULL),
-(27, 'Français', 'Thomas Pierson', '20', 'je suis bon en fr', NULL, NULL, NULL, '2024-04-18 17:19:36', 11, NULL, NULL),
-(28, 'Virtualisation', 'Thomas Pierson', '10', 'Pas ouf', NULL, NULL, NULL, '2024-04-19 10:05:12', 17, NULL, NULL),
-(29, 'Projet annuel', 'Thomas Pierson', '20', 'Bonne note', NULL, NULL, NULL, '2024-04-19 12:41:11', 18, NULL, NULL);
 
 -- --------------------------------------------------------
 
 --
--- Structure de la table `users`
+-- Structure de la table `promo`
 --
 
-CREATE TABLE `users` (
-  `id_user` int(11) NOT NULL,
-  `name` varchar(100) NOT NULL,
-  `surname` varchar(100) NOT NULL,
-  `pdp` varchar(10000) NOT NULL DEFAULT 'https://media.istockphoto.com/id/1223671392/fr/vectoriel/photo-de-profil-par-d%C3%A9faut-avatar-photo-placeholder-illustration-de-vecteur.jpg?s=612x612&w=0&k=20&c=iLDNfo8MGvF_Srti46vL4iyYbHB4bUK5iv6V7c4Pj80=',
-  `email` varchar(100) NOT NULL,
-  `password` varchar(255) NOT NULL,
-  `salt` varchar(50) NOT NULL,
-  `school` varchar(50) NOT NULL
+CREATE TABLE `promo` (
+  `id_promo` int(11) NOT NULL,
+  `nom_promo` varchar(10) NOT NULL,
+  `id_ecole` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Déchargement des données de la table `users`
+-- Déchargement des données de la table `promo`
 --
 
-INSERT INTO `users` (`id_user`, `name`, `surname`, `pdp`, `email`, `password`, `salt`, `school`) VALUES
-(1, 'Fabien', 'Lubin', 'https://media.discordapp.net/attachments/779025361596842029/1230800965112954951/image.png?ex=6634a3b9&is=66222eb9&hm=772f76065fb80fcf52d2e2bb42bf524b0f48c647f142d16cbb019c919b4e6b67&=&format=webp&quality=lossless&width=648&height=700', 'flubin1@myges.fr', '$2y$10$IhcJ1ZKKuc3hCIxj0yzx2OUnQa3A1koiKUl7jv8RgaFz9xw.Pibp2', '846279938660c2cc8149e61.97265511', 'admin'),
-(2, 'Alexis', 'Derveaux', 'https://media.discordapp.net/attachments/1167492339200172139/1222848726951788594/FF466658-70A5-441E-87E4-67550E918643.jpg?ex=6617b59f&is=6605409f&hm=1b2c381876569937224864f57ba8f7bcf409142456763178d8ef44ff273a2d3f&=&format=webp&width=395&height=702', 'alexis@gmail.com', '$2y$10$PMseVDBpHq7jfJ6j95jR/uP/Tg9hZhCflc.cefuuuVhtH2zER9j6.', '936870711660c2da4b9baa6.61185934', 'admin'),
-(4, 'Amaury', 'Marchand', 'https://media.licdn.com/dms/image/D4E35AQEE5JtLcYxhPQ/profile-framedphoto-shrink_800_800/0/1706560499281?e=1712682000&v=beta&t=zaPGIrVJynFrngZsEgLb_o-w3sImHi1qp392-5mai5o', 'amaury@gmail.com', '$2y$10$e01uVfvocnIlQ0/v5eI1Jep9KO/0JVFzgixAfWrZm1pSTOKj3.OT6', '1331194036660c306f4db8e0.60802392', 'admin'),
-(10, 'Gaetan', 'Majkowiez', 'https://media.istockphoto.com/id/1223671392/fr/vectoriel/photo-de-profil-par-d%C3%A9faut-avatar-photo-placeholder-illustration-de-vecteur.jpg?s=612x612&w=0&k=20&c=iLDNfo8MGvF_Srti46vL4iyYbHB4bUK5iv6V7c4Pj80=', 'gmajkowiez@myges.fr', '$2y$10$FLMACAUK/dXsypRWf0OJneQnj.ebALxmf1MB4vmNLdnhz4L3zquKe', '579335945661fb81cda5a38.59436732', 'admin'),
-(11, 'Phèdre', 'Homehr', 'https://media.istockphoto.com/id/1223671392/fr/vectoriel/photo-de-profil-par-d%C3%A9faut-avatar-photo-placeholder-illustration-de-vecteur.jpg?s=612x612&w=0&k=20&c=iLDNfo8MGvF_Srti46vL4iyYbHB4bUK5iv6V7c4Pj80=', 'sweetylove2005@gmail.Com', '$2y$10$chlyKd26/ScQYkCnpNjjTeIS4U90DgGqK/92YeVgcFh6ydHn8iPYW', '142246554661ff764575c79.01143103', 'EFAB'),
-(12, 'Thomas', 'Pierson', 'https://media.istockphoto.com/id/1223671392/fr/vectoriel/photo-de-profil-par-d%C3%A9faut-avatar-photo-placeholder-illustration-de-vecteur.jpg?s=612x612&w=0&k=20&c=iLDNfo8MGvF_Srti46vL4iyYbHB4bUK5iv6V7c4Pj80=', 'tpierson@myges.fr', '$2y$10$nySNz5aOyQqeVCo2eRcZTO0RfedmBLtI4NJ0WfpUJeqGeiTCRrsTO', '8412783046620e8032a4d84.86953128', 'Intervenant'),
-(13, 'Pierre', 'Postal', 'https://media.discordapp.net/attachments/1164881520234868787/1230501114009354240/7F4D3871-986E-4CF2-815A-FD025A3EC93F_1_105_c.jpeg?ex=66338c77&is=66211777&hm=b726cb122717780f0e2e26a7ea93d8b388e537c9e8055efd5c7c3772adb19e8d&=&format=webp&width=550&height=976', 'ppostal@myges.fr', '$2y$10$ZA4a96TlBtaP1lWGvs87HOiPFxM1brkEXnZyKMuXctsxq7dlma66i', '75058694666210cdc259267.15247958', 'ESGI'),
-(14, 'Sarah', 'Muszalski', 'https://media.licdn.com/dms/image/D4E35AQF25QjGu88ebg/profile-framedphoto-shrink_100_100/0/1709044408213?e=1714050000&v=beta&t=dUi2WDvJIC0zOqijAhX07cx73s8Jv3rzmLIvxiKsMpY', 'smuszalski@myges.fr', '$2y$10$IAXe91GXV.kPrJBZpvLeU.MgPb5Yddp0CVc2KmvEP9NW948AKqgsy', '1127611833662116b748ff50.88570720', 'EFAB'),
-(15, 'Apolline', 'Goin', 'https://media.istockphoto.com/id/1223671392/fr/vectoriel/photo-de-profil-par-d%C3%A9faut-avatar-photo-placeholder-illustration-de-vecteur.jpg?s=612x612&w=0&k=20&c=iLDNfo8MGvF_Srti46vL4iyYbHB4bUK5iv6V7c4Pj80=', 'agoin@myges.fr', '$2y$10$lXHfroN92Zw0azs.com50elBiKIMskX/QGma3fZvD375rEtRHNOzq', '1181633869662119612e1969.78712026', 'PPA'),
-(16, 'Aline', 'Chaffangeon', 'https://media.istockphoto.com/id/1223671392/fr/vectoriel/photo-de-profil-par-d%C3%A9faut-avatar-photo-placeholder-illustration-de-vecteur.jpg?s=612x612&w=0&k=20&c=iLDNfo8MGvF_Srti46vL4iyYbHB4bUK5iv6V7c4Pj80=', 'achaffangeon@myges.fr', '$2y$10$8rskMpwzEaWEs65RZMcewu5BWaZFzq2rQxK34J5wVr2yGZK9SkgAC', '79801979066211a05f10491.59587154', 'admin'),
-(17, 'cacaa', 'boudin', 'https://media.istockphoto.com/id/1223671392/fr/vectoriel/photo-de-profil-par-d%C3%A9faut-avatar-photo-placeholder-illustration-de-vecteur.jpg?s=612x612&w=0&k=20&c=iLDNfo8MGvF_Srti46vL4iyYbHB4bUK5iv6V7c4Pj80=', 'caca@gmail.com', '$2y$10$vvK1TN0.eDnQhvrg5iRGWupS6XFAGRiKt0Tj8ELcXZE5wjctrpiqW', '216494775662241399d1db4.02421954', 'ESUPCOM'),
-(18, 'toto', 'toto', 'https://media.istockphoto.com/id/1223671392/fr/vectoriel/photo-de-profil-par-d%C3%A9faut-avatar-photo-placeholder-illustration-de-vecteur.jpg?s=612x612&w=0&k=20&c=iLDNfo8MGvF_Srti46vL4iyYbHB4bUK5iv6V7c4Pj80=', 'tata@gmail.com', '$2y$10$3aUFSVuRw6NQnUOYDqViw.BaMHCMNniMQf4jLNKj5sQ0uezE0suY2', '147159845662265a294c698.20698701', 'ESUPCOM');
+INSERT INTO `promo` (`id_promo`, `nom_promo`, `id_ecole`) VALUES
+(1, 'B1', 1),
+(72, 'B1ESGI', 1),
+(73, 'B2ESGI', 1),
+(74, 'B3ESGI', 1),
+(75, 'M1ESGI', 1),
+(76, 'M2ESGI', 1),
+(77, 'B1ESPUCOM', 6),
+(78, 'B2ESPUCOM', 6),
+(79, 'B3ESPUCOM', 6),
+(80, 'M1ESPUCOM', 6),
+(81, 'M2ESPUCOM', 6),
+(82, 'B1EFET STU', 3),
+(83, 'B2EFET STU', 3),
+(84, 'B3EFET STU', 3),
+(85, 'M1EFET STU', 3),
+(86, 'M2EFET STU', 3),
+(87, 'B1EFET PHO', 4),
+(88, 'B2EFET PHO', 4),
+(89, 'B3EFET PHO', 4),
+(90, 'M1EFET PHO', 4),
+(91, 'M2EFET PHO', 4),
+(92, 'B1EFAB', 5),
+(93, 'B2EFAB', 5),
+(94, 'B3EFAB', 5),
+(95, 'M1EFAB', 5),
+(96, 'M2EFAB', 5),
+(97, 'B1ESUPCOM', 6),
+(98, 'B2ESUPCOM', 6),
+(99, 'B3ESUPCOM', 6),
+(100, 'M1ESUPCOM', 6),
+(101, 'M2ESUPCOM', 6),
+(102, 'B1MAESTRIS', 7),
+(103, 'B2MAESTRIS', 7),
+(104, 'B3MAESTRIS', 7),
+(105, 'M1MAESTRIS', 7),
+(106, 'M2MAESTRIS', 7),
+(107, 'B1MODART', 8),
+(108, 'B2MODART', 8),
+(109, 'B3MODART', 8),
+(110, 'M1MODART', 8),
+(111, 'M2MODART', 8),
+(112, 'B1EIML', 9),
+(113, 'B2EIML', 9),
+(114, 'B3EIML', 9),
+(115, 'M1EIML', 9),
+(116, 'M2EIML', 9),
+(117, 'B1PPASPORT', 10),
+(118, 'B2PPASPORT', 10),
+(119, 'B3PPASPORT', 10),
+(120, 'M1PPASPORT', 10),
+(121, 'M2PPASPORT', 10),
+(122, 'B1PPA', 11),
+(123, 'B2PPA', 11),
+(124, 'B3PPA', 11),
+(125, 'M1PPA', 11),
+(126, 'M2PPA', 11),
+(127, 'B1ISFJ', 12),
+(128, 'B2ISFJ', 12),
+(129, 'B3ISFJ', 12),
+(130, 'M1ISFJ', 12),
+(131, 'M2ISFJ', 12),
+(132, 'B1ISA', 2),
+(133, 'B2ISA', 2),
+(134, 'B3ISA', 2),
+(135, 'M1ISA', 2),
+(136, 'M2ISA', 2);
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `student`
+--
+
+CREATE TABLE `student` (
+  `id_student` int(11) NOT NULL,
+  `name_student` varchar(100) NOT NULL,
+  `surname_student` varchar(100) NOT NULL,
+  `pdp_student` varchar(10000) NOT NULL DEFAULT 'https://media.istockphoto.com/id/1223671392/fr/vectoriel/photo-de-profil-par-d%C3%A9faut-avatar-photo-placeholder-illustration-de-vecteur.jpg?s=612x612&w=0&k=20&c=iLDNfo8MGvF_Srti46vL4iyYbHB4bUK5iv6V7c4Pj80=',
+  `email` varchar(100) NOT NULL,
+  `password` varchar(255) NOT NULL,
+  `salt` varchar(50) NOT NULL,
+  `id_ecole` int(11) NOT NULL,
+  `id_promo` int(11) NOT NULL,
+  `moyenne_total` decimal(5,2) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Déchargement des données de la table `student`
+--
+
+INSERT INTO `student` (`id_student`, `name_student`, `surname_student`, `pdp_student`, `email`, `password`, `salt`, `id_ecole`, `id_promo`, `moyenne_total`) VALUES
+(13, 'Alexis', 'Derveaux', 'https://media.istockphoto.com/id/1223671392/fr/vectoriel/photo-de-profil-par-d%C3%A9faut-avatar-photo-placeholder-illustration-de-vecteur.jpg?s=612x612&w=0&k=20&c=iLDNfo8MGvF_Srti46vL4iyYbHB4bUK5iv6V7c4Pj80=', 'aderveaux@myges.fr', '$2y$10$oK4BK6n96XAKx65482wHCOEdHMb1qxPBwNT2SF63kwUzCTVubw8XK', '142818988366364f892d3546.68137362', 1, 72, NULL),
+(14, 'Amaury', 'Marchand', 'https://media.istockphoto.com/id/1223671392/fr/vectoriel/photo-de-profil-par-d%C3%A9faut-avatar-photo-placeholder-illustration-de-vecteur.jpg?s=612x612&w=0&k=20&c=iLDNfo8MGvF_Srti46vL4iyYbHB4bUK5iv6V7c4Pj80=', 'amarchand@myges.fr', '$2y$10$hWQMqaOP72i80e65I1OiiuL4tbf5C9v7QPS5Qf7Rn3k05RrpaXH5m', '53852761466432c95a2d850.90477777', 5, 93, NULL),
+(15, 'Marine', 'Delaville', 'https://media.istockphoto.com/id/1223671392/fr/vectoriel/photo-de-profil-par-d%C3%A9faut-avatar-photo-placeholder-illustration-de-vecteur.jpg?s=612x612&w=0&k=20&c=iLDNfo8MGvF_Srti46vL4iyYbHB4bUK5iv6V7c4Pj80=', 'mdelaville@myges.fr', '$2y$10$MfOG/X11L1UjQbmA4VuuNeHg85uG8OpRkeqN8bO38nhtXwI8oLhUe', '4346540906644ce3506f447.17018723', 2, 133, NULL);
 
 --
 -- Index pour les tables déchargées
 --
 
 --
+-- Index pour la table `admin`
+--
+ALTER TABLE `admin`
+  ADD PRIMARY KEY (`id_admin`),
+  ADD UNIQUE KEY `email` (`email`);
+
+--
+-- Index pour la table `ecole`
+--
+ALTER TABLE `ecole`
+  ADD PRIMARY KEY (`id_ecole`);
+
+--
+-- Index pour la table `intervenant`
+--
+ALTER TABLE `intervenant`
+  ADD PRIMARY KEY (`id_intervenant`);
+
+--
+-- Index pour la table `matiere`
+--
+ALTER TABLE `matiere`
+  ADD PRIMARY KEY (`id_matiere`);
+
+--
 -- Index pour la table `note`
 --
 ALTER TABLE `note`
   ADD PRIMARY KEY (`id_note`),
-  ADD KEY `fk_user_note` (`id_user`);
+  ADD KEY `id_student` (`id_student`),
+  ADD KEY `fk_note_matiere` (`id_matiere`),
+  ADD KEY `fk_note_intervenant` (`id_intervenant`);
 
 --
--- Index pour la table `users`
+-- Index pour la table `promo`
 --
-ALTER TABLE `users`
-  ADD PRIMARY KEY (`id_user`),
+ALTER TABLE `promo`
+  ADD PRIMARY KEY (`id_promo`),
+  ADD KEY `id_ecole` (`id_ecole`);
+
+--
+-- Index pour la table `student`
+--
+ALTER TABLE `student`
+  ADD PRIMARY KEY (`id_student`),
   ADD UNIQUE KEY `email` (`email`);
 
 --
@@ -121,26 +316,77 @@ ALTER TABLE `users`
 --
 
 --
+-- AUTO_INCREMENT pour la table `admin`
+--
+ALTER TABLE `admin`
+  MODIFY `id_admin` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT pour la table `ecole`
+--
+ALTER TABLE `ecole`
+  MODIFY `id_ecole` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+
+--
+-- AUTO_INCREMENT pour la table `intervenant`
+--
+ALTER TABLE `intervenant`
+  MODIFY `id_intervenant` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+
+--
+-- AUTO_INCREMENT pour la table `matiere`
+--
+ALTER TABLE `matiere`
+  MODIFY `id_matiere` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
+
+--
 -- AUTO_INCREMENT pour la table `note`
 --
 ALTER TABLE `note`
-  MODIFY `id_note` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
+  MODIFY `id_note` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
 
 --
--- AUTO_INCREMENT pour la table `users`
+-- AUTO_INCREMENT pour la table `promo`
 --
-ALTER TABLE `users`
-  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+ALTER TABLE `promo`
+  MODIFY `id_promo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=137;
+
+--
+-- AUTO_INCREMENT pour la table `student`
+--
+ALTER TABLE `student`
+  MODIFY `id_student` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
 -- Contraintes pour les tables déchargées
 --
 
 --
+-- Contraintes pour la table `ecole`
+--
+ALTER TABLE `ecole`
+  ADD CONSTRAINT `ecole_ibfk_1` FOREIGN KEY (`id_ecole_ecole`) REFERENCES `matiere_ecole` (`id_ecole`);
+
+--
 -- Contraintes pour la table `note`
 --
 ALTER TABLE `note`
-  ADD CONSTRAINT `fk_user_note` FOREIGN KEY (`id_user`) REFERENCES `users` (`id_user`);
+  ADD CONSTRAINT `fk_note_intervenant` FOREIGN KEY (`id_intervenant`) REFERENCES `intervenant` (`id_intervenant`),
+  ADD CONSTRAINT `fk_note_matiere` FOREIGN KEY (`id_matiere`) REFERENCES `matiere` (`id_matiere`),
+  ADD CONSTRAINT `note_ibfk_1` FOREIGN KEY (`id_student`) REFERENCES `student` (`id_student`);
+
+--
+-- Contraintes pour la table `promo`
+--
+ALTER TABLE `promo`
+  ADD CONSTRAINT `promo_ibfk_1` FOREIGN KEY (`id_ecole`) REFERENCES `ecole` (`id_ecole`);
+
+--
+-- Contraintes pour la table `student`
+--
+ALTER TABLE `student`
+  ADD CONSTRAINT `student_ibfk_1` FOREIGN KEY (`id_ecole`) REFERENCES `ecole` (`id_ecole`),
+  ADD CONSTRAINT `student_ibfk_2` FOREIGN KEY (`id_promo`) REFERENCES `promo` (`id_promo`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

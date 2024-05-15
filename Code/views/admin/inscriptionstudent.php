@@ -3,11 +3,7 @@
 
 <?php
 
-if (!isset($_SESSION['user_id'])) {
-    // Rediriger vers la page de connexion si l'utilisateur n'est pas connecté
-    header("Location: index.php?page=session");
-    exit;
-}
+
 ?>
 
 
@@ -43,8 +39,8 @@ if (!isset($_SESSION['user_id'])) {
         <div class="forms">
             <div class="form-content">
                 <div class="signup-form">
-                    <div class="title">S'inscrire</div>
-                    <form method="POST" action="index.php?form=register">
+                    <div class="title">Inscrire un étudiant</div>
+                    <form method="POST" action="index.php?form=registerstudent">
                         <div class="input-boxes">
                             <div class="input-box">
                                 <i class="fa-solid fa-user"></i>
@@ -64,17 +60,39 @@ if (!isset($_SESSION['user_id'])) {
                             </div>
                             <div class="input-box">
                                 <i class="fa-solid fa-school"></i>
-                                <input type="text" for="school" placeholder="Entrez l'école de l'étudiant" id="school" name="school">
+                                <select name="id_ecole" id="id_ecole" onchange="updatePromos()" required>
+                                    <option name="id_ecole" id="id_ecole" value="">Sélectionnez une école</option>
+                                    <?php
+                                    // Boucle à travers la liste des utilisateurs et affiche-les dans les options
+                                    foreach (DbEcole() as $ecole) {
+                                        echo "<option value=\"{$ecole['id_ecole']}\">{$ecole['nom_ecole']} </option>";
+                                    }
+                                    ?>
+                                </select>
+                            </div>
+                            <div class="input-box">
+                                <i class="fa-regular fa-graduation-cap"></i>
+                                <select name="id_promo" id="id_promo" required>
+                                    <option name="id_promo" id="id_promo" value="">Sélectionnez une promo</option>
+                                    <?php
+                                    // Boucle à travers la liste des utilisateurs et affiche-les dans les options
+                                    foreach (DbPromoByEcole($id_ecole) as $promo) {
+                                        echo "<option value=\"{$promo['id_promo']}\">{$promo['nom_promo']} </option>";
+                                    }
+                                    ?>
+                                </select>
                             </div>
                             <div class="button input-box">
                                 <input type="submit" value="S'inscrire">
                             </div>
-                            <div class="text sign-up-text">Vous avez déjà un compte ? <label for=""><a href="index.php?page=session">Se connecter</a></label></div>
+                            <div class="text sign-up-text">Vous avez déjà un compte ? <label><a href="index.php?page=session">Se connecter</a></label></div>
                         </div>
                     </form>
                 </div>
             </div>
         </div>
+    </div>
+    <script src="/NewGES/Code/assets/js/promo.js"></script>
 </body>
 
 </html>
