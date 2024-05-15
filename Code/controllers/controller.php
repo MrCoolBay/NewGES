@@ -83,6 +83,14 @@ function DisplayDoc()
 {
     require("views/scolarite/documents.php");
 }
+function DisplayCV()
+{
+    require("views/sevices/cv.php");
+}
+function DbPartenaires()
+{
+    require("views/services/cv.php");
+}
 
 function DbLogin()
 {

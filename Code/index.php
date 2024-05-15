@@ -42,6 +42,12 @@ if (isset($_GET['logout'])) {
     } elseif ($page == 'ajoutnote') {
         session_start();
         DisplayAjoutNote();
+    } elseif ($page == 'ciriculum') {
+        session_start();
+        DisplayCv();
+    } elseif ($page == 'partenaires') {
+        session_start();
+        DisplayPartenaires();
     }
 } elseif (isset($_GET["form"]) && !empty($_GET["form"])) {
     $form = htmlspecialchars_decode($_GET["form"]);
