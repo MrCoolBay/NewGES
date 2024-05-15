@@ -539,8 +539,13 @@ td.notes {
 
 /********* PAGE PLANNING ***********/
 .planning {
-    border: 1px solid #ccc; 
-    padding: 10px; 
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background-color: #f2f2f2;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
 }
 
 

@@ -101,8 +101,8 @@
         }
 
         // Afficher le formulaire
+        echo "<div class='planning'>";
         echo "<form method='post'>";
-        echo "<div class = planning>";
         foreach ($semainier as $jour => $horaires) {
             echo "<div class='jour'>";
             echo "<h3>$jour :</h3>";
@@ -112,10 +112,10 @@
             }
             echo "</div>";
         }
-        echo "</div>";
         echo "<input type='submit' value='Enregistrer'>";
         echo "</form>";
-
+        echo "</div>";
+        
         ?>
     <script src="assets/js/script.js"></script>
 </body>
