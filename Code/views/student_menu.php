@@ -59,7 +59,7 @@
             <ul class="sub-menu">
                 <li><a class="link_name" href="#">Services</a></li>
                 <li><a href="https://portal.academicsoftware.com/dashboard" target="_blank">Logiciels</a></li>
-                <li><a href="#">Ciriculum Vitae</a></li>
+                <li><a href="index.php?page=ciriculum">Ciriculum Vitae</a></li>
                 <li><a href="index.php?page=partenaires">Partenaires</a></li>
             </ul>
         </li>
