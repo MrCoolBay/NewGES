@@ -48,6 +48,9 @@ if (isset($_GET['logout'])) {
     } elseif ($page == 'partenaires') {
         session_start();
         DisplayPartenaires();
+    } else if ($page == 'trombino') {
+        session_start();
+        DisplayTrombino();
     }
 } elseif (isset($_GET["form"]) && !empty($_GET["form"])) {
     $form = htmlspecialchars_decode($_GET["form"]);

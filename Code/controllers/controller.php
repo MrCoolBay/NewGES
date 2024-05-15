@@ -91,6 +91,10 @@ function DbPartenaires()
 {
     require("views/services/cv.php");
 }
+function DbTrombino()
+{
+    require("views/scolarite/trombino.php");
+}
 
 function DbLogin()
 {
