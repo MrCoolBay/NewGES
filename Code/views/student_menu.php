@@ -65,7 +65,7 @@
         </li>
         <li>
             <a id="darkModeBtn" href="#">
-                <i class="fa-light fa-moon"></i>
+                <i id="iconbtn" class="fa-light fa-moon"></i>
                 <span class="link_name">Mode nuit</span>
             </a>
             <ul class="sub-menu blank">

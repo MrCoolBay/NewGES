@@ -60,44 +60,8 @@
                             </div>
                             <div class="input-box">
                                 <i class="fa-solid fa-school"></i>
-                                <select name="id_matiere[]" id="id_matiere" required>
-                                    <option name="id_matiere" id="id_matiere" value="">Sélectionnez une matière</option>
-                                    <?php
-                                    // Boucle à travers la liste des utilisateurs et affiche-les dans les options
-                                    foreach (DbMatiere() as $matiere) {
-                                        echo "<option value=\"{$matiere['id_matiere']}\">{$matiere['nom_matiere']} </option>";
-                                    }
-                                    ?>
-                                </select>
-                            </div>
-                            <div class="input-box">
-                                <i class="fa-solid fa-school"></i>
-                                <select name="id_matiere[]" id="id_matiere">
-                                    <option name="id_matiere" id="id_matiere" value="">Sélectionnez une autre matière</option>
-                                    <?php
-                                    // Boucle à travers la liste des utilisateurs et affiche-les dans les options
-                                    foreach (DbMatiere() as $matiere) {
-                                        echo "<option value=\"{$matiere['id_matiere']}\">{$matiere['nom_matiere']} </option>";
-                                    }
-                                    ?>
-                                </select>
-                            </div>
-                            <div class="input-box">
-                                <i class="fa-regular fa-graduation-cap"></i>
-                                <select name="id_ecole[]" id="id_ecole" required>
+                                <select name="id_ecole" id="id_ecole" onchange="updatePromos()" required>
                                     <option name="id_ecole" id="id_ecole" value="">Sélectionnez une école</option>
-                                    <?php
-                                    // Boucle à travers la liste des utilisateurs et affiche-les dans les options
-                                    foreach (DbEcole() as $ecole) {
-                                        echo "<option value=\"{$ecole['id_ecole']}\">{$ecole['nom_ecole']} </option>";
-                                    }
-                                    ?>
-                                </select>
-                            </div>
-                            <div class="input-box">
-                                <i class="fa-regular fa-graduation-cap"></i>
-                                <select name="id_ecole[]" id="id_ecole" required>
-                                    <option name="id_ecole" id="id_ecole" value="">Sélectionnez une autre école</option>
                                     <?php
                                     // Boucle à travers la liste des utilisateurs et affiche-les dans les options
                                     foreach (DbEcole() as $ecole) {
@@ -109,7 +73,7 @@
                             <div class="button input-box">
                                 <input type="submit" value="S'inscrire">
                             </div>
-                            <div class="text sign-up-text">Vous avez déjà un compte ? <label for=""><a href="index.php?page=session">Se connecter</a></label></div>
+                            <div class="text sign-up-text">Vous avez déjà un compte ? <label><a href="index.php?page=session">Se connecter</a></label></div>
                         </div>
                     </form>
                 </div>

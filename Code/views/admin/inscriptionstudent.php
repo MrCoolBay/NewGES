@@ -85,7 +85,7 @@
                             <div class="button input-box">
                                 <input type="submit" value="S'inscrire">
                             </div>
-                            <div class="text sign-up-text">Vous avez déjà un compte ? <label for=""><a href="index.php?page=session">Se connecter</a></label></div>
+                            <div class="text sign-up-text">Vous avez déjà un compte ? <label><a href="index.php?page=session">Se connecter</a></label></div>
                         </div>
                     </form>
                 </div>

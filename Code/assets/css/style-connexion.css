@@ -178,6 +178,13 @@ body {
   color: #1ea7d3;
   font-size: 17px;
 }
+.input-box select {
+  margin-left: 25px;
+  position: absolute;
+  border: 2px solid #1ea7d3;
+  border-radius: 10px;
+  font-size: 14px;
+}
 .forms .form-content .text {
   font-size: 14px;
   font-weight: 500;

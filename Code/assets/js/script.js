@@ -46,21 +46,29 @@ document.querySelector('.fa-bars').addEventListener('click', function() {
 });
 
 let darkModeBtn = document.querySelector("#darkModeBtn");
+let darkMode = document.querySelector("#iconbtn");
 let body = document.querySelector("body");
 let section = document.querySelector("section");
 let menu = document.querySelector(".sidebar");
 let footer = document.querySelector(".footer");
 let menuPink = document.querySelector(".profile-details");
+let subMenus = document.querySelectorAll("ul.sub-menu"); // Modified line
+
 
 darkModeBtn.addEventListener("click", () => {
+
   if (localStorage.getItem('darkMode') !== 'enabled') {
     body.classList.add("dark-mode");
     section.classList.add("dark-mode");
     menu.classList.add("dark-mode");
     footer.classList.add("dark-mode");
     menuPink.classList.add("dark-mode");
+    subMenus.forEach(subMenu => subMenu.classList.add("dark-mode")); // Added line
 
-    // Enregistrez l'état dans le stockage local
+    // Change le bouton en icône de soleil
+    darkMode.classList.remove("fa-moon");
+    darkMode.classList.add("fa-sun");
+    // Enregistre l'état dans le stockage local
     localStorage.setItem('darkMode', 'enabled');
   } else {
     body.classList.remove("dark-mode");
@@ -68,8 +76,12 @@ darkModeBtn.addEventListener("click", () => {
     menu.classList.remove("dark-mode");
     footer.classList.remove("dark-mode");
     menuPink.classList.remove("dark-mode");
-    
-    // Supprimez l'état du stockage local
+    subMenus.forEach(subMenu => subMenu.classList.remove("dark-mode")); // Added line
+
+    // Change le bouton en icône de lune
+    darkMode.classList.remove("fa-sun");
+    darkMode.classList.add("fa-moon");
+    // Supprime l'état du stockage local
     localStorage.removeItem('darkMode');
   }
 });
@@ -81,6 +93,10 @@ document.addEventListener('DOMContentLoaded', (event) => {
     menu.classList.add("dark-mode");
     footer.classList.add("dark-mode");
     menuPink.classList.add("dark-mode");
+    subMenus.forEach(subMenu => subMenu.classList.add("dark-mode")); // Added line
+    
+    darkMode.classList.remove("fa-moon");
+    darkMode.classList.add("fa-sun");
   }
 });
 

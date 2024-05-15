@@ -9,13 +9,13 @@
     </div>
     <ul class="nav-links">
         <li>
-            <a href="index.php?page=studentdash">
+            <a href="index.php?page=interdash">
                 <i class="fa-light fa-house"></i>
                 <span class="link_name">Tableau de bord</span>
             </a>
             <ul class="sub-menu blank">
                 <li>
-                    <a class="link_name" href="index.php?page=studentdash">Tableau de bord</a>
+                    <a class="link_name" href="index.php?page=interdash">Tableau de bord</a>
                 </li>
             </ul>
         </li>
@@ -65,7 +65,7 @@
         </li>
         <li>
             <a id="darkModeBtn" href="#">
-                <i class="fa-light fa-moon"></i>
+                <i id="iconbtn" class="fa-light fa-moon"></i>
                 <span class="link_name">Mode nuit</span>
             </a>
             <ul class="sub-menu blank">

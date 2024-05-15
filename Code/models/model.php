@@ -80,8 +80,7 @@ function DbRegisterInter()
     $surname = $_POST['surname'];
     $email = $_POST['email'];
     $password = $_POST['password'];
-    $id_ecoles = $_POST['id_ecole']; // Un tableau des ID des écoles
-    $id_matieres = $_POST['id_matiere']; // Un tableau des ID des matières
+    $id_ecole = $_POST['id_ecole']; // Un tableau des ID des écoles
 
     // Vérifier si l'adresse e-mail existe déjà
     $stmt = $db->prepare("SELECT COUNT(*) FROM intervenant WHERE email = :email");
@@ -99,52 +98,25 @@ function DbRegisterInter()
     $hashed_password = password_hash($password . $salt, PASSWORD_DEFAULT);
 
     try {
-        // Commencer une transaction
-        $db->beginTransaction();
-
         // Insérer l'intervenant dans la table intervenant
-        $stmt = $db->prepare("INSERT INTO intervenant (name_intervenant, surname_intervenant, email, password, salt) VALUES (:name, :surname, :email, :password, :salt)");
+        $stmt = $db->prepare("INSERT INTO intervenant (name_intervenant, surname_intervenant, email, password, salt, id_ecole) VALUES (:name, :surname, :email, :password, :salt, :id_ecole)");
         $stmt->bindParam(':name', $name, PDO::PARAM_STR);
         $stmt->bindParam(':surname', $surname, PDO::PARAM_STR);
         $stmt->bindParam(':email', $email, PDO::PARAM_STR);
         $stmt->bindParam(':password', $hashed_password, PDO::PARAM_STR);
         $stmt->bindParam(':salt', $salt, PDO::PARAM_STR);
+        $stmt->bindParam(':id_ecole', $id_ecole, PDO::PARAM_INT);
         $stmt->execute();
-
-        // Récupérer l'ID de l'intervenant nouvellement inséré
-        $intervenant_id = $db->lastInsertId();
-
-        // Insérer les associations école-intervenant dans la table de liaison intervenant_ecole
-        $stmt = $db->prepare("INSERT INTO intervenant_ecole (id_intervenant, id_ecole) VALUES (:intervenant_id, :id_ecole)");
-        foreach ($id_ecoles as $id_ecole) {
-            $stmt->bindParam(':intervenant_id', $intervenant_id, PDO::PARAM_INT);
-            $stmt->bindParam(':id_ecole', $id_ecole, PDO::PARAM_INT);
-            $stmt->execute();
-        }
-
-        // Insérer les associations matière-intervenant dans la table de liaison intervenant_matiere
-        $stmt = $db->prepare("INSERT INTO intervenant_matiere (id_intervenant, id_matiere) VALUES (:intervenant_id, :id_matiere)");
-        foreach ($id_matieres as $id_matiere) {
-            $stmt->bindParam(':intervenant_id', $intervenant_id, PDO::PARAM_INT);
-            $stmt->bindParam(':id_matiere', $id_matiere, PDO::PARAM_INT);
-            $stmt->execute();
-        }
-
-        // Valider la transaction
-        $db->commit();
 
         // Afficher un message de confirmation
         DisplayConfRegister();
     } catch (PDOException $e) {
-        // En cas d'erreur PDO, annuler la transaction et afficher l'erreur
-        $db->rollBack();
         echo "Erreur PDO : " . $e->getMessage();
     } catch (Exception $e) {
         // En cas d'autre erreur, afficher l'erreur
         echo "Erreur : " . $e->getMessage();
     }
 }
-
 
 function DbLogout()
 {
@@ -347,7 +319,7 @@ function DbStudentByInter($intervenant_id)
 {
     $db = DbConnexion();
 
-    // Préparez la requête pour sélectionner les étudiants de l'école associés à l'intervenant
+    // Préparez la requête pour sélectionner tous les élèves de l'école associés à l'intervenant
     $stmt = $db->prepare("SELECT student.id_student, student.name_student, student.surname_student 
                           FROM student 
                           INNER JOIN promo ON student.id_promo = promo.id_promo 
@@ -453,14 +425,31 @@ function DbMatiere()
     return $matiereList;
 }
 
+// Fonction pour récupérer les matières en fonction de l'ID de l'école
+function DbMatiereByEcole($id_ecole)
+{
+    $db = DbConnexion();
+    $stmt = $db->prepare("SELECT id_matiere, nom_matiere FROM matiere WHERE id_ecole = :id_ecole");
+    $stmt->bindParam(':id_ecole', $id_ecole, PDO::PARAM_INT);
+    // Exécution de la requête
+    $stmt->execute();
+    // Récupération des résultats
+    $matiereList = $stmt->fetchAll(PDO::FETCH_ASSOC);
+    return $matiereList;
+}
+
 function DbMatiereInterID()
 {
     $db = DbConnexion();
 
+    $intervenant_id = $_SESSION['intervenant_id']; // Assurez-vous d'avoir correctement stocké l'ID de l'intervenant dans $_SESSION lors de la connexion
+
     $stmt = $db->prepare("SELECT m.id_matiere, m.nom_matiere, i.name_intervenant, i.surname_intervenant
                           FROM matiere m
                           INNER JOIN intervenant_matiere im ON m.id_matiere = im.id_matiere
-                          INNER JOIN intervenant i ON im.id_intervenant = i.id_intervenant");
+                          INNER JOIN intervenant i ON im.id_intervenant = i.id_intervenant
+                          WHERE i.id_intervenant = :intervenant_id");
+    $stmt->bindParam(':intervenant_id', $intervenant_id, PDO::PARAM_INT);
     // Exécution de la requête
     $stmt->execute();
     // Récupération des résultats

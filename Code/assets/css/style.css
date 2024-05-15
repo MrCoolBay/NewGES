@@ -96,7 +96,7 @@ body.dark-mode {
 }
 
 .sidebar .nav-links li:hover {
-  background: #1ea7d3;
+  background: none;
 }
 
 .sidebar .nav-links li .iocn-link {
@@ -667,5 +667,13 @@ td.notes {
 
 .sidebar.dark-mode,
 .footer.dark-mode {
+  background: #136380;
+}
+
+.sidebar .nav-links li .sub-menu.dark-mode {
+  background: #136380;
+}
+
+.sidebar .nav-links li ul.sub-menu.dark-mode {
   background: #136380;
 }
