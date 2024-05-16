@@ -3,8 +3,9 @@
 
 <?php
 
+session_start();
 
-if (!isset($_SESSION['user_id'])) {
+if (!isset($_SESSION['student_id'])) {
     // Rediriger vers la page de connexion si l'utilisateur n'est pas connecté
     header("Location: index.php?page=session");
     exit;
@@ -22,11 +23,22 @@ if (!isset($_SESSION['user_id'])) {
     <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.5.1/css/sharp-regular.css">
     <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.5.1/css/sharp-light.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" />
-    <title>Notes - MyNewGes</title>
+    <title>Trombioscope - MyNewGes</title>
 </head>
 
 <body>
+    <nav>
+        <?php
+        require("student_menu.php");
+        ?>
+        <section class="home-section">
+            <div class="home-content">
+                <i id="icon" class="fa-solid fa-bars"></i>
+                <span class="text">Trombinoscope</span>
+            </div>
 
+        </section>
+    </nav>
     <script src="assets/js/script.js"></script>
 </body>
 

@@ -10,6 +10,14 @@ if (!isset($_SESSION['student_id'])) {
     exit;
 }
 
+$total = 0;
+$count = 0;
+foreach ($data as $note) {
+    $total += $note['note'];
+    $count++;
+}
+$moyenne = $total / $count;
+
 ?>
 
 <head>
@@ -61,13 +69,23 @@ if (!isset($_SESSION['student_id'])) {
                             <td><?php echo $note['date_note']; ?></td>
                         </tr>
                     <?php } ?>
-                    <tr>
-                        <th class="notes">Moyenne</th>
 
-                        <th><?php $data = $note;
-                            echo $data['moyenne_total'] ?></th>
-                    </tr>
                 </table>
+
+            </div>
+            <div class="moyenne">
+                Votre moyenne est de : <?php echo $moyenne; ?>
+                <?php
+                if ($moyenne >= 0 && $moyenne <= 5) {
+                    echo "<div>😢</div>";
+                } elseif ($moyenne > 5 && $moyenne <= 10) {
+                    echo "<div>😔</div>";
+                } elseif ($moyenne > 10 && $moyenne <= 15) {
+                    echo "<div>😊</div>";
+                } elseif ($moyenne > 15 && $moyenne <= 20) {
+                    echo "<div>😄</div>";
+                }
+                ?>
             </div>
             <?php require("footer.php") ?>
         </section>

@@ -36,7 +36,7 @@
                         <div class="tooltip">
                             StreamView
                         </div>
-                        <span><img src="https://media.discordapp.net/attachments/1164893755283869728/1230873000929132725/Black_and_White_Monogram_Business_Logo_500_x_500_px.png?ex=6634e6cf&is=662271cf&hm=f465ef5d7c0d90abdee7c17a5b8cc771c769ea8dbaa9001fef3629ca54f3d989&=&format=webp&quality=lossless&width=976&height=976"></span>
+                        <span><img src="https://media.discordapp.net/attachments/1164893755283869728/1230873000929132725/Black_and_White_Monogram_Business_Logo_500_x_500_px.png?ex=66460a4f&is=6644b8cf&hm=31da49ea094a2b66f7cac69054fe5a9213968477f66a014c19e29ee3fac6a98b&=&format=webp&quality=lossless&width=976&height=976"></span>
                     </div>
                 </div>
 </footer>

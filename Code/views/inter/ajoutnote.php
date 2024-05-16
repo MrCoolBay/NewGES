@@ -1,4 +1,5 @@
 <?php
+session_start();
 
 // Assurez-vous que l'utilisateur est identifié
 if (!isset($_SESSION['intervenant_id'])) {
@@ -8,6 +9,13 @@ if (!isset($_SESSION['intervenant_id'])) {
 }
 
 $intervenant_id = $_SESSION['intervenant_id'];
+
+$id_ecole = $_SESSION['id_ecole'];
+
+$matieres = DbMatiereByEcole($id_ecole);
+
+// var_dump($matieres); 
+
 
 $students = DbStudentByInter($intervenant_id);
 ?>
@@ -26,7 +34,7 @@ $students = DbStudentByInter($intervenant_id);
     <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.5.1/css/sharp-regular.css">
     <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.5.1/css/sharp-light.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" />
-    <title>Panel Intervenant - MyNewGES</title>
+    <title>Ajout de note - MyNewGES</title>
 </head>
 
 <body>
@@ -54,19 +62,12 @@ $students = DbStudentByInter($intervenant_id);
                             </select>
                             <select name="id_matiere" id="id_matiere" required>
                                 <option value="">Sélectionnez une matière</option>
-                                <?php
-                                // Appel de la fonction pour récupérer la liste des matières avec les informations de l'intervenant
-                                $matieres = DbMatiereInterID();
-
-                                // Parcourir chaque matière et afficher les options
-                                foreach ($matieres as $matiere) {
-                                    // Concaténer le nom de l'intervenant avec le nom de la matière pour créer une option lisible
-                                    $optionLabel = "{$matiere['nom_matiere']} ({$matiere['name_intervenant']} {$matiere['surname_intervenant']})";
-                                    echo "<option value=\"{$matiere['id_matiere']}\">$optionLabel</option>";
-                                }
-                                ?>
+                                <?php foreach ($matieres as $matiere) : ?>
+                                    <option value="<?php echo $matiere['id_matiere']; ?>">
+                                        <?php echo $matiere['nom_matiere']; ?>
+                                    </option>
+                                <?php endforeach; ?>
                             </select>
-
                             <input type="hidden" id="id_intervenant" name="id_intervenant" value="<?= $_SESSION['intervenant_id'] ?>" />
                             <input type="number" placeholder="Note" id="note" name="note" required />
                             <textarea type="text" placeholder="Information" id="info_note" name="info_note" required></textarea>

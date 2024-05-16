@@ -20,9 +20,13 @@ function DisplayPanelAdmin()
 }
 function DisplayAjoutNote()
 {
-    DbStudent();
-    VerifyInter();
-    require("views/inter/ajoutnote.php");
+    try {
+
+        require("views/inter/ajoutnote.php");
+    } catch (Exception $e) {
+        // Handle the error here
+        echo "An error occurred: " . $e->getMessage();
+    }
 }
 function DisplayPanelInter()
 {
@@ -155,7 +159,7 @@ function DbLogin()
     }
 
     // Recherche de l'intervenant dans la table intervenant
-    $stmt = $db->prepare("SELECT id_intervenant, name_intervenant, surname_intervenant, pdp_intervenant email, password, salt FROM intervenant WHERE email = :email");
+    $stmt = $db->prepare("SELECT id_intervenant, name_intervenant, surname_intervenant, pdp_intervenant email, password, salt, id_ecole FROM intervenant WHERE email = :email");
     $stmt->bindParam(':email', $email);
     $stmt->execute();
     $intervenant = $stmt->fetch(PDO::FETCH_ASSOC);
@@ -168,6 +172,7 @@ function DbLogin()
         $_SESSION['name'] = $intervenant['name_intervenant'];
         $_SESSION['surname'] = $intervenant['surname_intervenant'];
         $_SESSION['pdp'] = $intervenant['pdp_intervenant'];
+        $_SESSION['id_ecole'] = $intervenant['id_ecole'];
 
         // Créer un cookie pour garder l'intervenant connecté
         setcookie('intervenant_id', $intervenant['id_intervenant'], time() + 3600, '/');

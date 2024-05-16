@@ -320,11 +320,7 @@ function DbStudentByInter($intervenant_id)
     $db = DbConnexion();
 
     // Préparez la requête pour sélectionner tous les élèves de l'école associés à l'intervenant
-    $stmt = $db->prepare("SELECT student.id_student, student.name_student, student.surname_student 
-                          FROM student 
-                          INNER JOIN promo ON student.id_promo = promo.id_promo 
-                          INNER JOIN intervenant_ecole ON promo.id_ecole = intervenant_ecole.id_ecole 
-                          WHERE intervenant_ecole.id_intervenant = :intervenant_id");
+    $stmt = $db->prepare("SELECT student.id_student, student.name_student, student.surname_student FROM student INNER JOIN promo ON student.id_promo = promo.id_promo INNER JOIN ecole ON promo.id_ecole = ecole.id_ecole WHERE ecole.id_ecole = (SELECT id_ecole FROM intervenant WHERE id_intervenant = :intervenant_id)");
 
     // Liaison des paramètres
     $stmt->bindParam(':intervenant_id', $intervenant_id, PDO::PARAM_INT);
@@ -425,18 +421,34 @@ function DbMatiere()
     return $matiereList;
 }
 
-// Fonction pour récupérer les matières en fonction de l'ID de l'école
 function DbMatiereByEcole($id_ecole)
 {
     $db = DbConnexion();
+
     $stmt = $db->prepare("SELECT id_matiere, nom_matiere FROM matiere WHERE id_ecole = :id_ecole");
     $stmt->bindParam(':id_ecole', $id_ecole, PDO::PARAM_INT);
-    // Exécution de la requête
-    $stmt->execute();
-    // Récupération des résultats
-    $matiereList = $stmt->fetchAll(PDO::FETCH_ASSOC);
-    return $matiereList;
+
+    try {
+        // Exécution de la requête
+        if ($stmt->execute()) {
+            // Récupération des résultats
+            $matiereList = $stmt->fetchAll(PDO::FETCH_ASSOC);
+            return $matiereList;
+        } else {
+            // Gérer l'échec de l'exécution de la requête
+            echo "Erreur lors de l'exécution de la requête.";
+            return null;
+        }
+    } catch (PDOException $e) {
+        echo "Erreur PDO : " . $e->getMessage();
+        return null;
+    } catch (Exception $e) {
+        // Gérer d'autres exceptions
+        echo "Erreur : " . $e->getMessage();
+        return null;
+    }
 }
+
 
 function DbMatiereInterID()
 {

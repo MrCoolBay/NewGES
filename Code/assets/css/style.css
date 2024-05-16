@@ -607,7 +607,12 @@ td.notes {
 .tophead a {
   color: #1ea7d3;
 }
-
+.moyenne {
+  color: #eb4e81;
+  margin-top: 20px;
+  text-align: center;
+  font-weight: 600;
+}
 /********* PAGE OFFRES ***********/
 .offre {
   display: flex;
@@ -676,4 +681,28 @@ td.notes {
 
 .sidebar .nav-links li ul.sub-menu.dark-mode {
   background: #136380;
+}
+
+/********* PAGE PLANNING ***********/
+.planning {
+  position: absolute;
+  top: 60px;
+  left: 20px;
+  background-color: #f2f2f2;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  width: 100%;
+}
+
+.jour {
+  display: inline-block;
+  vertical-align: top;
+  width: calc(100% / 7);
+  box-sizing: border-box;
+  padding: 10px;
+  border-right: 1px solid #ccc;
+}
+.jour:last-child {
+  border-right: none; /*Supprimer la bordure droite pour le dernier jour */
 }
