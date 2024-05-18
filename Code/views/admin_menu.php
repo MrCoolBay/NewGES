@@ -24,17 +24,6 @@
         </li>
         <li>
             <div class="iocn-link">
-                <a href="index.php?page=plannings">
-                    <i class="fa-light fa-calendar-week"></i>
-                    <span class="link_name">Plannings</span>
-                </a>
-            </div>
-            <ul class="sub-menu">
-                <li><a class="link_name" href="index.php?page=plannings">Plannings</a></li>
-            </ul>
-        </li>
-        <li>
-            <div class="iocn-link">
                 <a href="#">
                     <i class="fa-light fa-id-card"></i>
                     <span class="link_name">Inscription</span>
@@ -61,7 +50,6 @@
                 <li><a class="link_name" href="#">Services</a></li>
                 <li><a href="#">Photo Caroussel</a></li>
                 <li><a href="https://portal.academicsoftware.com/dashboard" target="_blank">Logiciels</a></li>
-                <li><a href="#">Ciriculum Vitae</a></li>
                 <li><a href="index.php?page=partenaires">Partenaires</a></li>
             </ul>
         </li>

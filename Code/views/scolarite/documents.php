@@ -2,7 +2,7 @@
 <html lang="fr">
 <?php
 session_start();
-if (!isset($_SESSION['student_id'])) {
+if (!isset($_SESSION['student_id']) && !isset($_SESSION['intervenant_id'])) {
     // Rediriger vers la page de connexion si l'utilisateur n'est pas connecté
     header("Location: index.php?page=session");
     exit;
@@ -25,7 +25,11 @@ if (!isset($_SESSION['student_id'])) {
 
 <body>
     <nav>
-        <?php require("views/student_menu.php"); ?>
+        <?php if (isset($_SESSION['student_id'])) {
+            require("views/student_menu.php");
+        } elseif (isset($_SESSION['intervenant_id'])) {
+            require("views/intervenant_menu.php");
+        } ?>
         <section class="home-section">
             <div class="home-content">
                 <i class="fa-solid fa-bars"></i>
